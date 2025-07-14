@@ -14,6 +14,7 @@
         text-align: center;
         border-radius: 10%;
         box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+        margin: 3% 0;
         padding: 3% 2%;
 
         & span{

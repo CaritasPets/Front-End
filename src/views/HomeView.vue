@@ -34,6 +34,7 @@
     section.funcionalidades{
         display: flex;
         justify-content: space-between;
-        padding: 0 10%;
+        flex-wrap: wrap;
+        padding: 5% 10%;
     }
 </style>
