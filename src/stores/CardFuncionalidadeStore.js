@@ -1,8 +1,8 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-export const useCardFuncionalidadeStore = defineStore('nome-store', () => {
-    const propriedadesFuncionalidades = ref({
+export const useCardFuncionalidadeStore = defineStore('card-store', () => {
+    const propriedades = ref({
         card1: {
             text: 'De um lar para um pet',
             icon: 'mdi mdi-home-heart',
@@ -23,6 +23,6 @@ export const useCardFuncionalidadeStore = defineStore('nome-store', () => {
         }
     })
     return {
-        propriedadesFuncionalidades,
+        propriedades,
     }
 })
