@@ -1,5 +1,6 @@
 <script setup>
     import CardFuncionalidade from '../components/CardFuncionalidade.vue';
+    import InfoAdocao from '../components/InfoAdocao.vue';
     import { useCardFuncionalidadeStore } from '../stores/CardFuncionalidadeStore';
     const storeCardFuncionalidades = useCardFuncionalidadeStore();
     
@@ -27,7 +28,9 @@
             :text="storeCardFuncionalidades.propriedadesFuncionalidades.card3.text"
         />
     </section>
-    
+    <section class="info-adocao">
+        <InfoAdocao/>
+    </section>
 </template>
 
 <style scoped>
@@ -36,5 +39,9 @@
         justify-content: space-between;
         flex-wrap: wrap;
         padding: 5% 10%;
+    }
+    section.info-adocao{
+        margin: 2% 0;
+        padding: 0;
     }
 </style>

@@ -24,7 +24,7 @@
         }
 
         & p{
-            font-size: 3rem;
+            font-size: 300%;
         }
     }
 </style>
