@@ -10,25 +10,13 @@
 </script>
 
 <template>
-    <header>Home</header>
+    <header></header>
     <section class="funcionalidades">
-        <CardFuncionalidade
-            :background="storeCardFuncionalidades.propriedades.card1.background"
-            :icon="storeCardFuncionalidades.propriedades.card1.icon"
-            :iconBackground ="storeCardFuncionalidades.propriedades.card1.iconBackground"
-            :text="storeCardFuncionalidades.propriedades.card1.text"
-        />
-        <CardFuncionalidade
-            :background="storeCardFuncionalidades.propriedades.card2.background"
-            :icon="storeCardFuncionalidades.propriedades.card2.icon"
-            :iconBackground ="storeCardFuncionalidades.propriedades.card2.iconBackground"
-            :text="storeCardFuncionalidades.propriedades.card2.text"
-        />
-        <CardFuncionalidade
-            :background="storeCardFuncionalidades.propriedades.card3.background"
-            :icon="storeCardFuncionalidades.propriedades.card3.icon"
-            :iconBackground ="storeCardFuncionalidades.propriedades.card3.iconBackground"
-            :text="storeCardFuncionalidades.propriedades.card3.text"
+        <CardFuncionalidade v-for="card in storeCardFuncionalidades.propriedades" :key="card"
+            :icon="card.icon"
+            :icon-background="card.iconBackground"
+            :text="card.text"
+            :background="card.background"
         />
     </section>
     <section class="info-adocao">
@@ -36,31 +24,12 @@
     </section>
     <section class="duvidas">
         <h2>Dúvidas Frequentes</h2>
-        <RecolhivelComponent
-            :icon="recolhivelStore.propriedades.recolhivel1.icon"
-            :title="recolhivelStore.propriedades.recolhivel1.title"
-            :background="recolhivelStore.propriedades.recolhivel1.background"
-            :text="recolhivelStore.propriedades.recolhivel1.text"
-            />
-        <RecolhivelComponent
-            :icon="recolhivelStore.propriedades.recolhivel2.icon"
-            :title="recolhivelStore.propriedades.recolhivel2.title"
-            :background="recolhivelStore.propriedades.recolhivel2.background"
-            :text="recolhivelStore.propriedades.recolhivel2.text"
-            />
-        <RecolhivelComponent
-            :icon="recolhivelStore.propriedades.recolhivel3.icon"
-            :title="recolhivelStore.propriedades.recolhivel3.title"
-            :background="recolhivelStore.propriedades.recolhivel3.background"
-            :text="recolhivelStore.propriedades.recolhivel3.text"
+        <RecolhivelComponent v-for="recolhivel in recolhivelStore.propriedades" :key="recolhivel"
+            :icon="recolhivel.icon"
+            :title="recolhivel.title"
+            :background="recolhivel.background"
+            :text="recolhivel.text"
         />
-        <RecolhivelComponent
-            :icon="recolhivelStore.propriedades.recolhivel4.icon"
-            :title="recolhivelStore.propriedades.recolhivel4.title"
-            :background="recolhivelStore.propriedades.recolhivel4.background"    
-            :text="recolhivelStore.propriedades.recolhivel4.text"
-        />
-
     </section>
 </template>
 
