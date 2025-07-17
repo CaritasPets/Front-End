@@ -4,6 +4,10 @@ const routes = [
     {
         path: '/',
         component: () => import("@/views/HomeView.vue")
+    },
+    {
+        path: '/adopt',
+        component: () => import("@/views/AdoptPageView.vue")
     }
 ];
 
