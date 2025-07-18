@@ -1,8 +1,5 @@
 <script setup>
-import { ref } from 'vue'
 import { RouterLink } from 'vue-router';
-
-const hoveredIndex = ref(null)
 
 const navItems = [
   { label: 'Home', icon: 'mdi mdi-home', link: '/' },
@@ -18,9 +15,9 @@ const navItems = [
   </RouterLink>
   <nav>
     <ul>
-       <li v-for="(item, index) in navItems" :key="index" @mouseover="hoveredIndex = index" @mouseout="hoveredIndex = null">
+       <li v-for="(item, index) in navItems" :key="index">
         <RouterLink :to="item.link">
-          <span :class="item.icon" v-if="hoveredIndex == index"></span>
+          <span :class="item.icon"></span>
           <h2>
             {{ item.label }}
           </h2>
@@ -53,25 +50,23 @@ nav ul li a {
 
   span{
     font-size: 3rem;
+    position: absolute;
+    transform: translateX(-110%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
   }
 }
+
+nav ul li:hover a span {
+  transform: translateX(-100%);
+  opacity: 1;
+}
+
 span.mdi-account-circle-outline{
   position: relative;
 }
 span {
   color: #1E0B00;
   font-size: 4.5rem;
-  animation: spanAnimation ease-in 0.5s;
-  position: absolute;
-  transform: translateX(-100%);
-}
-@keyframes spanAnimation{
-  0%{
-    transform: translateX(0);
-    opacity: 0;
-  } 100% {
-    transform: translateX(-100%);
-    opacity: 1;
-  }
 }
 </style>
