@@ -1,35 +1,44 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router'
 
 const navItems = [
   { label: 'Home', icon: 'mdi mdi-home', link: '/' },
-  { label: 'Ongs', icon: 'mdi mdi-hand-heart', link: '/' },
+  { label: 'Ongs', icon: 'mdi mdi-hand-heart', link: '/ongs' },
   { label: 'Adote', icon: 'mdi mdi-heart', link: '/' },
   { label: 'Procura-se', icon: 'mdi mdi-magnify', link: '/' },
   { label: 'Sobre', icon: 'mdi mdi-information', link: '/' },
 ]
 </script>
 <template>
+  <div class="header">
   <RouterLink to="/">
-    <img src="/logo.png" alt="Logo">
+    <img src="/logo.png" alt="Logo" />
   </RouterLink>
   <nav>
     <ul>
-       <li v-for="(item, index) in navItems" :key="index">
+      <li v-for="(item, index) in navItems" :key="index">
         <RouterLink :to="item.link">
           <span :class="item.icon"></span>
           <h2>
             {{ item.label }}
           </h2>
         </RouterLink>
-       </li>
+      </li>
     </ul>
   </nav>
   <RouterLink to="">
     <span class="mdi mdi-account-circle-outline"></span>
   </RouterLink>
+  </div>
 </template>
 <style scoped>
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+  background-color: #ffdb58;
+}
 nav ul {
   display: flex;
   transform: translateX(4vw);
@@ -42,18 +51,20 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #1E0B00;
+  color: #1e0b00;
   font-size: 1.5rem;
   transition: 0.5s;
   display: flex;
   align-items: center;
 
-  span{
+  span {
     font-size: 3rem;
     position: absolute;
     transform: translateX(0);
     opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition:
+      transform 0.5s ease,
+      opacity 0.5s ease;
   }
 }
 
@@ -62,11 +73,11 @@ nav ul li:hover a span {
   opacity: 1;
 }
 
-span.mdi-account-circle-outline{
+span.mdi-account-circle-outline {
   position: relative;
 }
 span {
-  color: #1E0B00;
+  color: #1e0b00;
   font-size: 4.5rem;
 }
 </style>
