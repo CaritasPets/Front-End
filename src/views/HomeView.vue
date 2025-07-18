@@ -1,13 +1,16 @@
 <script setup>
     import CardFuncionalidade from '../components/CardFuncionalidade.vue';
     import InfoAdocao from '../components/InfoAdocao.vue';
-    import { useCardFuncionalidadeStore } from '../stores/CardFuncionalidadeStore';
+    import RecolhivelComponent from '../components/RecolhivelComponent.vue';
     import HeaderComponent from '@/components/HeaderComponent.vue';
     import BannerComponent from '@/components/BannerComponent.vue';
+    
+    import { useCardFuncionalidadeStore } from '../stores/CardFuncionalidadeStore';
     import { useBannerComponentStore } from '@/stores/BannerComponentStore';
+    import { useRecolhivelStore } from '../stores/RecolhiveisStore';
     const storeCardFuncionalidades = useCardFuncionalidadeStore();
     const storeBannerComponent = useBannerComponentStore();
-
+    const recolhivelStore = useRecolhivelStore();
 </script>
 
 <template>
@@ -24,31 +27,35 @@
       />
     </section>
     <section class="funcionalidades">
-        <CardFuncionalidade
-            :background="storeCardFuncionalidades.propriedadesFuncionalidades.card1.background"
-            :icon="storeCardFuncionalidades.propriedadesFuncionalidades.card1.icon"
-            :iconBackground ="storeCardFuncionalidades.propriedadesFuncionalidades.card1.iconBackground"
-            :text="storeCardFuncionalidades.propriedadesFuncionalidades.card1.text"
-        />
-        <CardFuncionalidade
-            :background="storeCardFuncionalidades.propriedadesFuncionalidades.card2.background"
-            :icon="storeCardFuncionalidades.propriedadesFuncionalidades.card2.icon"
-            :iconBackground ="storeCardFuncionalidades.propriedadesFuncionalidades.card2.iconBackground"
-            :text="storeCardFuncionalidades.propriedadesFuncionalidades.card2.text"
-        />
-        <CardFuncionalidade
-            :background="storeCardFuncionalidades.propriedadesFuncionalidades.card3.background"
-            :icon="storeCardFuncionalidades.propriedadesFuncionalidades.card3.icon"
-            :iconBackground ="storeCardFuncionalidades.propriedadesFuncionalidades.card3.iconBackground"
-            :text="storeCardFuncionalidades.propriedadesFuncionalidades.card3.text"
+        <CardFuncionalidade v-for="card in storeCardFuncionalidades.propriedades" :key="card"
+            :icon="card.icon"
+            :icon-background="card.iconBackground"
+            :text="card.text"
+            :background="card.background"
         />
     </section>
     <section class="info-adocao">
         <InfoAdocao/>
     </section>
+    <section class="duvidas">
+        <h2>Dúvidas Frequentes</h2>
+        <RecolhivelComponent v-for="recolhivel in recolhivelStore.propriedades" :key="recolhivel"
+            :icon="recolhivel.icon"
+            :title="recolhivel.title"
+            :background="recolhivel.background"
+            :text="recolhivel.text"
+        />
+    </section>
 </template>
 
 <style scoped>
+    header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2vw;
+      background-color: #FFDB58;
+    }
     section.funcionalidades{
         display: flex;
         justify-content: space-between;
@@ -59,11 +66,17 @@
         margin: 2% 0;
         padding: 0;
     }
-    header{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2vw;
-      background-color: #FFDB58;
+    section.duvidas{
+        background: #FFE078;
+        margin: 8% 4%;
+        padding: 8% 8%;
+        border-radius: 80px;
+
+        h2{
+            text-align: center;
+            font-size: 500%;
+            color: #361300;
+            margin-bottom: 10%;
+        }
     }
 </style>
