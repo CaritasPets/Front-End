@@ -3,7 +3,10 @@
     import InfoAdocao from '../components/InfoAdocao.vue';
     import { useCardFuncionalidadeStore } from '../stores/CardFuncionalidadeStore';
     import HeaderComponent from '@/components/HeaderComponent.vue';
+    import BannerComponent from '@/components/BannerComponent.vue';
+    import { useBannerComponentStore } from '@/stores/BannerComponentStore';
     const storeCardFuncionalidades = useCardFuncionalidadeStore();
+    const storeBannerComponent = useBannerComponentStore();
 
 </script>
 
@@ -11,6 +14,15 @@
   <header>
     <HeaderComponent/>
   </header>
+    <section class="banner">
+      <BannerComponent
+        :background="storeBannerComponent.propriedadesBanners.banner1.background"
+        :image="storeBannerComponent.propriedadesBanners.banner1.image"
+        :title="storeBannerComponent.propriedadesBanners.banner1.title"
+        :text="storeBannerComponent.propriedadesBanners.banner1.text"
+        :waves="storeBannerComponent.propriedadesBanners.banner1.waves"
+      />
+    </section>
     <section class="funcionalidades">
         <CardFuncionalidade
             :background="storeCardFuncionalidades.propriedadesFuncionalidades.card1.background"

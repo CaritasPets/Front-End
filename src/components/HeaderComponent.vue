@@ -51,14 +51,14 @@ nav ul li a {
   span{
     font-size: 3rem;
     position: absolute;
-    transform: translateX(-110%);
+    transform: translateX(0);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
   }
 }
 
 nav ul li:hover a span {
-  transform: translateX(-100%);
+  transform: translateX(-110%);
   opacity: 1;
 }
 
