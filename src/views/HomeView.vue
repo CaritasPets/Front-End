@@ -2,15 +2,30 @@
     import CardFuncionalidade from '../components/CardFuncionalidade.vue';
     import InfoAdocao from '../components/InfoAdocao.vue';
     import RecolhivelComponent from '../components/RecolhivelComponent.vue';
+    import HeaderComponent from '@/components/HeaderComponent.vue';
+    import BannerComponent from '@/components/BannerComponent.vue';
+    
     import { useCardFuncionalidadeStore } from '../stores/CardFuncionalidadeStore';
+    import { useBannerComponentStore } from '@/stores/BannerComponentStore';
     import { useRecolhivelStore } from '../stores/RecolhiveisStore';
-
     const storeCardFuncionalidades = useCardFuncionalidadeStore();
+    const storeBannerComponent = useBannerComponentStore();
     const recolhivelStore = useRecolhivelStore();
 </script>
 
 <template>
-    <header></header>
+  <header>
+    <HeaderComponent/>
+  </header>
+    <section class="banner">
+      <BannerComponent
+        :background="storeBannerComponent.propriedadesBanners.banner1.background"
+        :image="storeBannerComponent.propriedadesBanners.banner1.image"
+        :title="storeBannerComponent.propriedadesBanners.banner1.title"
+        :text="storeBannerComponent.propriedadesBanners.banner1.text"
+        :waves="storeBannerComponent.propriedadesBanners.banner1.waves"
+      />
+    </section>
     <section class="funcionalidades">
         <CardFuncionalidade v-for="card in storeCardFuncionalidades.propriedades" :key="card"
             :icon="card.icon"
@@ -34,6 +49,13 @@
 </template>
 
 <style scoped>
+    header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2vw;
+      background-color: #FFDB58;
+    }
     section.funcionalidades{
         display: flex;
         justify-content: space-between;
