@@ -18,22 +18,21 @@ const props = defineProps(['background', 'image', 'title', 'text', 'waves'])
 <style scoped>
 .banner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding-top: 2vw;
-}
-.title{
-  position: relative;
-}
-.texts {
-  position: relative;
+  padding-top: 5%           ;
+  padding-left: 5%;
 }
 .texts h1 {
   color: #fff;
-  font-size: 500%;
-  margin: ;
+  font-size: 600%;
+  position: relative;
+  
 }
 .texts p {
   color: #fff;
+  position: relative;
+  font-size: 300%;
 }
 img {
   z-index: 10;
