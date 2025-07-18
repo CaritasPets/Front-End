@@ -20,7 +20,7 @@ const props = defineProps(['background', 'image', 'title', 'text', 'waves'])
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 5%           ;
+  padding-top: 5%;
   padding-left: 5%;
 }
 .texts h1 {
