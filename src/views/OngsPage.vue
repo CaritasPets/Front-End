@@ -1,5 +1,13 @@
-<script setup></script>
+<script setup>
+    import PapelOngs from '../components/PapelOngs.vue';
+</script>
 <template>
-    <h1>ongs page</h1>
+    <section class="papel-ongs">
+        <PapelOngs/>
+    </section>
 </template>
-<style scoped></style>
+<style scoped>
+    section.papel-ongs{
+        margin: 0 10%;
+    }
+</style>
