@@ -25,9 +25,8 @@ const props = defineProps(['background', 'image', 'title', 'text', 'waves'])
 }
 .texts h1 {
   color: #fff;
-  font-size: 600%;
+  font-size: 500%;
   position: relative;
-  
 }
 .texts p {
   color: #fff;

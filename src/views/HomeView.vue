@@ -61,6 +61,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         padding: 5% 10%;
+        margin-top: 40%;
     }
     section.info-adocao{
         margin: 2% 0;
