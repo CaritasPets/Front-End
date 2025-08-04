@@ -11,8 +11,8 @@ const navItems = [
 </script>
 <template>
   <div class="header">
-  <RouterLink to="/">
-    <img src="/logo.png" alt="Logo" />
+  <RouterLink to="/" class="logo">
+    <img src="/logo.svg" alt="Logo">
   </RouterLink>
   <nav>
     <ul>
@@ -38,6 +38,15 @@ const navItems = [
   align-items: center;
   padding: 0 2vw;
   background-color: #ffdb58;
+
+
+a.logo{
+  width: 10%;
+
+  img{
+    width: 100%;
+  }
+
 }
 nav ul {
   display: flex;
@@ -50,9 +59,10 @@ nav ul li {
 }
 
 nav ul li a {
+  text-wrap: nowrap;
   text-decoration: none;
-  color: #1e0b00;
-  font-size: 1.5rem;
+  color: #1E0B00;
+  font-size: 150%;
   transition: 0.5s;
   display: flex;
   align-items: center;
@@ -79,5 +89,6 @@ span.mdi-account-circle-outline {
 span {
   color: #1e0b00;
   font-size: 4.5rem;
+}
 }
 </style>
