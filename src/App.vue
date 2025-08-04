@@ -15,7 +15,7 @@ import FooterComponent from './components/FooterComponent.vue';
 footer{
   background: url(/footer.png) no-repeat;
   background-size: 100%;
-  padding: 23.5% 0;
+  padding: 22.5% 0;
 
 }
 </style>
