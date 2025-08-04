@@ -24,7 +24,7 @@
     })
 </script>
 <template>    
-    <div class="card-ong" :style="`background: ${sortBackground()}`" ref="cardOngElement">
+    <div class="card-ong" :style="`background: ${sortBackground()}`">
         <img :src="props.logo" :alt="`${props.nome}-logo`">
         <p class="nome">{{ props.nome }}</p>
     </div>

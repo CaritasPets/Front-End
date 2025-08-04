@@ -21,7 +21,7 @@ onMounted(() => {
     As ONGs desempenham um papel crucial na defesa dos direitos dos animais, atuando no resgate,
     acolhimento, tratamento e adoção responsável de animais abandonados ou vítimas de maus-tratos
   </p>
-  <img class="hidden" src="/imagem_ongs.png" alt="" />
+  <img class="hidden" src="/imagem_ongs.svg" alt="" />
   <p class="hidden">
     Voluntários dedicam seu tempo para transformar a angústia em acolhimento. Com cuidado, carinho e compromisso, eles reconquistam a confiança dos animais, oferecendo conforto, amor, saúde e a chance de um novo lar. Após esse processo de recuperação, as ONGs disponibilizam os pets para adoção, esperando que toquem os corações de quem busca um verdadeiro  companheiro.
   </p>
@@ -39,6 +39,7 @@ p {
 }
 img {
   width: 100%;
+  margin: auto;
 }
 .hidden {
   opacity: 0;
