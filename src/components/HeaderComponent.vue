@@ -10,8 +10,8 @@ const navItems = [
 ]
 </script>
 <template>
-  <RouterLink to="/">
-    <img src="/logo.png" alt="Logo">
+  <RouterLink to="/" class="logo">
+    <img src="/logo.svg" alt="Logo">
   </RouterLink>
   <nav>
     <ul>
@@ -30,6 +30,14 @@ const navItems = [
   </RouterLink>
 </template>
 <style scoped>
+
+a.logo{
+  width: 10%;
+
+  img{
+    width: 100%;
+  }
+}
 nav ul {
   display: flex;
   transform: translateX(4vw);
@@ -41,9 +49,10 @@ nav ul li {
 }
 
 nav ul li a {
+  text-wrap: nowrap;
   text-decoration: none;
   color: #1E0B00;
-  font-size: 1.5rem;
+  font-size: 150%;
   transition: 0.5s;
   display: flex;
   align-items: center;
