@@ -4,19 +4,19 @@ import { ref } from "vue";
 export const useOngStore = defineStore('ongStore', () => {
     const propriedades = ref([
         {
-            logo: '/logo.png',
+            logo: '/logo.svg',
             nome: 'nome exemplo',
         },
         {
-            logo: '/logo.png',
+            logo: '/logo.svg',
             nome: 'nome exemplo',
         },
         {
-            logo: '/logo.png',
+            logo: '/logo.svg',
             nome: 'nome exemplo',
         },
         {
-            logo: '/logo.png',
+            logo: '/logo.svg',
             nome: 'nome exemplo',
         },
     ]);

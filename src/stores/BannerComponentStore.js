@@ -15,7 +15,7 @@ export const useBannerComponentStore = defineStore('bannerStore', () => {
       image: '/img_banner2.svg',
       title: 'Conheça nossas ONGs parceiras',
       text: 'Cada Ong carrega uma história de amor.',
-      waves: '/waves2.svg',
+      waves: '/blue_waves.svg',
     },
   })
   return {
