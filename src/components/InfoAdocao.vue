@@ -38,21 +38,26 @@ onMounted(() => {
   <ul ref="listContainer">
     <li>
       <p class="hidden-text">
-        Ter um pet em casa vai muito além da companhia: o convívio com esses animais fortalece laços de afeto, confiança e empatia. Além disso, eles nos incentivam a sair da rotina, trazendo mais leveza e alegria para o dia a dia
+        Ter um pet em casa vai muito além da companhia: o convívio com esses animais fortalece laços
+        de afeto, confiança e empatia. Além disso, eles nos incentivam a sair da rotina, trazendo
+        mais leveza e alegria para o dia a dia
       </p>
-      <img src="/img_cachorros.png" alt="cachorrinhos" class="hidden-img" />
+      <img src="/img_cachorros.svg" alt="cachorrinhos" class="hidden-img" />
     </li>
     <li>
-      <img src="/img_gatos.png" alt="gatinhos" class="hidden-img" />
+      <img src="/img_gatos.svg" alt="gatinhos" class="hidden-img" />
       <p class="hidden-text">
-        Ao adotar, você oferece um lar seguro e cheio de amor para um animal que, muitas vezes, já enfrentou o abandono ou maus-tratos. Com esse gesto, você transforma vidas — inclusive a sua
+        Ao adotar, você oferece um lar seguro e cheio de amor para um animal que, muitas vezes, já
+        enfrentou o abandono ou maus-tratos. Com esse gesto, você transforma vidas — inclusive a sua
       </p>
     </li>
     <li>
       <p class="hidden-text">
-        É importante ressaltar os impactos negativos do abandono de animais,  como a saúde mental do pet, os riscos à sqúde pública e o custo  emocional e financeiro para a sociedade como um todo.
+        É importante ressaltar os impactos negativos do abandono de animais, como a saúde mental do
+        pet, os riscos à sqúde pública e o custo emocional e financeiro para a sociedade como um
+        todo.
       </p>
-      <img src="/img_gato_e_cachorro.png" alt="gatinhos_cachorros" class="hidden-img" />
+      <img src="/img_gato_e_cachorro.svg" alt="gatinhos_cachorros" class="hidden-img" />
     </li>
   </ul>
 </template>
