@@ -49,13 +49,6 @@
 </template>
 
 <style scoped>
-    header{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2vw;
-      background-color: #FFDB58;
-    }
     section.funcionalidades{
         display: flex;
         justify-content: space-between;
