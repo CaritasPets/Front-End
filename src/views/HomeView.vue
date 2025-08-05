@@ -4,7 +4,7 @@
     import RecolhivelComponent from '../components/RecolhivelComponent.vue';
     import HeaderComponent from '@/components/HeaderComponent.vue';
     import BannerComponent from '@/components/BannerComponent.vue';
-    
+
     import { useCardFuncionalidadeStore } from '../stores/CardFuncionalidadeStore';
     import { useBannerComponentStore } from '@/stores/BannerComponentStore';
     import { useRecolhivelStore } from '../stores/RecolhiveisStore';
@@ -74,3 +74,4 @@
         }
     }
 </style>
+@

@@ -9,7 +9,11 @@ const routes = [
     {
         path: '/ongs',
         component: () => import("@/views/OngsPage.vue")
-    }
+    },
+    {
+        path: '/adote',
+        component: () => import("@/views/AdotePage.vue")
+    },
 ];
 
 const router = createRouter({

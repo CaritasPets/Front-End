@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router'
 const navItems = [
   { label: 'Home', icon: 'mdi mdi-home', link: '/' },
   { label: 'Ongs', icon: 'mdi mdi-hand-heart', link: '/ongs' },
-  { label: 'Adote', icon: 'mdi mdi-heart', link: '/' },
+  { label: 'Adote', icon: 'mdi mdi-heart', link: '/adote' },
   { label: 'Procura-se', icon: 'mdi mdi-magnify', link: '/' },
   { label: 'Sobre', icon: 'mdi mdi-information', link: '/' },
 ]
