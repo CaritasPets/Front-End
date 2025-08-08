@@ -10,16 +10,16 @@ const navItems = [
 ]
 </script>
 <template>
-  <div class="header">
-  <RouterLink to="/" class="logo">
+  <div class="flex justify-between items-center px-10 bg-[#ffdb58]">
+  <RouterLink to="/" class="w-30">
     <img src="/logo.svg" alt="Logo">
   </RouterLink>
   <nav>
-    <ul>
-      <li v-for="(item, index) in navItems" :key="index">
-        <RouterLink :to="item.link">
+    <ul class="flex gap-20">
+      <li v-for="(item, index) in navItems" :key="index" class="list-none">
+        <RouterLink :to="item.link" class="flex items-center text-nowrap decoration-0 text-[#1E0B00]  transition-all duration-500">
           <span :class="item.icon"></span>
-          <h2>
+          <h2 class="text-2xl">
             {{ item.label }}
           </h2>
         </RouterLink>
@@ -32,63 +32,23 @@ const navItems = [
   </div>
 </template>
 <style scoped>
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2vw;
-  background-color: #ffdb58;
-
-
-a.logo{
-  width: 10%;
-
-  img{
-    width: 100%;
-  }
-
-}
-nav ul {
-  display: flex;
-  transform: translateX(4vw);
-}
-
-nav ul li {
-  list-style: none;
-  margin: 0 4vw;
-}
-
 nav ul li a {
-  text-wrap: nowrap;
-  text-decoration: none;
-  color: #1E0B00;
-  font-size: 150%;
-  transition: 0.5s;
-  display: flex;
-  align-items: center;
-
   span {
-    font-size: 3rem;
-    position: absolute;
-    transform: translateX(0);
+    font-size: 40px;
+    transform: translateX(50%);
     opacity: 0;
-    transition:
-      transform 0.5s ease,
-      opacity 0.5s ease;
+    transition: all 500ms;
   }
 }
-
 nav ul li:hover a span {
-  transform: translateX(-110%);
+  transform: translateX(-20%);
   opacity: 1;
 }
-
 span.mdi-account-circle-outline {
   position: relative;
 }
 span {
   color: #1e0b00;
   font-size: 4.5rem;
-}
 }
 </style>
