@@ -27,7 +27,7 @@ const navItems = [
     </ul>
   </nav>
   <RouterLink to="">
-    <span class="mdi mdi-account-circle-outline"></span>
+    <span class="mdi mdi-account-circle-outline relative text-7xl"></span>
   </RouterLink>
   </div>
 </template>
@@ -43,12 +43,5 @@ nav ul li a {
 nav ul li:hover a span {
   transform: translateX(-20%);
   opacity: 1;
-}
-span.mdi-account-circle-outline {
-  position: relative;
-}
-span {
-  color: #1e0b00;
-  font-size: 4.5rem;
 }
 </style>
