@@ -20,7 +20,3 @@ const open = ref(false)
     </div>
   </div>
 </template>
-
-<style scoped>
-  
-</style>
