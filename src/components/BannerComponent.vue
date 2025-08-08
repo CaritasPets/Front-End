@@ -2,45 +2,16 @@
 const props = defineProps(['background', 'image', 'title', 'text', 'waves'])
 </script>
 <template>
-  <div class="banner" :style="'background:' + props.background">
-    <div class="texts">
-      <h1>{{ props.title }}</h1>
-      <p>{{ props.text }}</p>
+  <div class="flex items-center justify-between pt-20 pl-20" :style="'background:' + props.background">
+    <div class="text-white relative z-10 flex flex-col gap-y-4">
+      <h1 class="text-7xl">{{ props.title }}</h1>
+      <p class="text-4xl opacity-50 font-thin">{{ props.text }}</p>
     </div>
     <div>
-      <img :src="props.image" alt="banner">
+      <img class="z-10 relative" :src="props.image" alt="banner">
     </div>
   </div>
   <div>
-    <img class="waves" :src="props.waves" alt="waves">
+    <img class="w-[100%] transform-[translateY(-20%)] relative z-0" :src="props.waves" alt="waves">
   </div>
 </template>
-<style scoped>
-.banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 5%;
-  padding-left: 5%;
-}
-.texts h1 {
-  color: #fff;
-  font-size: 500%;
-  position: relative;
-}
-.texts p {
-  color: #fff;
-  position: relative;
-  font-size: 300%;
-}
-img {
-  z-index: 10;
-  position: relative;
-}
-img.waves{
-  width: 100%;
-  transform: translateY(-20%);
-  position: absolute;
-  z-index: 0;
-}
-</style>
