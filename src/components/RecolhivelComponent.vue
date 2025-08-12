@@ -6,7 +6,8 @@ const open = ref(false)
 </script>
 
 <template>
-  <div class="w-[100%] rounded-4xl px-5 text-white transition-all duration-1000 my-8" :style="'background:' + props.background">
+  <div  :class="`w-[100%] rounded-4xl px-5 text-white transition-all duration-500 my-8 border-2 border-transparent hover:bg-[#FFE078] hover:border-[#361300] hover:text-[#361300] ` + props.background"
+  >
     <div class="w-[100%] flex justify-between items-center cursor-pointer p-3" 
       @click="open = !open"
     >
