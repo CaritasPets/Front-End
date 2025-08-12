@@ -1,6 +1,5 @@
 <script setup>
 import BannerComponent from '../components/BannerComponent.vue';
-import HeaderComponent from '../components/HeaderComponent.vue'
 import PapelOngs from '../components/PapelOngs.vue';
 import OngsComponent from '../components/OngsComponent.vue';
 
@@ -10,9 +9,6 @@ const bannerStore = useBannerComponentStore();
 const ongStore = useOngStore();
 </script>
 <template>
-  <header>
-    <HeaderComponent/>
-  </header>
   <section>
     <BannerComponent
       :background="bannerStore.propriedadesBanners.banner2.background"

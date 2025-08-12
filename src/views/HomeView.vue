@@ -2,7 +2,6 @@
     import CardFuncionalidade from '../components/CardFuncionalidade.vue';
     import InfoAdocao from '../components/InfoAdocao.vue';
     import RecolhivelComponent from '../components/RecolhivelComponent.vue';
-    import HeaderComponent from '@/components/HeaderComponent.vue';
     import BannerComponent from '@/components/BannerComponent.vue';
     
     import { useCardFuncionalidadeStore } from '../stores/CardFuncionalidadeStore';
@@ -14,9 +13,6 @@
 </script>
 
 <template>
-  <header>
-    <HeaderComponent/>
-  </header>
     <section class="banner">
       <BannerComponent
         :background="storeBannerComponent.propriedadesBanners.banner1.background"
