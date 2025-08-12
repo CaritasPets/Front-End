@@ -4,15 +4,7 @@ import FooterComponent from './components/FooterComponent.vue'
 
 <template>
   <RouterView />
-  <footer>
+  <footer class="bg-[url(/footer.svg)] bg-no-repeat bg-size-[100%] py-96 ">
     <FooterComponent />
   </footer>
 </template>
-
-<style scoped>
-footer {
-  background: url(/footer.svg) no-repeat;
-  background-size: 100%;
-  padding: 22.5% 0;
-}
-</style>
