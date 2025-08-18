@@ -11,11 +11,38 @@ function validateFooter(url) {
     return true
   }
 }
+
+function headerBackground(url) {
+  if(url == '/') {
+    return '#104C00'
+  }
+  if(url == '/ongs' || url == '/user/login') {
+    return '#03497B'
+  }
+
+}
+
+function headerColor(url) {
+  if(url == '/' || url == '/ongs' || url == '/user/login') {
+    return '#DFB468'
+  }
+}
+
+function activeColor(url) {
+  if(url == '/' || url == '/ongs' || url == '/user/login') {
+    return '#1E0B00'
+  }
+}
+
 </script>
 
 <template>
   <header>
-    <HeaderComponent/>
+    <HeaderComponent
+    :background="headerBackground(route.path)"
+    :header-color="headerColor(route.path)"
+    :active-color="activeColor(route.path)"
+    />
   </header>
   <RouterView />
   <footer v-if="validateFooter(route.path)" class="bg-[url(/footer.svg)] bg-no-repeat bg-size-[100%] py-96 ">
