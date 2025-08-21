@@ -1,38 +1,19 @@
 <script setup>
 import { ref } from 'vue'
-import api from '../services/api'
 
 import { useRequestUrlStore } from '../stores/RequestsUrls'
 const urlStore = useRequestUrlStore();
 
-const isLoading = ref(false)
+import { useAuthStore } from '../stores/AuthStore';
+const authStore = useAuthStore()
+
 const username = ref('')
 const password = ref('')
-const error = ref('')
-const login = async () => {
-    error.value = '';
-    try{
-        isLoading.value = true;
-        const response = await api.post(urlStore.token, {
-            username: username.value,
-            password: password.value
-        })
 
-        const { access, refresh } = response.data
-        localStorage.setItem('accessToken', access)
-        localStorage.setItem('refreshToken', refresh)
 
-    } catch(err){
-        error.value = 'Usuário ou senha inválidos'
-        console.log(err)
-    } finally{
-        isLoading.value = false
-        console.log('login bem sucedido')
-    }
-}
 </script>
 <template>
-  <form @submit.prevent="login" class="flex flex-col items-center gap-y-12">
+  <form @submit.prevent="authStore.login(urlStore.token, { username, password })" class="flex flex-col items-center gap-y-12">
     <div class="flex flex-col gap-y-2">
       <label class="text-2xl text-white">Nome de usuário:</label>
       <input class="text-lg text-[#FDA202] border-2 border-[#FDA202] rounded-xl px-2 py-2 w-100"
