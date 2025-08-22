@@ -6,7 +6,8 @@ export const useAuthStore = defineStore('authStore', () => {
     const loading = ref(false);
     const error = ref('');
     const authenticated = ref(false);
-    
+    const registred = ref(false);
+
     const login = async (urlPost, objUser) =>{
         try{
             loading.value = true;
@@ -29,8 +30,7 @@ export const useAuthStore = defineStore('authStore', () => {
         try{
             loading.value = true
             const response = await api.post(urlPost, objUser)
-
-            console.log(response.data.message)
+            alert(response.data.message)    
         } catch(err) {
             error.value = 'Algum campo não foi inserido corretamente'
             console.log(err)
@@ -40,6 +40,9 @@ export const useAuthStore = defineStore('authStore', () => {
         }
     }
     return{
+        error,
+        loading,
+        registred,
         authenticated,
         login,
         register,
