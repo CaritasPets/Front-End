@@ -3,6 +3,7 @@ import { ref } from 'vue'
 
 import { useRequestUrlStore } from '../stores/RequestsUrls'
 import { useAuthService } from '../services/Auth'
+import InputComponent from './InputComponent.vue'
 const requestUrls = useRequestUrlStore()
 const authService = useAuthService()
 
@@ -49,6 +50,10 @@ function onFileChange(event) {
     class="flex flex-col items-center gap-20"
   >
     <div class="flex justify-around gap-10 w-[100%]">
+      <InputComponent
+        @input-value="username"
+        
+      />
       <ul class="flex flex-col items-center">
         <li class="flex flex-col w-[100%]">
           <label class="text-2xl text-white">*Usuario</label>
