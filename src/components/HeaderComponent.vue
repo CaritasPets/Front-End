@@ -26,7 +26,7 @@ const navItems = [
       </li>
     </ul>
   </nav>
-  <RouterLink to="">
+  <RouterLink to="/user">
     <span class="mdi mdi-account-circle-outline relative text-7xl"></span>
   </RouterLink>
   </div>
