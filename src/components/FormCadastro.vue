@@ -2,9 +2,9 @@
 import { ref } from 'vue'
 
 import { useRequestUrlStore } from '../stores/RequestsUrls'
-import { useAuthStore } from '../stores/AuthStore'
+import { useAuthService } from '../services/Auth'
 const requestUrls = useRequestUrlStore()
-const authStore = useAuthStore()
+const authService = useAuthService()
 
 const username = ref('')
 const password = ref('')
@@ -34,7 +34,8 @@ function onFileChange(event) {
 </script>
 <template>
   <form
-    @submit.prevent="authStore.register(requestUrls.register, {
+    @submit.prevent="
+      authService.register(requestUrls.register, {
         username,
         password,
         email,
@@ -42,8 +43,9 @@ function onFileChange(event) {
         cpf,
         telefone,
         data_nascimento,
-        foto
-    })"
+        foto,
+      })
+    "
     class="flex flex-col items-center gap-20"
   >
     <div class="flex justify-around gap-10 w-[100%]">
