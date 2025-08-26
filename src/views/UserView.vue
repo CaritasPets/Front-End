@@ -24,12 +24,34 @@ const ongsFavorite = [
     logo: '/logo.svg'
   }
 ]
+const petsFavorite = [
+  {
+    id: 1,
+    nome: 'cachorro',
+    fotoPet: '/Logo.svg',
+  },
+  {
+    id: 1,
+    nome: 'cachorro',
+    fotoPet: '/Logo.svg',
+  },
+  {
+    id: 1,
+    nome: 'cachorro',
+    fotoPet: '/Logo.svg',
+  },
+  {
+    id: 1,
+    nome: 'cachorro',
+    fotoPet: '/Logo.svg',
+  }
+]
 </script>
 
 <template>
   <InfosUserComponent
     :user="{
-      nome: 'Breno',
+      nome: 'Breno Otário Rohregger',
       foto: '',
       username: 'breno_rohregger',
       telefone: '47984542516',
@@ -45,5 +67,10 @@ const ongsFavorite = [
       :nome="ong.nome"
     />
   </div>
-  <PetsSavesComponent/>
+  <div class="flex flex-wrap justify-between mt-20 px-60">
+  <PetsSavesComponent v-for="pet of petsFavorite" :key="pet.id"
+      :fotoPet="pet.fotoPet"
+      :nome="pet.nome"
+      />
+  </div>
 </template>
