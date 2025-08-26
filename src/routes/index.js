@@ -14,6 +14,12 @@ const routes = [
         path: '/adote',
         component: () => import("@/views/AdotePage.vue")
     },
+    {
+        path: '/pet/:id',
+        name: 'Pet',
+        component: () => import('@/views/PetView.vue'),
+        props: true,
+    },
 ];
 
 const router = createRouter({

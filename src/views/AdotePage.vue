@@ -18,7 +18,7 @@ const petStore = usePetStore()
   </section>
   <section class="adocao">
     <FilterComponent/>
-    <div class=" flex flex-wrap mx-40 my-30 gap-x-8">
+    <div class=" flex flex-wrap mx-40 my-30 gap-x-8 justify-center">
       <PetsAdocao v-for="pet of petStore.propriedades" :key="pet"
         :foto="pet.foto"
         :nome="pet.nome"
