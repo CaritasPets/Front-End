@@ -5,7 +5,9 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute()
 function validateFooter(url) {
-  if(url.slice(0, 5) == '/user'){
+  if(url == '/user/profile'){
+    return true
+  } else if(url.slice(0, 5) == '/user'){
     return false
   } else{
     return true

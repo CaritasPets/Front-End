@@ -1,8 +1,29 @@
 <script setup>
 import InfosUserComponent from '@/components/InfosUserComponent.vue';
-import OngsSavesComponent from '@/components/OngsSavesComponent.vue';
+import OngsComponent from '@/components/OngsComponent.vue';
 import PetsSavesComponent from '@/components/PetsSavesComponent.vue';
-
+const ongsFavorite = [
+  {
+    id: 1,
+    nome: 'Abrigo Animal',
+    logo: '/logo.svg'
+  },
+  {
+    id: 1,
+    nome: 'Abrigo Animal',
+    logo: '/logo.svg'
+  },
+  {
+    id: 1,
+    nome: 'Abrigo Animal',
+    logo: '/logo.svg'
+  },
+  {
+    id: 1,
+    nome: 'Abrigo Animal',
+    logo: '/logo.svg'
+  }
+]
 </script>
 
 <template>
@@ -17,6 +38,12 @@ import PetsSavesComponent from '@/components/PetsSavesComponent.vue';
       email: 'brenoot0405@gmail.com'
     }"
   />
-  <OngsSavesComponent/>
+  <h2 class="text-center text-5xl text-[#4c260a]">Ongs Salvas</h2>
+  <div class="flex flex-wrap justify-between mt-20 px-60">
+    <OngsComponent v-for="ong of ongsFavorite" :key="ong.id"
+      :logo="ong.logo"
+      :nome="ong.nome"
+    />
+  </div>
   <PetsSavesComponent/>
 </template>

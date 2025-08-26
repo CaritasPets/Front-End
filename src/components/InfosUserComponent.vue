@@ -24,7 +24,7 @@ const props = defineProps(['user'])
         Alterar informações
       </button>
     </div>
-    <img src="/blue_waves.svg" alt="banner_waves" class="w-full transform-[translateY(-60%)] z-0 relative">
+    <img src="/blue_waves.svg" alt="banner_waves" class="w-full transform-[translateY(-20%)] z-0 relative">
   </section>
 </template>
 
