@@ -19,17 +19,21 @@ function headerBackground(url) {
   if(url == '/ongs' || url == '/user/login') {
     return '#03497B'
   }
-
+  if(url == '/adote'){
+    return '#FF7700'
+  }
 }
 
 function headerColor(url) {
   if(url == '/' || url == '/ongs' || url == '/user/login') {
     return '#DFB468'
+  } else{
+    return '#1E0B00'
   }
 }
 
 function activeColor(url) {
-  if(url == '/' || url == '/ongs' || url == '/user/login') {
+  if(url == '/' || url == '/ongs' || url == '/user/login' ) {
     return '#1E0B00'
   }
 }

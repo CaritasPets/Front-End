@@ -5,7 +5,7 @@ const props = defineProps (['background', 'headerColor', 'activeColor'])
 const navItems = [
   { label: 'Home', icon: 'mdi mdi-home', link: '/' },
   { label: 'Ongs', icon: 'mdi mdi-hand-heart', link: '/ongs' },
-  { label: 'Adote', icon: 'mdi mdi-heart', link: '/' },
+  { label: 'Adote', icon: 'mdi mdi-heart', link: '/adote' },
   { label: 'Procura-se', icon: 'mdi mdi-magnify', link: '/' },
   { label: 'Sobre', icon: 'mdi mdi-information', link: '/' },
   { label: 'Perfil', icon: 'mdi mdi-account', link: '/' },
@@ -13,7 +13,7 @@ const navItems = [
 ]
 </script>
 <template>
-  <div class="flex justify-between items-center px-5 " :style="'background:' + props.background">
+  <div class="flex justify-between items-center px-5 " :style="`background: ${props.background}`">
   <RouterLink to="/" class="w-15">
     <img src="/logo_noBackground.svg" alt="Logo">
   </RouterLink>
@@ -49,5 +49,12 @@ nav ul li a.router-link-active {
   background-color: #1E0B00;
   padding: 0.1vw 1.8vw 0.1vw 1vw;
   border-radius: 15px;
+
+  h2{
+    color: #DFB468;
+  }
+  span{
+    color: #DFB468;
+  }
 }
 </style>
