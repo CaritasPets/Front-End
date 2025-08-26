@@ -3,7 +3,6 @@ import { ref } from 'vue'
 
 import { useRequestUrlStore } from '../stores/RequestsUrls'
 import { useAuthService } from '../services/Auth'
-import InputComponent from './InputComponent.vue'
 const requestUrls = useRequestUrlStore()
 const authService = useAuthService()
 
@@ -16,16 +15,6 @@ const telefone = ref('')
 const data_nascimento = ref(null)
 const foto = ref(null)
 
-function cleanForm() {
-  username.value = ''
-  password.value = ''
-  email.value = ''
-  nome.value = ''
-  cpf.value = ''
-  telefone.value = ''
-  data_nascimento.value = null
-  foto.value = null
-}
 function onFileChange(event) {
   const selectedFile = event.target.files[0]
   if (selectedFile) {
@@ -50,10 +39,6 @@ function onFileChange(event) {
     class="flex flex-col items-center gap-20"
   >
     <div class="flex justify-around gap-10 w-[100%]">
-      <InputComponent
-        @input-value="username"
-        
-      />
       <ul class="flex flex-col items-center">
         <li class="flex flex-col w-[100%]">
           <label class="text-2xl text-white">*Usuario</label>
@@ -137,7 +122,7 @@ function onFileChange(event) {
     <div class="flex gap-30">
       <button
         class="text-xl rounded-xl py-2 px-6 bg-[#FDA202] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FDA202] hover:text-[#FDA202]"
-        @click="cleanForm"
+        type="reset"
       >
         Limpar
       </button>
