@@ -17,8 +17,12 @@ export const useAuthService = defineStore('authService', () => {
       localStorage.setItem('accessToken', access)
       localStorage.setItem('refreshToken', refresh)
       authenticated.value = true
+      
+      const name = response.data.user.nome
+      alert(`Bem vindo(a) ${name}`);
     } catch (err) {
       error.value = 'Usuário ou senha inválidos'
+      alert(error.value)
       console.log(err)
     } finally {
       loading.value = false
@@ -30,8 +34,9 @@ export const useAuthService = defineStore('authService', () => {
     try {
       loading.value = true
       const response = await api.post(urlPost, objUser)
-      alert(response.data.message)
       registred.value = true
+
+      alert(response.data.message)
     } catch (err) {
       if(err.response && err.response.data){
         const errData = err.response.data;
