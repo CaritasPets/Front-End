@@ -8,6 +8,9 @@ onUnmounted(() => {
     if(authService.registred){
         router.replace('/user/login')
     } 
+    if(authService.authenticated){
+        router.replace('/user/profile');
+    }
 });
 </script>
 <template>
