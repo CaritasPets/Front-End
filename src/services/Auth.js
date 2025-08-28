@@ -31,12 +31,21 @@ export const useAuthService = defineStore('authService', () => {
       loading.value = true
       const response = await api.post(urlPost, objUser)
       alert(response.data.message)
+      registred.value = true
     } catch (err) {
-      error.value = 'Algum campo não foi inserido corretamente'
-      console.log(err)
+      if(err.response && err.response.data){
+        const errData = err.response.data;
+
+        for(let key in errData){
+            error.value+= `${key.toUpperCase()}: ${errData[key]}\n`
+        }
+        alert(error.value)
+      }
+
     } finally {
       loading.value = false
       error.value = ''
+      registred.value = false
     }
   }
   return {
