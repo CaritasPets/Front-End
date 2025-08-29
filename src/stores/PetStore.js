@@ -6,7 +6,7 @@ export const usePetStore = defineStore('petStore', () => {
         {
             id: '1',
             foto: '/logo.svg',
-            nome: 'Nome Pet',
+            nome: 'Rodolfo',
             genero: 'Gênero Pet',
         },
         {
