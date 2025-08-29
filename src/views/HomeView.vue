@@ -1,30 +1,45 @@
 <script setup>
-const props = defineProps(['user'])
+    import CardFuncionalidade from '../components/CardFuncionalidade.vue';
+    import InfoAdocao from '../components/InfoAdocao.vue';
+    import RecolhivelComponent from '../components/RecolhivelComponent.vue';
+    import BannerComponent from '@/components/BannerComponent.vue';
+
+    import { useCardFuncionalidadeStore } from '../stores/CardFuncionalidadeStore';
+    import { useBannerComponentStore } from '@/stores/BannerComponentStore';
+    import { useRecolhivelStore } from '../stores/RecolhiveisStore';
+    const storeCardFuncionalidades = useCardFuncionalidadeStore();
+    const storeBannerComponent = useBannerComponentStore();
+    const recolhivelStore = useRecolhivelStore();
 </script>
 
 <template>
-  <section class="text-white text-center">
-    <div class="bg-[#03497B] pt-30">
-      <h2 class="text-6xl font-bold mb-6 z-10 relative">{{ props.user.nome }}</h2>
-
-      <div class="flex flex-col md:flex-row items-start justify-start gap-12 z-10 relative max-w-5xl mx-auto pl-0">
-        <img :src="props.user.foto"
-            alt="Foto do usuário"
-            class="w-72 h-72 rounded-2xl object-cover bg-gray-300 shadow-lg -ml-8" />
-
-        <ul class="text-left space-y-6">
-          <li class="text-2xl"><strong>Username:</strong> {{ props.user.username }}</li>
-          <li class="text-2xl"><strong>Telefone:</strong> {{ props.user.telefone }}</li>
-          <li class="text-2xl"><strong>CPF:</strong> {{ props.user.cpf }}</li>
-          <li class="text-2xl"><strong>Data de Nascimento:</strong> {{ props.user.data_nascimento }}</li>
-          <li class="text-2xl"><strong>Email:</strong> {{ props.user.email }}</li>
-        </ul>
-      </div>
-
-      <button class="mt-15 px-6 py-2 z-10 relative bg-yellow-500 text-black font-semibold rounded-lg border-2 border-transparent transition-all duration-500 cursor-pointer hover:bg-transparent hover:border-[#FDA202] hover:text-[#FDA202]">
-        Alterar informações
-      </button>
-    </div>
-    <img src="/blue_waves.svg" alt="banner_waves" class="w-full transform-[translateY(-20%)] z-0 relative">
-  </section>
+    <section class="banner">
+      <BannerComponent
+        :background="storeBannerComponent.propriedadesBanners.banner1.background"
+        :image="storeBannerComponent.propriedadesBanners.banner1.image"
+        :title="storeBannerComponent.propriedadesBanners.banner1.title"
+        :text="storeBannerComponent.propriedadesBanners.banner1.text"
+        :waves="storeBannerComponent.propriedadesBanners.banner1.waves"
+      />
+    </section>
+    <section class="flex justify-between flex-wrap py-10 px-30">
+        <CardFuncionalidade v-for="card in storeCardFuncionalidades.propriedades" :key="card"
+            :icon="card.icon"
+            :icon-background="card.iconBackground"
+            :text="card.text"
+            :background="card.background"
+        />
+    </section>
+    <section class="my-10">
+        <InfoAdocao/>
+    </section>
+    <section class="bg-[#FFE078] my-30 mx-30 px-10 py-10 rounded-4xl">
+        <h2 class="text-center text-5xl text-[#361300] py-10">Dúvidas Frequentes</h2>
+        <RecolhivelComponent v-for="recolhivel in recolhivelStore.propriedades" :key="recolhivel"
+            :icon="recolhivel.icon"
+            :title="recolhivel.title"
+            :background="recolhivel.background"
+            :text="recolhivel.text"
+        />
+    </section>
 </template>
