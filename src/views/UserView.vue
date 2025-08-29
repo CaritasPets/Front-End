@@ -52,7 +52,7 @@ const petsFavorite = [
   <InfosUserComponent
     :user="{
       nome: 'Breno Otário Rohregger',
-      foto: '',
+      foto: '/logo.svg',
       username: 'breno_rohregger',
       telefone: '47984542516',
       cpf: '11251526993',
