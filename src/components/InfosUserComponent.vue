@@ -12,7 +12,7 @@ const props = defineProps(['user'])
           </h2>
           <img :src="props?.user?.foto"
               alt="Foto do usuário"
-              class="w-[380px] h-[380px] rounded-[60px] object-cover bg-gray-300 shadow-lg -ml-16 mt-4" />
+              class="w-[380px] h-[380px] rounded-[115px] object-cover bg-gray-300 shadow-lg -ml-16 mt-4" />
 
         </div>
         <ul class="text-left space-y-6 flex flex-col justify-center ml-4">
