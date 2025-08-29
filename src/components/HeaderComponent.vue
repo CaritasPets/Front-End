@@ -20,7 +20,7 @@ const navItems = [
   <nav>
     <ul class="flex gap-30 mr-30">
       <li v-for="(item, index) in navItems" :key="index" class="list-none">
-        <RouterLink :to="item.link" class="flex items-center text-nowrap decoration-0 transition-all duration-500" :style=" 'color:' + props.headerColor">
+        <RouterLink :to="item.link" class="flex items-center text-nowrap decoration-0 transition-all duration-500 font-[Handlee]" :style=" 'color:' + props.headerColor">
           <span :class="item.icon"></span>
           <h2 class="text-xl">
             {{ item.label }}

@@ -2,10 +2,10 @@
 const props = defineProps(['background', 'image', 'title', 'text', 'waves'])
 </script>
 <template>
-  <div class="flex items-center justify-between pt-20 pl-20" :style="'background:' + props.background">
+  <div class="flex justify-between pt-20 pl-20" :style="'background:' + props.background">
     <div class="text-white relative z-10 flex flex-col gap-y-4">
-      <h1 class="text-7xl">{{ props.title }}</h1>
-      <p class="text-4xl opacity-50 font-thin">{{ props.text }}</p>
+      <h1 class="text-7xl font-[Handlee] mt-20">{{ props.title }}</h1>
+      <p class="text-3xl font-[Sen] mt-15">{{ props.text }}</p>
     </div>
     <div>
       <img class="z-10 relative" :src="props.image" alt="banner">
