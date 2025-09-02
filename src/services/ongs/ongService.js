@@ -1,4 +1,4 @@
-import api from "../api";
+import api from "../../plugins/api";
 import { defineStore } from "pinia";
 import { useOngStore } from "../../stores/OngsStore";
 import { useRequestUrlStore } from "../../stores/RequestsUrls";
