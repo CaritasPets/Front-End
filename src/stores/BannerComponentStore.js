@@ -17,6 +17,13 @@ export const useBannerComponentStore = defineStore('bannerStore', () => {
       text: 'Cada Ong carrega uma história de amor.',
       waves: '/blue_waves.svg',
     },
+    bannerAbout: {
+      background: '#104C00',
+      image: '/img_bannerAbout.svg',
+      title: 'Sobre Nós',
+      text: 'Conheça nossa equipe e objetivos do site',
+      waves: '/green_waves.svg'
+    }
   })
   return {
     propriedadesBanners,
