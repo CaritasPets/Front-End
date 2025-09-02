@@ -6,13 +6,13 @@ export const usePetStore = defineStore('petStore', () => {
         {
             id: '1',
             foto: '/logo.svg',
-            nome: 'Rodolfo',
+            nome: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
             genero: 'Gênero Pet',
         },
         {
             id: '2',
             foto: '/logo.svg',
-            nome: 'Nome Pet',
+            nome: 'RONALDINHO GAUCHO',
             genero: 'Gênero Pet',
         },
         {

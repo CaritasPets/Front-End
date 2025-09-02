@@ -1,32 +1,20 @@
 <script setup>
 import { ref } from 'vue';
 
-    const props = defineProps(['opcoes'])
+    const props = defineProps(['options', 'background', 'title', ])
     const open = ref(false)
-
-    //exemplo de objeto a ser usado
-    /*const propriedades = [
-        {
-            nomePai: 'Especie',
-            nomesFilhos: [
-                {
-                    nome: 'Gato',
-                    valor:'gato'
-                }
-            ]
-        }
-    ]*/
+    let contador = 0;
 </script>
 <template>
-    <div v-for="opcao of props.opcoes" :key="opcao">
-        <div>
-            <h3>{{ opcao.nomePai }}</h3>
+    <div  :style="`background: ${props.background}`">
+        <div @click="open = !open">
+            <h3>{{ props.title }}</h3>
             <span></span>
         </div>
         <div v-if="open">
-            <label v-for="nomeFilho of opcoes.nomesFilhos" :key="nomeFilho">
-                <input type="checkbox" :value="nomeFilho.valor">
-                {{ nomeFilho.nome }}
+            <label v-for="item of props.options" :key="item">
+                <input type="checkbox" :value="item.value" onclick="contador++">
+                {{ item.option }}
             </label>
         </div>
     </div>
