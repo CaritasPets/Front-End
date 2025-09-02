@@ -23,6 +23,9 @@ export const useBannerComponentStore = defineStore('bannerStore', () => {
       title: 'Perdeu seu melhor amigo?',
       text: 'Divulgue aqui para encontrá-lo',
       waves: '/yellow_waves.svg',
+      buttonBoolean: true,
+      buttonText: 'Cadastrar pet perdido',
+      buttonLink: '/',
     },
   })
   return {
