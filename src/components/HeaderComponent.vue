@@ -18,7 +18,7 @@ const navItems = [
     <img src="/logo_noBackground.svg" alt="Logo">
   </RouterLink>
   <nav>
-    <ul class="flex gap-30 mr-30">
+    <ul class="flex gap-30 pr-50 pl-50">
       <li v-for="(item, index) in navItems" :key="index" class="list-none">
         <RouterLink :to="item.link" class="flex items-center text-nowrap decoration-0 transition-all duration-500" :style=" 'color:' + props.headerColor">
           <span :class="item.icon"></span>

@@ -41,7 +41,7 @@ function activeColor(url) {
 </script>
 
 <template>
-  <header>
+  <header class="fixed z-50">
     <HeaderComponent
     :background="headerBackground(route.path)"
     :header-color="headerColor(route.path)"
