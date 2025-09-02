@@ -13,10 +13,14 @@ const routes = [
 
     },
     {
+        path: '/user/sign-up',
+        component: () => import("@/views/CadastroPage.vue")
+    },
+    {
         path: '/user/login',
         name: 'login',
         component: () => import("@/views/LoginView.vue")
-    }
+    },
 ];
 
 const router = createRouter({
