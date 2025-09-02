@@ -7,7 +7,7 @@ const navItems = [
   { label: 'Ongs', icon: 'mdi mdi-hand-heart', link: '/ongs' },
   { label: 'Adote', icon: 'mdi mdi-heart', link: '/adote' },
   { label: 'Procura-se', icon: 'mdi mdi-magnify', link: '/' },
-  { label: 'Sobre', icon: 'mdi mdi-information', link: '/' },
+  { label: 'Sobre', icon: 'mdi mdi-information', link: '/sobre' },
   { label: 'Perfil', icon: 'mdi mdi-account', link: '/' },
  
 ]
