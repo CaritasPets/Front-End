@@ -7,7 +7,7 @@
     </div>
     <div class="flex flex-col gap-2">
       <p class="text-xl text-white">Não possui uma conta?</p>
-      <RouterLink to="/">
+      <RouterLink to="/user/sign-up/">
         <button class="text-xl rounded-xl py-2 px-6 bg-[#FDA202] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FDA202] hover:text-[#FDA202]">
           Cadastrar-se
         </button>

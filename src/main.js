@@ -1,5 +1,7 @@
 import './assets/main.css'
 import '@mdi/font/css/materialdesignicons.css';7
+import "@fontsource/handlee";
+import "@fontsource/sen";
 
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
