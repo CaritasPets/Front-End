@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import BannerComponent from '../components/BannerComponent.vue';
-import PapelOngs from '../components/PapelOngs.vue';
+import PapelOngs from '../components/OngComponent/PapelOngs.vue';
 import OngsComponent from '../components/OngsComponent.vue';
 
 import { useOngService } from '../services/ongs/ongService';
