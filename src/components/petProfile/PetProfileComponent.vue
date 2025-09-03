@@ -14,7 +14,7 @@
   ]
 </script>
 <template>
-  <section class="flex px-20 gap-20 text-white">
+  <section class="flex gap-20 items-center">
     <div class="flex flex-col items-center gap-5">
       <img class="w-200 rounded-4xl" :src="props.foto" alt="foto-pet">
       <h2 class="text-5xl">{{ props.nome }}</h2>
