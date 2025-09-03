@@ -16,6 +16,12 @@ const routes = [
         path: '/user/login',
         name: 'login',
         component: () => import("@/views/LoginView.vue")
+    },
+    {
+        path:'/petProfile/:id',
+        name: 'pet',
+        component: () => import("@/views/PetProfilePage.vue"),
+        props: true
     }
 ];
 
