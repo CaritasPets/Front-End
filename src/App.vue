@@ -13,7 +13,7 @@ function validateFooter(url) {
 }
 
 function headerBackground(url) {
-  if(url == '/') {
+  if(url == '/' || url == '/sobre') {
     return '#104C00'
   }
   if(url == '/ongs' || url == '/user/login') {
@@ -21,6 +21,9 @@ function headerBackground(url) {
   }
   if(url == '/adote'){
     return '#FF7700'
+  }
+  if(url == '/procura-se'){
+    return '#FDA202'
   }
 }
 
@@ -35,13 +38,15 @@ function headerColor(url) {
 function activeColor(url) {
   if(url == '/' || url == '/ongs' || url == '/user/login' ) {
     return '#1E0B00'
+  } else {
+    return '#DFB468'
   }
 }
 
 </script>
 
 <template>
-  <header>
+  <header class="fixed z-50">
     <HeaderComponent
     :background="headerBackground(route.path)"
     :header-color="headerColor(route.path)"
