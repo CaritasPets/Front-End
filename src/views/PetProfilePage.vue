@@ -1,5 +1,5 @@
 <script setup>
-import PetProfileComponent from '../components/PetProfileComponent.vue'
+import PetProfileComponent from '../components/petProfile/PetProfileComponent.vue'
 const pet = {
   foto: '/logo.svg',
   nome: 'Ronaldo',
