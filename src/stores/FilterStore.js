@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 
 export const useFilterStore = defineStore('filterStore', () => {
+  const contador = ref(0);
   const propriedadesFilter = ref({
     filterCard1: {
       background: '#587911',
@@ -86,5 +87,6 @@ export const useFilterStore = defineStore('filterStore', () => {
   })
   return {
     propriedadesFilter,
+    contador,
   }
 })
