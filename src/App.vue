@@ -49,7 +49,14 @@ function activeColor(url) {
     />
   </header>
   <RouterView />
-  <footer v-if="validateFooter(route.path)" class="bg-[url(/footer.svg)] bg-no-repeat bg-size-[100%] py-96 ">
+  <footer
+    v-if="validateFooter(route.path)"
+    class="bg-[url('/footer.svg')] bg-no-repeat bg-bottom bg-[length:100%]
+           py-10 sm:py-16 md:py-96"
+  >
     <FooterComponent />
   </footer>
 </template>
+
+
+
