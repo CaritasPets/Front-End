@@ -5,7 +5,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute()
 function validateFooter(url) {
-  if(url.slice(0, 5) == '/user'){
+  if(url.slice(0, 5) == '/user' || url.slice(0, 11) == '/petProfile'){
     return false
   } else{
     return true
@@ -19,7 +19,7 @@ function headerBackground(url) {
   if(url == '/ongs' || url == '/user/login') {
     return '#03497B'
   }
-  if(url == '/adote'){
+  if(url == '/adote' || url.slice(0, 11) == '/petProfile'){
     return '#FF7700'
   }
 }

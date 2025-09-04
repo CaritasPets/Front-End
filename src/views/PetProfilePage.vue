@@ -1,4 +1,5 @@
 <script setup>
+import InformationRangeComponent from '../components/petProfile/InformationRangeComponent.vue';
 import PetProfileComponent from '../components/petProfile/PetProfileComponent.vue'
 const pet = {
   foto: '/logo.svg',
@@ -13,8 +14,9 @@ const pet = {
 }
 </script>
 <template>
-  <section class="bg-[#FF7700] py-20">
-    <PetProfileComponent
+  <section class="bg-[#FF7700] p-20 text-white flex flex-col gap-15">
+    <PetProfileComponent class="relative z-10"
+    
       :foto="pet.foto"
       :nome="pet.nome"
       :genero="pet.genero"
@@ -25,5 +27,11 @@ const pet = {
       :castrado="pet.castrado"
       :raca="pet.raca"
     />
+    <InformationRangeComponent class="relative z-10"
+        :foto="pet.foto"
+        :nome="pet.nome"
+        :telefone="'47991940327'"
+    />
   </section>
+  <img class="w-full transform-[translateY(-50%)] absolute z-0" src="/orange_waves.svg" alt="wave-images">
 </template>
