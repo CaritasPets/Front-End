@@ -1,168 +1,171 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-export const useFilterStore = defineStore('filterStore', () => {
+export const useFilterStore = defineStore("filterStore", () => {
   const contador = ref(0);
-  const propriedadesFilter = ref({
-    filterCard1: {
-      background: '#587911',
-      title: 'Espécie',
+  const propriedadesFilterVerdes = ref([
+    {
+      background: "#104C00",
+      background2: "#587911",
+      title: "Espécie",
       options: [
         {
-          option: 'Cachorro',
-          value: 'cachorro'
+          option: "Cachorro",
+          value: "cachorro"
         },
         {
-          option: 'Gato',
-          value: 'gato'
+          option: "Gato",
+          value: "gato"
         },
         {
-          option: 'Pássaro',
-          value: 'rola'
+          option: "Pássaro",
+          value: "passaro"
         },
         {
-          option: 'Outros',
-          value: 'outros'
-        }
-      ]
+          option: "Outros",
+          value: "outros"
+        },
+      ],
     },
-    filterCard2: {
-      background: '#587911',
-      title: 'Vacinado',
+    {
+      background: "#104C00",
+      background2: "#587911",
+      title: "Vacinado",
       options: [
         {
-          option: 'Sim',
-          value: 'sim'
+          option: "Sim",
+          value: "sim"
         },
         {
-          option: 'Não',
-          value: 'nao'
+          option: "Não",
+          value: "nao"
         },
         {
-          option: 'Parcialmente',
-          value: 'parcialmente'
-        }
-      ]
+          option: "Parcialmente",
+          value: "parcialmente"
+        },
+      ],
     },
-    filterCard3: {
-      background: '#587911',
-      title: 'Idade',
+    {
+      background: "#104C00",
+      background2: "#587911",
+      title: "Idade",
       options: [
         {
-          option: '0-1 anos',
-          value: ''
+          option: "0-1 anos",
+          value: "0-1"
         },
         {
-          option: '2-4 anos',
-          value: ''
+          option: "2-4 anos",
+          value: "2-4"
         },
         {
-          option: '5-7 anos',
-          value: ''
+          option: "5-7 anos",
+          value: "5-7"
         },
         {
-          option: '8 anos ou mais',
-          value: ''
-        }
-      ]
+          option: "8 anos ou mais",
+          value: "8+"
+        },
+      ],
     },
-    filterCard4: {
-      background: '#587911',
-      title: 'Porte',
+    {
+      background: "#104C00",
+      background2: "#587911",
+      title: "Porte",
       options: [
         {
-          option: 'Pequeno',
-          value: 'pequeno'
+          option: "Pequeno",
+          value: "pequeno"
         },
         {
-          option: 'Médio',
-          value: 'medio'
+          option: "Médio",
+          value: "medio"
         },
         {
-          option: 'Grande',
-          value: 'grande'
-        }
-      ]
+          option: "Grande",
+          value: "grande"
+        },
+      ],
     },
-    filterCard5: {
-      background: '#FF7700',
-      title: 'Castrado',
+  ]);
+  const propriedadesFilterLaranjas = ref([
+    {
+      background: "#FF7700",
+      title: "Castrado",
       options: [
         {
-          option: 'Sim',
-          value: 'sim'
+          option: "Sim",
+          value: "sim"
         },
         {
-          option: 'Não',
-          value: 'nao'
-        }
-      ]
+          option: "Não",
+          value: "nao"
+        },
+      ],
     },
-    filterCard6: {
-      background: '#FF7700',
-      title: 'Sexo',
+    {
+      background: "#FF7700",
+      title: "Sexo",
       options: [
         {
-          option: 'Fêmea',
-          value: 'femea'
+          option: "Fêmea",
+          value: "femea"
         },
         {
-          option: 'Macho',
-          value: 'macho'
+          option: "Macho",
+          value: "macho"
         },
         {
-          option: 'Não identificado',
-          value: '',
-        }
-      ]
+          option: "Não identificado",
+          value: "nao-identificado"
+        },
+      ],
     },
-    filterCard7: {
-      background: '#FF7700',
-      title: 'Pelagem',
+    {
+      background: "#FF7700",
+      title: "Pelagem",
       options: [
         {
-          option: '0-1 anos',
-          value: ''
+          option: "Curta",
+          value: "curta"
         },
         {
-          option: '2-4 anos',
-          value: ''
-        },
+          option: "Média",
+          value: "media" },
         {
-          option: '5-7 anos',
-          value: ''
+          option: "Longa",
+          value: "longa"
         },
-        {
-          option: '8 anos ou mais',
-          value: ''
-        }
-      ]
+      ],
     },
-    filterCard8: {
-      background: '#FF7700',
-      title: 'Peso',
+    {
+      background: "#FF7700",
+      title: "Peso",
       options: [
         {
-          option: '0-1 anos',
-          value: ''
+          option: "",
+          value: ""
         },
         {
-          option: '2-4 anos',
-          value: ''
+          option: "",
+          value: ""
         },
         {
-          option: '5-7 anos',
-          value: ''
+          option: "",
+          value: ""
         },
         {
-          option: '8 anos ou mais',
-          value: ''
-        }
-      ]
-    }
-  })
+          option: "",
+          value: ""
+        },
+      ],
+    },
+  ]);
+
   return {
-    propriedadesFilter,
     contador,
-  }
-})
+    propriedadesFilterVerdes,
+    propriedadesFilterLaranjas,
+  };
+});
