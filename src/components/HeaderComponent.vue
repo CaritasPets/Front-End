@@ -41,7 +41,7 @@ const menuIconColor = computed(() => {
 
 <template>
   <div
-    class="flex justify-between items-center px-5 py-3 relative transition-colors duration-500"
+    class="flex justify-between items-center px-5 py-3 relative "
     :style="`background: ${headerBackground}`"
   >
     <RouterLink to="/" class="w-15">
@@ -90,7 +90,7 @@ const menuIconColor = computed(() => {
               :to="item.link"
               class="flex items-center gap-2 text-xl font-[Handlee] px-4 py-2 rounded-lg"
               :class="{
-                'bg-[#1E0B00] text-[#DFB468]': route.path === item.link, // ativo
+                'bg-[#1E0B00] text-[#DFB468]': route.path === item.link,
                 'hover:bg-[#1E0B00] hover:text-[#DFB468]': route.path !== item.link,
               }"
               :style="{
