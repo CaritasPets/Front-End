@@ -6,7 +6,7 @@ import ButtonsProfileComponent from '../components/petProfile/ButtonsProfileComp
 const ongId = ref(1);
 const pet = {
   foto: '/logo.svg',
-  nome: 'Ronaldo',
+  nome: 'Ronaldo Fenômeno',
   genero: 'Macho',
   especie: 'Gato',
   idade: '11 anos',

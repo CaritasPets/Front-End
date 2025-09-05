@@ -17,7 +17,7 @@
   <section class="flex gap-20 items-center">
     <div class="flex flex-col items-center gap-5">
       <img class="w-200 rounded-4xl" :src="props.foto" alt="foto-pet">
-      <h2 class="text-5xl">{{ props.nome }}</h2>
+      <h2 class="text-5xl text-center">{{ props.nome }}</h2>
     </div>
     <div>
       <ul class="flex flex-wrap gap-x-40 gap-y-10">
