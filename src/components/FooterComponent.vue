@@ -1,5 +1,26 @@
+<script setup>
+import { useRoute } from 'vue-router';
+
+const route = useRoute()
+function validateFooter(url) {
+  if(url.slice(0, 5) == '/user'){
+    return false
+  } else{
+    return true
+  }
+}
+
+</script>
+
 <template>
-  <p class="text-center text-sm md:text-base font-[Sen]">
+
+
+  <div
+
+    v-if="validateFooter(route.path)"
+    class="bg-[url('/footer.svg')] bg-no-repeat bg-bottom bg-[length:100%]
+           py-10 sm:py-16 md:py-96">
+ <p class="text-center text-sm md:text-base font-[Sen]">
     &copy; 2025 CaritasPets. Todos os direitos reservados.
   </p>
   <p class="text-center text-sm md:text-base font-[Sen] mt-1 md:mt-2">
@@ -8,4 +29,5 @@
   <p class="text-center text-sm md:text-base font-[Sen] mt-1 md:mt-2">
     <span class="mdi mdi-email-outline text-lg md:text-xl"></span> caritaspets.jlle@gmail.com
   </p>
+  </div>
 </template>
