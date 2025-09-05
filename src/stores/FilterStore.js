@@ -140,6 +140,10 @@ export const useFilterStore = defineStore("filterStore", () => {
           option: "Longa",
           value: "longa"
         },
+        {
+          option: "Não possui",
+          value: "n/a"
+        }
       ],
     },
     {
@@ -148,20 +152,20 @@ export const useFilterStore = defineStore("filterStore", () => {
       title: "Peso",
       options: [
         {
-          option: "",
-          value: ""
+          option: "Até 5kg",
+          value: "-5"
         },
         {
-          option: "",
-          value: ""
+          option: "5kg a 15kg",
+          value: "5-15"
         },
         {
-          option: "",
-          value: ""
+          option: "15kg a 30kg",
+          value: "15-30"
         },
         {
-          option: "",
-          value: ""
+          option: "Acima de 30kg",
+          value: "30+"
         },
       ],
     },

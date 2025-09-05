@@ -19,9 +19,9 @@ const filterStore = useFilterStore()
             <span class="mdi mdi-chevron-down text-4xl" v-if="open == false"></span>
             <span class="mdi mdi-chevron-up text-4xl" v-else></span>
         </div>
-        <div class="rounded-b-4xl flex flex-col px-4 pb-8 text-white" :style="`background: ${props.background2}`" v-if="open">
-            <label v-for="item of props.options" :key="item">
-                <input type="checkbox" :value="item.value" @change="toggleCounter($event)">
+        <div class="rounded-b-4xl flex flex-col px-4 pt-2 pb-8 text-white gap-y-1" :style="`background: ${props.background2}`" v-if="open">
+            <label class="text-[1.1rem] flex gap-2 items-center" v-for="item of props.options" :key="item">
+                <input type="checkbox" class="appearance-none w-6 h-6 border-2 rounded-sm bg-[#FFE078] checked:bg-[url(/pata-checkbox.svg)] checked:bg-cover " :style="`border: solid 2px ${props.background}`" :value="item.value" @change="toggleCounter($event)">
                 {{ item.option }}
             </label>
         </div>

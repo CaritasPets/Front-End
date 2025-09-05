@@ -28,8 +28,8 @@ const open = ref(false);
             :options="filterCard.options" :background="filterCard.background" :title="filterCard.title" :background2="filterCard.background2"/>
         </div>
         <div class="flex justify-center gap-4 mt-6">
-          <button class="text-3xl px-6 py-2 border-4 border-blue-700 rounded-xl hover:bg-white transition">Limpar</button>
-          <button class="text-3xl px-30 py-2 border-4 border-orange-400 rounded-xl hover:bg-white transition">Filtrar</button>
+          <button class="text-3xl px-6 py-2 border-4 border-blue-700 rounded-xl hover:bg-[#FAF9B4] transition">Limpar</button>
+          <button class="text-3xl px-30 py-2 border-4 border-orange-400 rounded-xl hover:bg-[#FAF9B4] transition">Filtrar</button>
         </div>
       </div>
     </div>
