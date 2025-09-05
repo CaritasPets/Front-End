@@ -20,12 +20,12 @@ const open = ref(false);
         <!--Green Filters-->
         <div class="grid grid-cols-4 gap-4">
           <FilterCard v-for="filterCard in filterStore.propriedadesFilterVerdes" :key="filterCard.title"
-            :options="filterCard.options" :background="filterCard.background" :title="filterCard.title" />
+            :options="filterCard.options" :background="filterCard.background" :title="filterCard.title" :background2="filterCard.background2"/>
         </div>
         <!--Orange Filters-->
         <div class="grid grid-cols-4 gap-4">
           <FilterCard v-for="filterCard in filterStore.propriedadesFilterLaranjas" :key="filterCard.title"
-            :options="filterCard.options" :background="filterCard.background" :title="filterCard.title" />
+            :options="filterCard.options" :background="filterCard.background" :title="filterCard.title" :background2="filterCard.background2"/>
         </div>
         <div class="flex justify-center gap-4 mt-6">
           <button class="text-3xl px-6 py-2 border-4 border-blue-700 rounded-xl hover:bg-white transition">Limpar</button>

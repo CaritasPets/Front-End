@@ -9,7 +9,7 @@ function toggleCounter(event) {
   }
 }
 const filterStore = useFilterStore()
-    const props = defineProps(['options', 'background', 'title', ])
+    const props = defineProps(['options', 'background', 'title', 'background2'])
     const open = ref(false)
 </script>
 <template>

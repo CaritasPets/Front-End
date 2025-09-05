@@ -92,6 +92,7 @@ export const useFilterStore = defineStore("filterStore", () => {
   const propriedadesFilterLaranjas = ref([
     {
       background: "#FF7700",
+      background2: "#FDA202",
       title: "Castrado",
       options: [
         {
@@ -106,6 +107,7 @@ export const useFilterStore = defineStore("filterStore", () => {
     },
     {
       background: "#FF7700",
+      background2: "#FDA202",
       title: "Sexo",
       options: [
         {
@@ -124,6 +126,7 @@ export const useFilterStore = defineStore("filterStore", () => {
     },
     {
       background: "#FF7700",
+      background2: "#FDA202",
       title: "Pelagem",
       options: [
         {
@@ -141,6 +144,7 @@ export const useFilterStore = defineStore("filterStore", () => {
     },
     {
       background: "#FF7700",
+      background2: "#FDA202",
       title: "Peso",
       options: [
         {
