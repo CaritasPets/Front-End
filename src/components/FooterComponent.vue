@@ -13,20 +13,18 @@ function validateFooter(url) {
 </script>
 
 <template>
-
-
   <div
 
     v-if="validateFooter(route.path)"
-    class="bg-[url('/footer.svg')] bg-no-repeat bg-bottom bg-[length:100%]
-           py-10 sm:py-16 md:py-96">
+    class="bg-[url('/footer.svg')] bg-no-repeat bg-bottom bg-[length:100%] pt-15 pb-20
+       lg:p-93">
  <p class="text-center text-sm md:text-base font-[Sen]">
     &copy; 2025 CaritasPets. Todos os direitos reservados.
   </p>
-  <p class="text-center text-sm md:text-base font-[Sen] mt-1 md:mt-2">
+  <p class="text-center text-sm md:text-base font-[Sen] ">
     <span class="mdi mdi-instagram text-lg md:text-xl"></span> @caritaspets.jlle
   </p>
-  <p class="text-center text-sm md:text-base font-[Sen] mt-1 md:mt-2">
+  <p class="text-center text-sm md:text-base font-[Sen] ">
     <span class="mdi mdi-email-outline text-lg md:text-xl"></span> caritaspets.jlle@gmail.com
   </p>
   </div>

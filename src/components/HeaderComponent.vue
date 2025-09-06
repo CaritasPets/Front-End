@@ -48,7 +48,7 @@ const menuIconColor = computed(() => {
       <img src="/logo_noBackground.svg" alt="Logo" />
     </RouterLink>
 
-    <nav class="hidden md:block">
+    <nav class="hidden xl:block">
       <ul class="flex gap-30 mr-30">
         <li v-for="(item, index) in navItems" :key="index" class="list-none">
           <RouterLink
@@ -71,7 +71,7 @@ const menuIconColor = computed(() => {
 
     <button
       @click="mobileMenuOpen = !mobileMenuOpen"
-      class="md:hidden text-3xl"
+      class="xl:hidden text-3xl"
       :style="{ color: menuIconColor }"
     >
       <span v-if="!mobileMenuOpen" class="mdi mdi-menu"></span>
