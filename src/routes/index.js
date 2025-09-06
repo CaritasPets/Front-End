@@ -10,7 +10,10 @@ const routes = [
         path: '/ongs',
         name: 'ongs',
         component: () => import("@/views/OngsPage.vue"),
-
+    },
+    {
+        path: '/adote',
+        component: () => import("@/views/AdotePage.vue")
     },
     {
         path: '/user/sign-up',
@@ -26,7 +29,6 @@ const routes = [
         name: 'sobre nós',
         component: () => import("@/views/AboutView.vue")
     }
-
 ];
 
 const router = createRouter({
