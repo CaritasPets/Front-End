@@ -43,7 +43,7 @@ const menuIconColor = computed(() => {
 
 <template>
   <div
-    class="flex justify-between items-center px-5 py-3 relative "
+    class="w-full flex justify-between items-center px-5 py-3 fixed z-50"
     :style="`background: ${headerBackground}`"
   >
     <RouterLink to="/" class="w-15">
