@@ -3,6 +3,7 @@ import { ref, computed } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
 const navItems = [
+
   { label: "Home", icon: "mdi mdi-home", link: "/" },
   { label: "Ongs", icon: "mdi mdi-hand-heart", link: "/ongs" },
   { label: "Adote", icon: "mdi mdi-heart", link: "/adote" },
@@ -37,6 +38,7 @@ const menuIconColor = computed(() => {
   }
   return "#DFB468";
 });
+
 </script>
 
 <template>

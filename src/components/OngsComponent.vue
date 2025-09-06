@@ -1,5 +1,5 @@
 <script setup>
-    const props = defineProps(['logo', 'nome', 'background']);
+    const props = defineProps(['logo', 'nome']);
     const backgrounds = ['#03497B', '#587911', '#FDA202'];
     function sortBackground(){
         const randomNum = Math.floor(Math.random() * 3);

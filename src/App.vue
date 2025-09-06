@@ -2,7 +2,6 @@
 import FooterComponent from './components/FooterComponent.vue'
 import HeaderComponent from './components/HeaderComponent.vue';
 
-
 </script>
 
 <template>
@@ -12,8 +11,5 @@ import HeaderComponent from './components/HeaderComponent.vue';
   <RouterView />
   <footer>
     <FooterComponent />
-  </footer>
+</footer>
 </template>
-
-
-
