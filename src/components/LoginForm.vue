@@ -1,55 +1,44 @@
 <script setup>
 import { ref } from 'vue'
-import api from '../services/api'
 
 import { useRequestUrlStore } from '../stores/RequestsUrls'
-const urlStore = useRequestUrlStore();
+const urlStore = useRequestUrlStore()
 
-const isLoading = ref(false)
+import { useAuthService } from '../services/Auth'
+const authService = useAuthService()
+
 const username = ref('')
 const password = ref('')
-const error = ref('')
-const login = async () => {
-    error.value = '';
-    try{
-        isLoading.value = true;
-        const response = await api.post(urlStore.token, {
-            username: username.value,
-            password: password.value
-        })
-
-        const { access, refresh } = response.data
-        localStorage.setItem('accessToken', access)
-        localStorage.setItem('refreshToken', refresh)
-
-    } catch(err){
-        error.value = 'Usuário ou senha inválidos'
-        console.log(err)
-    } finally{
-        isLoading.value = false
-        console.log('login bem sucedido')
-    }
-}
 </script>
 <template>
-  <form @submit.prevent="login" class="flex flex-col items-center gap-y-12">
+  <form
+    @submit.prevent="authService.login(urlStore.token, { username, password })"
+    class="flex flex-col items-center gap-y-12"
+  >
     <div class="flex flex-col gap-y-2">
       <label class="text-2xl text-white">Nome de usuário:</label>
-      <input class="text-lg text-[#FDA202] border-2 border-[#FDA202] rounded-xl px-2 py-2 w-100"
+      <input
+        class="text-lg text-[#FDA202] border-2 border-[#FDA202] rounded-xl px-2 py-2 w-100"
         placeholder="Nome de usuário"
         v-model="username"
         required
-       />
+      />
     </div>
     <div class="flex flex-col gap-y-2">
-        <label class="text-2xl text-white">Senha:</label>
-        <input class="text-lg text-[#FF7700] border-2 border-[#FF7700] rounded-xl px-2 py-2 w-100"
-            placeholder="Senha"
-            v-model="password"
-            type="password"
-            required
-       />
+      <label class="text-2xl text-white">Senha:</label>
+      <input
+        class="text-lg text-[#FF7700] border-2 border-[#FF7700] rounded-xl px-2 py-2 w-100"
+        placeholder="Senha"
+        v-model="password"
+        type="password"
+        required
+      />
     </div>
-    <button type="submit" class=" text-xl rounded-xl py-2 px-6 bg-[#FDA202] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FDA202] hover:text-[#FDA202]">Fazer Login</button>
+    <button
+      type="submit"
+      class="text-xl rounded-xl py-2 px-6 bg-[#FDA202] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FDA202] hover:text-[#FDA202]"
+    >
+      Fazer Login
+    </button>
   </form>
 </template>

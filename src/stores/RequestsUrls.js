@@ -9,11 +9,9 @@ export const useRequestUrlStore = defineStore('requestUrlStore', () => {
         portes: '/portes/',
         racas: '/racas/',
         //registro e autenticação de usuários
-        register: '/auth/register',
-        registerVoluntario: '/auth/register/voluntario',
-        registerOngs: 'auth/register/organizacao',
-        refresh: '/refresh/',
-        token: '/token/',
+        register: '/auth/register/',
+        refresh: '/auth/refresh/',
+        token: '/auth/token/',
     }
 
     return (

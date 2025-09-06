@@ -4,12 +4,20 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: () => import("@/views/HomeView.vue")
+        component: () => import("@/views/HomeView.vue"),
     },
     {
         path: '/ongs',
         name: 'ongs',
-        component: () => import("@/views/OngsPage.vue")
+        component: () => import("@/views/OngsPage.vue"),
+    },
+    {
+        path: '/adote',
+        component: () => import("@/views/AdotePage.vue")
+    },
+    {
+        path: '/user/sign-up',
+        component: () => import("@/views/CadastroPage.vue")
     },
     {
         path: '/user/login',
@@ -17,10 +25,16 @@ const routes = [
         component: () => import("@/views/LoginView.vue")
     },
     {
+
         path: '/user/profile',
         name: 'user-profile',
         component: () => import("@/views/UserView.vue")
-    }
+    },
+    {
+        path: '/sobre',
+        name: 'sobre nós',
+        component: () => import("@/views/AboutView.vue")
+    },
 ];
 
 const router = createRouter({
