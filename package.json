@@ -11,8 +11,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fontsource/handlee": "^5.2.6",
+    "@fontsource/sen": "^5.2.6",
     "@mdi/font": "^7.4.47",
     "@tailwindcss/vite": "^4.1.11",
+    "axios": "^1.11.0",
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.11",
     "vue": "^3.5.17",
@@ -28,5 +31,17 @@
     "prettier": "3.5.3",
     "vite": "^7.0.0",
     "vite-plugin-vue-devtools": "^7.7.7"
-  }
+  },
+  "description": "This template should help get you started developing with Vue 3 in Vite.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HackathonAABHJ/Front-End.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HackathonAABHJ/Front-End/issues"
+  },
+  "homepage": "https://github.com/HackathonAABHJ/Front-End#readme"
 }

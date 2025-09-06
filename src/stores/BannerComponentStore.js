@@ -24,6 +24,13 @@ export const useBannerComponentStore = defineStore('bannerStore', () => {
       text: 'lorem ipsulom doloriam',
       waves: '/orange_waves.svg',
     },
+    bannerAbout: {
+      background: '#104C00',
+      image: '/img_bannerAbout.svg',
+      title: 'Sobre Nós',
+      text: 'Conheça nossa equipe e objetivos do site',
+      waves: '/green_waves.svg'
+    },
   })
   return {
     propriedadesBanners,
