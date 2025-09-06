@@ -3,6 +3,9 @@ import { ref } from "vue";
 
 export const useFilterStore = defineStore("filterStore", () => {
   const contador = ref(0);
+  const filters = ref([]);
+
+
   const propriedadesFilterVerdes = ref([
     {
       background: "#104C00",
@@ -175,5 +178,6 @@ export const useFilterStore = defineStore("filterStore", () => {
     contador,
     propriedadesFilterVerdes,
     propriedadesFilterLaranjas,
+    filters,
   };
 });
