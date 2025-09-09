@@ -3,7 +3,7 @@
     import InfoAdocao from '../components/InfoAdocao.vue';
     import RecolhivelComponent from '../components/RecolhivelComponent.vue';
     import BannerComponent from '@/components/BannerComponent.vue';
-    
+
     import { useCardFuncionalidadeStore } from '../stores/CardFuncionalidadeStore';
     import { useBannerComponentStore } from '@/stores/BannerComponentStore';
     import { useRecolhivelStore } from '../stores/RecolhiveisStore';
