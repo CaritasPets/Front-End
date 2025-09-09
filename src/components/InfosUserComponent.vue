@@ -6,7 +6,7 @@ const props = defineProps(['user'])
   <section class="text-white">
     <div class="bg-[#03497B] pt-30 px-40">
       <div class="flex flex-col">
-        <h2 class="text-6xl font-bold mb-4 z-10 relative whitespace-nowrap">
+        <h2 class="text-6xl font-bold mb-4 z-10 relative whitespace-nowrap font-[Handlee]">
           {{ props?.user?.nome }}
         </h2>
         <div class="flex gap-10 pt-10">
@@ -15,7 +15,7 @@ const props = defineProps(['user'])
             alt="Foto do usuário"
             class="w-96 rounded-[115px]"
           />
-          <ul class="text-left space-y-6 flex flex-col justify-center ml-4">
+          <ul class="text-left space-y-6 flex flex-col justify-center ml-4 font-[Sen]">
             <li class="text-3xl"><strong>Username:</strong> {{ props?.user?.username }}</li>
             <li class="text-3xl"><strong>Telefone:</strong> {{ props?.user?.telefone }}</li>
             <li class="text-3xl"><strong>CPF:</strong> {{ props?.user?.cpf }}</li>

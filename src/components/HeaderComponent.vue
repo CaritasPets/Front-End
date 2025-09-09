@@ -9,7 +9,7 @@ const navItems = [
   { label: "Adote", icon: "mdi mdi-heart", link: "/adote" },
   { label: "Procura-se", icon: "mdi mdi-magnify", link: "/procura" },
   { label: "Sobre", icon: "mdi mdi-information", link: "/sobre" },
-  { label: "Perfil", icon: "mdi mdi-account", link: "/perfil" },
+  { label: "Perfil", icon: "mdi mdi-account", link: "/user/profile" },
 ];
 
 const mobileMenuOpen = ref(false);
@@ -18,7 +18,7 @@ const route = useRoute();
 
 const headerBackground = computed(() => {
   if (route.path === "/ongs") return "#03497B";
-  if (route.path === "/perfil") return "#03497B";
+  if (route.path === "/user/profile" || route.path === "/user/login" || route.path === "/user/sign-up") return "#03497B";
   if (route.path === "/adote") return "#FF7700";
   if (route.path === "/procura") return "#FDA202";
   if (route.path === "/sobre") return "#104C00";
