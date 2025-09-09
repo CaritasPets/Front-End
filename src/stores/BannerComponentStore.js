@@ -31,6 +31,16 @@ export const useBannerComponentStore = defineStore('bannerStore', () => {
       text: 'Conheça nossa equipe e objetivos do site',
       waves: '/green_waves.svg'
     },
+    bannerSearch: {
+      background: '#FDA202',
+      image: '/banner_image_search.svg',
+      title: 'Perdeu seu melhor amigo?',
+      text: 'Divulgue aqui para encontrá-lo',
+      waves: '/yellow_waves.svg',
+      buttonBoolean: true,
+      buttonText: 'Cadastrar pet perdido',
+      buttonLink: '/',
+    },
   })
   return {
     propriedadesBanners,
