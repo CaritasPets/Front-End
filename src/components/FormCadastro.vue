@@ -47,6 +47,7 @@ function onFileChange(event) {
             placeholder="Usuario."
             type="text"
             v-model="username"
+            required
           />
         </li>
         <li class="flex flex-col w-[100%]">
@@ -56,6 +57,7 @@ function onFileChange(event) {
             placeholder="Senha."
             type="password"
             v-model="password"
+            required
           />
         </li>
         <li class="flex flex-col w-[100%]">
@@ -65,6 +67,7 @@ function onFileChange(event) {
             placeholder="Email."
             type="email"
             v-model="email"
+            required
           />
         </li>
         <li class="flex flex-col w-[100%]">
@@ -74,6 +77,7 @@ function onFileChange(event) {
             placeholder="Nome."
             type="text"
             v-model="nome"
+            required
           />
         </li>
       </ul>
@@ -85,6 +89,7 @@ function onFileChange(event) {
             placeholder="CPF."
             type="text"
             v-model="cpf"
+            required
           />
         </li>
         <li class="flex flex-col w-[100%]">
@@ -94,6 +99,7 @@ function onFileChange(event) {
             placeholder="Telefone."
             type="text"
             v-model="telefone"
+            required
           />
         </li>
         <li class="flex flex-col w-[100%]">
