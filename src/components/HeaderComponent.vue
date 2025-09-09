@@ -15,7 +15,6 @@ const navItems = [
 const mobileMenuOpen = ref(false);
 const route = useRoute();
 
-
 const headerBackground = computed(() => {
   if (route.path === "/ongs") return "#03497B";
   if (route.path === "/perfil") return "#03497B";

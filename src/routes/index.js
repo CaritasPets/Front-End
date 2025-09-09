@@ -35,6 +35,11 @@ const routes = [
         name: 'sobre nós',
         component: () => import("@/views/AboutView.vue")
     },
+    {
+        path: '/procura-se',
+        name: 'procura-se',
+        component: () => import("@/views/SearchView.vue")
+    },
 ];
 
 const router = createRouter({
