@@ -19,53 +19,53 @@ function onFileChange(event) {
 }
 </script>
 <template>
-  <form action="">
-    <div>
+  <form action="" class="">
+    <div class="flex">
       <div class="">
         <ul>
-          <li>
-            <label class="">*Nome:</label>
+          <li class="flex flex-col gap-y-2">
+            <label class="text-2xl text-[#1E0B00]">*Nome:</label>
             <input
-              class=""
+              class="text-2xl text-[#03497B] py-1 px-2 my-2 border-2 rounded-xl w-120"
               placeholder="Nome."
               v-model="nome"
               type="text"
               required
             />
           </li>
-          <li>
-            <label class="">*Telefone:</label>
+          <li class="flex flex-col gap-y-2">
+            <label class="text-2xl text-[#1E0B00]">*Telefone:</label>
             <input
-              class=""
+              class="text-2xl text-[#FF7700] py-1 px-2 my-2 border-2 rounded-xl w-120"
               placeholder="Telefone."
               v-model="telefone"
               type="text"
               required
             />
           </li>
-          <li>
-            <label class="">*Email:</label>
+          <li class="flex flex-col gap-y-2">
+            <label class="text-2xl text-[#1E0B00]">*Email:</label>
             <input
-              class=""
+              class="text-2xl text-[#FDA202] py-1 px-2 my-2 border-2 rounded-xl w-120"
               placeholder="Email."
               v-model="email"
               type="email"
               required
             />
           </li>
-          <li>
-            <label class="">CNPJ:</label>
+          <li class="flex flex-col gap-y-2">
+            <label class="text-2xl text-[#1E0B00]">CNPJ:</label>
             <input
-              class=""
+              class="text-2xl text-[#104C00] py-1 px-2 my-2 border-2 rounded-xl w-120"
               placeholder="CNPJ (se possui)."
               v-model="cnpj"
               type="text"
             />
           </li>
-          <li>
-            <label class="">Instagram:</label>
+          <li class="flex flex-col gap-y-2">
+            <label class="text-2xl text-[#1E0B00]">Instagram:</label>
             <input
-              class=""
+              class="text-2xl text-[#03497B] py-1 px-2 my-2 border-2 rounded-xl w-120"
               placeholder="Instagram (se possui)."
               v-model="instagram"
               type="text"
@@ -75,50 +75,50 @@ function onFileChange(event) {
       </div>
       <div>
         <ul>
-          <li>
-            <label class="">Facebook:</label>
+          <li class="flex flex-col gap-y-2">
+            <label class="text-2xl text-[#1E0B00]">Facebook:</label>
             <input
-              class=""
+              class="text-2xl text-[#FDA202] py-1 px-2 my-2 border-2 rounded-xl w-120"
               placeholder="Facebook (se possui)."
               v-model="facebook"
               type="text"
             />
           </li>
-          <li>
-            <label class="">*Senha:</label>
+          <li class="flex flex-col gap-y-2">
+            <label class="text-2xl text-[#1E0B00]">*Senha:</label>
             <input
-              class=""
+              class="text-2xl text-[#104C00] py-1 px-2 my-2 border-2 rounded-xl w-120"
               placeholder="........"
               v-model="password"
               type="password"
               required
             />
           </li>
-          <li>
-            <label class="">Endereço:</label>
+          <li class="flex flex-col gap-y-2">
+            <label class="text-2xl text-[#1E0B00]">Endereço:</label>
             <input
-              class=""
+              class="text-2xl text-[#9EAF50] py-1 px-2 my-2 border-2 rounded-xl w-120"
               placeholder="Endereço da ONG (se possui)."
               v-model="endereco"
               type="text"
             />
           </li>
-          <li>
-            <p class="text-2xl text-white">Foto de Perfil</p>
+          <li class="flex flex-col">
+            <p class="text-2xl text-[#1E0B00]">Foto de Perfil</p>
             <input id="fileInput" class="hidden" type="file" @change="onFileChange" />
             <label
             for="fileInput"
-            class="text-2xl text-[#9EAF50] border-2 py-1 px-2 my-2 rounded-xl w-120 cursor-pointer"
+            class="text-2xl text-[#FF7700] border-2 py-1 px-2 my-2 rounded-xl w-120 cursor-pointer"
             >Selecionar Arquivo</label>
-            <div v-if="foto" class="text-xl text-[#9EAF50]">
+            <div v-if="foto" class="text-xl text-[#FF7700]">
               <p>Arquivo para foto selecionado:</p>
               <p>{{ foto.name }}</p>
             </div>
           </li>
-          <li>
-            <label class="">Descrição:</label>
+          <li class="flex flex-col">
+            <label class="text-2xl text-[#1E0B00]">Descrição:</label>
             <input
-              class=""
+              class="text-2xl text-[#FDA202] py-1 px-2 my-2 border-2 rounded-xl w-120"
               placeholder="Descrição."
               v-model="username"
               type="text"
