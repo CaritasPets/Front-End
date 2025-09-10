@@ -7,7 +7,7 @@ const navItems = [
   { label: "Home", icon: "mdi mdi-home", link: "/" },
   { label: "Ongs", icon: "mdi mdi-hand-heart", link: "/ongs" },
   { label: "Adote", icon: "mdi mdi-heart", link: "/adote" },
-  { label: "Procura-se", icon: "mdi mdi-magnify", link: "/procura" },
+  { label: "Procura-se", icon: "mdi mdi-magnify", link: "/procura-se" },
   { label: "Sobre", icon: "mdi mdi-information", link: "/sobre" },
   { label: "Perfil", icon: "mdi mdi-account", link: "/user/profile" },
 ];
@@ -19,20 +19,20 @@ const headerBackground = computed(() => {
   if (route.path === "/ongs") return "#03497B";
   if (route.path === "/user/profile" || route.path === "/user/login" || route.path === "/user/sign-up") return "#03497B";
   if (route.path === "/adote") return "#FF7700";
-  if (route.path === "/procura") return "#FDA202";
+  if (route.path === "/procura-se") return "#FDA202";
   if (route.path === "/sobre") return "#104C00";
   return "#104C00";
 });
 
 const linkBaseColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura") {
+  if (route.path === "/adote" || route.path === "/procura-se") {
     return "#1E0B00";
   }
   return "#DFB468";
 });
 
 const menuIconColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura") {
+  if (route.path === "/adote" || route.path === "/procura-se") {
     return "#1E0B00";
   }
   return "#DFB468";
