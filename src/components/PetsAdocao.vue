@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps(["foto", "nome", "genero"]);
+const props = defineProps(["fotoPet", "nome", "genero"]);
 const backgrounds = ["#03497B", "#587911", "#FDA202"];
 function sortBackground() {
   const randomNum = Math.floor(Math.random() * 3);
@@ -10,7 +10,7 @@ function sortBackground() {
   <div class="flex flex-col items-center w-full max-w-[240px] min-w-[230px] h-[350px] rounded-4xl mx-7 mb-14 px-5 shadow-[7px_7px_2px_rgba(0,0,0,0.30)] transition-all hover:scale-115 hover:shadow-[10px_10px_5px_rgba(0,0,0,0.4)] duration-300 ease-out active:scale-95 active:shadow-[5px_5px_2px_rgba(0,0,0,0.25)]"
     :style="`background: ${sortBackground()}`">
     <RouterLink to="" class="flex flex-col items-center">
-      <img class="w-[90%] h-auto rounded-4xl mt-6 mb-4" :src="props.foto" :alt="`${props.nome}-image`">
+      <img class="w-[90%] h-auto rounded-4xl mt-6 mb-4" :src="props.fotoPet" :alt="`${props.nome}-image`">
       <div class="flex flex-col items-center">
         <p class="my-1 text-[1.5rem] text-white text-center truncate overflow-hidden overflow-ellipsis w-55 ">{{ props.nome }}</p>
         <p class="my-1 text-[1.5rem] text-white -mt-2 mb-5.5 text-center">{{ props.genero }}</p>

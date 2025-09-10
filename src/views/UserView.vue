@@ -28,6 +28,30 @@ const ongsFavorite = [
 
 
 const petsFavorite = [
+  {
+    id: 1,
+    nome: 'Ronaldo Fenômeno',
+    fotoPet: '/logo.svg',
+    genero: 'macho'
+  },
+  {
+    id: 1,
+    nome: 'Ronaldo Fenômeno',
+    fotoPet: '/logo.svg',
+    genero: 'macho'
+  },
+  {
+    id: 1,
+    nome: 'Ronaldo Fenômeno',
+    fotoPet: '/logo.svg',
+    genero: 'macho'
+  },
+  {
+    id: 1,
+    nome: 'Ronaldo Fenômeno',
+    fotoPet: '/logo.svg',
+    genero: 'macho'
+  },
 ]
 </script>
 <template>
@@ -44,11 +68,11 @@ const petsFavorite = [
   />
   <h2 class="text-center text-5xl text-[#4c260a] font-[Handlee]">Seus Pets salvos:</h2>
  <div class="flex flex-wrap justify-between mt-20 px-60 font-[Sen]">
-    <PetsAdocao
-      v-for="pet in petsFavorite"
-      :key="pet.id"
+    <PetsAdocao v-for="pet of petsFavorite" :key="pet.id"
+
       :fotoPet="pet.fotoPet"
       :nome="pet.nome"
+      :genero="pet.genero"
     />
   </div>
   <h2 class="text-center text-5xl text-[#4c260a] font-[Handlee]">Suas ONGs Salvas:</h2>
