@@ -31,22 +31,26 @@ const petsFavorite = [
   {
     id: 1,
     nome: 'Ronaldo Fenômeno',
-    fotoPet: '/logo.svg'
+    fotoPet: '/logo.svg',
+    genero: 'macho'
   },
   {
     id: 1,
     nome: 'Ronaldo Fenômeno',
-    fotoPet: '/logo.svg'
+    fotoPet: '/logo.svg',
+    genero: 'macho'
   },
   {
     id: 1,
     nome: 'Ronaldo Fenômeno',
-    fotoPet: '/logo.svg'
+    fotoPet: '/logo.svg',
+    genero: 'macho'
   },
   {
     id: 1,
     nome: 'Ronaldo Fenômeno',
-    fotoPet: '/logo.svg'
+    fotoPet: '/logo.svg',
+    genero: 'macho'
   },
 ]
 </script>
@@ -68,6 +72,7 @@ const petsFavorite = [
 
       :fotoPet="pet.fotoPet"
       :nome="pet.nome"
+      :genero="pet.genero"
     />
   </div>
   <h2 class="text-center text-5xl text-[#4c260a] font-[Handlee]">Suas ONGs Salvas:</h2>
