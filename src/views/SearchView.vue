@@ -1,11 +1,11 @@
 <script setup>
-import BannerComponent from '@/components/BannerComponent.vue';
+import BannerComponent from '../components/BannerComponent.vue';
 import PetsAdocao from '@/components/PetsAdocao.vue';
-import { useBannerComponentStore } from '@/stores/BannerComponentStore';
 
+import { useBannerComponentStore } from '../stores/BannerComponentStore';
+const bannerStore = useBannerComponentStore();
 import { usePetStore } from '../stores/PetStore';
 const petStore = usePetStore()
-const bannerStore = useBannerComponentStore();
 
 </script>
 <template>
