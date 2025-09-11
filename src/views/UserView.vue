@@ -3,6 +3,7 @@ import InfosUserComponent from '@/components/InfosUserComponent.vue';
 import OngsComponent from '@/components/OngsComponent.vue';
 import PetsAdocao from '@/components/PetsAdocao.vue';
 
+
 const ongsFavorite = [
   {
     id: 1,
@@ -25,6 +26,8 @@ const ongsFavorite = [
     logo: '/logo.svg'
   }
 ]
+
+
 
 
 const petsFavorite = [
@@ -70,7 +73,8 @@ const petsFavorite = [
  <div class="flex flex-wrap justify-between mt-20 px-60 font-[Sen]">
     <PetsAdocao v-for="pet of petsFavorite" :key="pet.id"
 
-      :fotoPet="pet.fotoPet"
+
+      :fotoPet="pet.foto"
       :nome="pet.nome"
       :genero="pet.genero"
     />
@@ -82,5 +86,6 @@ const petsFavorite = [
       :nome="ong.nome"
     />
   </div>
+
 
 </template>
