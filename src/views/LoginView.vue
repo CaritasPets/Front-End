@@ -13,3 +13,5 @@ const authService = useAuthService()
     </section>
     <img class="w-[100%] transform-[translateY(-80%)] bg-gradient-to-t from-[#B6E1FF] from-50% to-[#03497B] to-50% absolute z-0" src="/blue_waves.svg" alt="">
 </template>
+
+
