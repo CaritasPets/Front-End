@@ -2,10 +2,10 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 const images = [
-  "/public/img_cachorros.svg",
-  "/public/img_gato_e_cachorro.svg",
-  "/public/img_gatoDormindo.svg",
-  "/public/img_gatos.svg"
+  "/img_cachorros.svg",
+  "/img_gato_e_cachorro.svg",
+  "/img_gatoDormindo.svg",
+  "/img_gatos.svg"
 ];
 
 const borderColors = [
