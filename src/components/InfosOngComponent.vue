@@ -4,7 +4,7 @@ const props = defineProps(['ong'])
 
 <template>
   <section class="text-white">
-    <div class="bg-[#03497B] pt-15 px-40 relative z-10">
+    <div class="bg-[#03497B] pt-30 px-40 relative z-10">
       <h2 class="text-7xl font-['Handlee']">
         {{ props?.ong?.nome }}
       </h2>
