@@ -17,8 +17,9 @@ const petStore = usePetStore()
       :waves="storeBannerComponent.propriedadesBanners.banner3.waves" />
   </section>
   <section class="adocao">
+    <h2 class="text-6xl text-[#4C260A] text-center mb-25 mt-10 font-[Handlee]">Pets para Adoção</h2>
     <FilterComponent/>
-    <div class=" flex flex-wrap mx-40 my-30 gap-x-8 justify-center">
+    <div class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
       <PetsAdocao v-for="pet of petStore.propriedades" :key="pet"
         :foto="pet.foto"
         :nome="pet.nome"
