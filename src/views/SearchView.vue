@@ -23,7 +23,7 @@ const petStore = usePetStore()
     </section>
     <section class="lost">
       <h2 class="text-center text-6xl text-[#4c260a] font-[Handlee]">Pets perdidos</h2>
-      <div class=" flex flex-wrap mx-40 my-30 gap-x-8 justify-center">
+      <div class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
         <PetsAdocao v-for="pet of petStore.propriedades" :key="pet"
           :foto="pet.foto"
           :nome="pet.nome"

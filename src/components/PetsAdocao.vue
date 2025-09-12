@@ -7,13 +7,13 @@ function sortBackground() {
 }
 </script>
 <template>
-  <div class="flex flex-col items-center w-full max-w-[240px] min-w-[230px] h-[350px] rounded-4xl mx-7 mb-14 px-5 shadow-[7px_7px_2px_rgba(0,0,0,0.30)] transition-all hover:scale-115 hover:shadow-[10px_10px_5px_rgba(0,0,0,0.4)] duration-300 ease-out active:scale-95 active:shadow-[5px_5px_2px_rgba(0,0,0,0.25)]"
+  <div class="flex flex-col items-center mb-5 mx-2 w-[160px] h-[220px] rounded-4xl px-5 transition-all ease-out hover:opacity-75 sm:mx-6 sm:mb-14 sm:w-[250] sm:h-[230px] md:w-[200px] md:h-[260px] lg:w-[215px] lg:h-[280px]"
     :style="`background: ${sortBackground()}`">
     <RouterLink to="" class="flex flex-col items-center">
-      <img class="w-[90%] h-auto rounded-4xl mt-6 mb-4" :src="props.foto" :alt="`${props.nome}-image`">
-      <div class="flex flex-col items-center">
-        <p class="my-1 text-[1.5rem] text-white text-center truncate overflow-hidden overflow-ellipsis w-55 ">{{ props.nome }}</p>
-        <p class="my-1 text-[1.5rem] text-white -mt-2 mb-5.5 text-center">{{ props.genero }}</p>
+      <img class="w-[90%] h-auto rounded-4xl mt-4 mb-2 lg:w-[95%] ms:w-[80%] md:w-[90%] " :src="props.foto" :alt="`${props.nome}-image`">
+      <div class="flex flex-col items-center ">
+        <p class="my-1 text-[1rem]  text-white text-center truncate overflow-hidden w-35 sm:text-[1.3rem] md:w-40">{{ props.nome }}</p>
+        <p class="my-1 text-[0.8rem]  text-white -mt-2 mb-5.5 text-center sm:text-[1rem]">{{ props.genero }}</p>
       </div>
     </RouterLink>
   </div>

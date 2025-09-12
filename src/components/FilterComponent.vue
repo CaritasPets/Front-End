@@ -17,7 +17,6 @@ const reset = () => {
 </script>
 <template>
   <section class="flex flex-col items-center">
-    <h2 class="text-7xl text-[#4C260A] text-center mb-25">Pets para Adoção</h2>
     <div class="flex flex-col items-center w-full">
       <button class="flex gap-4 text-5xl rounded-4xl bg-[#FFE078] px-13 py-3 cursor-pointer text-[#4C260A] transition duration-300" @click="open = !open">
         <h2 class="">{{ filterStore.contador }}</h2>
