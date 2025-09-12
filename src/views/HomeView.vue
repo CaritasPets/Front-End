@@ -1,7 +1,7 @@
 <script setup>
-    import CardFuncionalidade from '../components/CardFuncionalidade.vue';
-    import InfoAdocao from '../components/InfoAdocao.vue';
-    import RecolhivelComponent from '../components/RecolhivelComponent.vue';
+    import CardFuncionalidade from '../components/HomeComponents/CardFuncionalidade.vue';
+    import InfoAdocao from '../components/HomeComponents/InfoAdocao.vue';
+    import RecolhivelComponent from '../components/HomeComponents/RecolhivelComponent.vue';
     import BannerComponent from '@/components/BannerComponent.vue';
 
     import { useCardFuncionalidadeStore } from '../stores/CardFuncionalidadeStore';
@@ -22,19 +22,20 @@
         :waves="storeBannerComponent.propriedadesBanners.banner1.waves"
       />
     </section>
-    <section class="flex justify-between flex-wrap py-10 px-30">
+    <section class="flex justify-center flex-wrap mx-40 gap-10">
         <CardFuncionalidade v-for="card in storeCardFuncionalidades.propriedades" :key="card"
             :icon="card.icon"
             :icon-background="card.iconBackground"
             :text="card.text"
             :background="card.background"
+            :link="card.link"
         />
     </section>
-    <section class="my-10">
+    <section class="mx-40 mt-25">
         <InfoAdocao/>
     </section>
-    <section class="bg-[#FFE078] my-30 mx-30 px-10 py-10 rounded-4xl">
-        <h2 class="text-center text-5xl text-[#361300] py-10">Dúvidas Frequentes</h2>
+    <section class="bg-[#FFE078] my-30 mx-40 px-10 py-10 rounded-4xl">
+        <h2 class="text-center text-6xl text-[#361300] py-10 font-[Handlee]">Dúvidas Frequentes</h2>
         <RecolhivelComponent v-for="recolhivel in recolhivelStore.propriedades" :key="recolhivel"
             :icon="recolhivel.icon"
             :title="recolhivel.title"
