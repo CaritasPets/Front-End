@@ -10,7 +10,7 @@ import OngForm from '../components/OngForm.vue'
     <OngForm class="pl-15 z-10 relative" />
   </section>
   <img
-    class="w-[100%] transform-[translateY(-50%)] bg-[#FFF493] absolute z-0"
+    class="w-[100%] transform-[translateY(-70%)] bg-[#FFF493] absolute z-0"
     src="/cream_waves.svg"
     alt="bg-image-waves" />
 </template>
