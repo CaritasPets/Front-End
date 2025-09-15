@@ -40,7 +40,11 @@ const routes = [
         name: 'procura-se',
         component: () => import("@/views/SearchView.vue")
     },
-
+    {
+        path: '/procura-se/register',
+        name: 'procura-se',
+        component: () => import("@/views/CadastroPerdido.vue")
+    },
     //Not found
     {
         path: '/:pathMatch(.*)*',

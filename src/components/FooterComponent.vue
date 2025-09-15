@@ -5,7 +5,9 @@ const route = useRoute()
 function validateFooter(url) {
   if(url.slice(0, 5) == '/user'){
     return false
-  } else{
+  } else if(url == '/procura-se/register'){
+    return false
+  } else {
     return true
   }
 }
