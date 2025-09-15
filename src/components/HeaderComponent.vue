@@ -17,7 +17,7 @@ const route = useRoute();
 
 const headerBackground = computed(() => {
   if (route.path === "/ongs") return "#03497B";
-  if (route.path === "/user/profile" || route.path === "/user/login" || route.path === "/user/sign-up") return "#03497B";
+  if (route.path.slice(0,5) == "/user") return "#03497B";
   if (route.path === "/adote") return "#FF7700";
   if (route.path === "/procura-se") return "#FDA202";
   if (route.path === "/sobre") return "#104C00";
