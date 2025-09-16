@@ -50,6 +50,11 @@ const routes = [
         component: () => import("@/views/SearchView.vue")
     },
     {
+        path: '/adote/register',
+        name: 'adote-register',
+        component: () => import("@/views/PetRegisterPage.vue")
+    },
+    {
         path: '/procura-se/register',
         name: 'procura-se',
         component: () => import("@/views/CadastroPerdido.vue")

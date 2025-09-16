@@ -19,6 +19,7 @@ const route = useRoute();
 
 
 const headerBackground = computed(() => {
+  if(route.path === "/adote/register") return "#FFF493";
   if (route.path === "/ongs") return "#03497B";
   if (route.path === "/user/sign-up") return "#FFF493";
   if (route.path === "/perfil") return "#03497B";
@@ -33,7 +34,7 @@ const headerBackground = computed(() => {
 
 
 const linkBaseColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/user/profile") {
+  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/user/profile" || route.path === "/adote/register") {
     return "#1E0B00";
   }
   return "#DFB468";
@@ -41,7 +42,7 @@ const linkBaseColor = computed(() => {
 
 
 const menuIconColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/user/profile") {
+  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/user/profile" ||  route.path === "/adote/register") {
     return "#1E0B00";
   }
   return "#DFB468";
