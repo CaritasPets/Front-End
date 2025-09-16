@@ -7,7 +7,9 @@ function validateFooter(url) {
     return false
   } else if(url == '/ongs/sign-up'){
     return false
-  } else{
+  } else if(url == '/procura-se/register'){
+    return false
+  } else {
     return true
   }
 }
