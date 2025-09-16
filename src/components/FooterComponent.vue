@@ -17,9 +17,9 @@ function validateFooter(url) {
 <template>
   <div
     v-if="validateFooter(route.path)"
-    class="bg-[url('/footer.svg')] bg-no-repeat bg-bottom bg-[length:100%] pt-[25%] pb-20 sm:pt-[60%] md:pt-[60%] lg:pt-[60%]
+    class="bg-[url('/footer.svg')] bg-no-repeat bg-bottom bg-[length:100%] pt-[25%] pb-20 sm:pb-20 lg:pb-80 md:pb-50 sm:pt-[60%] md:pt-[60%] lg:pt-[60%]
        ">
- <p class="text-center text-sm md:text-base font-[Sen]">
+ <p class="text-center text-sm md:text-base font-[Sen] ">
     &copy; 2025 CaritasPets. Todos os direitos reservados.
   </p>
   <p class="text-center text-sm md:text-base font-[Sen] ">
