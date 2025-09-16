@@ -8,6 +8,8 @@ const urlStore = useRequestUrlStore()
 
 export const useOngService = defineStore('ongService', () => {
     const inError = ref(false)
+    const statusError = ref('')
+    const statusText = ref('')
     const getOngs = async () => {
         try{
             const response = await api.get(urlStore.organizacoes)
@@ -16,7 +18,9 @@ export const useOngService = defineStore('ongService', () => {
             inError.value = false
         } catch(err){
             console.log(err)
-            inError.value = true          
+            inError.value = true
+            statusError.value = err.response.status 
+            statusText.value = err.response.statusText         
         }
     }
     
@@ -35,6 +39,8 @@ export const useOngService = defineStore('ongService', () => {
     return {
         getOngs,
         postOng,
-        inError
+        inError,
+        statusError,
+        statusText
     }
 })

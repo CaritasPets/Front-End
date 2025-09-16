@@ -2,18 +2,22 @@
 import { ref, computed } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 
+
 const navItems = [
 
+
   { label: "Home", icon: "mdi mdi-home", link: "/" },
-  { label: "Ongs", icon: "mdi mdi-hand-heart", link: "/ongs" },
+  { label: "ONGs", icon: "mdi mdi-hand-heart", link: "/ongs" },
   { label: "Adote", icon: "mdi mdi-heart", link: "/adote" },
   { label: "Procura-se", icon: "mdi mdi-magnify", link: "/procura-se" },
   { label: "Sobre", icon: "mdi mdi-information", link: "/sobre" },
   { label: "Perfil", icon: "mdi mdi-account", link: "/user/profile" },
 ];
 
+
 const mobileMenuOpen = ref(false);
 const route = useRoute();
+
 
 const headerBackground = computed(() => {
   if (route.path === "/ongs") return "#03497B";
@@ -27,12 +31,14 @@ const headerBackground = computed(() => {
   return "#104C00";
 });
 
+
 const linkBaseColor = computed(() => {
   if (route.path === "/adote" || route.path === "/procura-se") {
     return "#1E0B00";
   }
   return "#DFB468";
 });
+
 
 const menuIconColor = computed(() => {
   if (route.path === "/adote" || route.path === "/procura-se") {
@@ -41,7 +47,9 @@ const menuIconColor = computed(() => {
   return "#DFB468";
 });
 
+
 </script>
+
 
 <template>
   <div
@@ -52,8 +60,9 @@ const menuIconColor = computed(() => {
       <img src="/logo_noBackground.svg" alt="Logo" />
     </RouterLink>
 
+
     <nav class="hidden xl:block">
-      <ul class="flex gap-30 mr-30">
+      <ul class="flex gap-25 mr-10">
         <li v-for="(item, index) in navItems" :key="index" class="list-none">
           <RouterLink
             :to="item.link"
@@ -66,12 +75,13 @@ const menuIconColor = computed(() => {
               color: route.path !== item.link ? linkBaseColor : '#DFB468'
             }"
           >
-            <span :class="item.icon"></span>
+            <span :class="item.icon" class="text-xl mr-1"></span>
             <h2 class="text-xl">{{ item.label }}</h2>
           </RouterLink>
         </li>
       </ul>
     </nav>
+
 
     <button
       @click="mobileMenuOpen = !mobileMenuOpen"
@@ -82,10 +92,11 @@ const menuIconColor = computed(() => {
       <span v-else class="mdi mdi-close"></span>
     </button>
 
+
     <transition name="slide-fade">
       <div
         v-if="mobileMenuOpen"
-        class="absolute top-full left-0 w-full shadow-lg p-5 flex flex-col gap-5 md:hidden z-50 transition-colors duration-500"
+        class="absolute top-full left-0 w-full shadow-lg p-5 flex flex-col gap-5 xl:hidden z-50 transition-colors duration-500"
         :style="`background: ${headerBackground}`"
       >
         <ul>
@@ -111,6 +122,7 @@ const menuIconColor = computed(() => {
     </transition>
   </div>
 </template>
+
 
 <style scoped>
 .slide-fade-enter-active {

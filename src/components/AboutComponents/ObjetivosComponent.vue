@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-    <h2 class="text-center text-6xl text-[#4c260a] mt-30">Nosso Objetivo</h2>
-    <div class="flex justify-between items-center">
-        <p class= "text-2xl my-10 mr-15 text-justify">
+    <h2 class="text-center text-5xl text-[#4c260a] font-[Handlee] md:text-6xl">Nosso Objetivo</h2>
+    <div class="block items-center lg:flex lg:justify-between">
+        <p class= "text-xl my-10 mt-10 text-justify font-[Sen] lg:text-2xl lg:mt-20">
         Nosso objetivo ao desenvolver esse projeto é reunir todas as ongs de Joinville no nosso site para facilitar e motivar a adoção, processo que transforma vidas, não só dos pets que podem ter sido vítimas de maus-tratos e abandono, mas também de humanos, que ao adotar conhecem uma nova forma de amar.
         </p>
         <p>

@@ -18,13 +18,13 @@
         :waves="storeBannerComponent.propriedadesBanners.bannerAbout.waves"
       />
     </section>
-    <section class="mx-40">
+    <section class="mx-10 mt-20 md:mx-20 lg:mx-40">
       <QuemSomosComponent></QuemSomosComponent>
     </section>
-    <section class="mx-40">
+    <section class="mx-10 mt-20 md:mx-20 lg:mx-40">
       <ObjetivosComponent></ObjetivosComponent>
     </section>
-    <section class="mx-40">
+    <section class="mx-10 mt-20 md:mx-20 lg:mx-40">
       <VisitaComponent></VisitaComponent>
     </section>
 </template>

@@ -45,6 +45,13 @@ const routes = [
         name: 'procura-se',
         component: () => import("@/views/SearchView.vue")
     },
+
+    //Not found
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'Not Found',
+        component: () => import('@/views/NotFoundPage.vue')
+    }
 ];
 
 const router = createRouter({
