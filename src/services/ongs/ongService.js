@@ -1,4 +1,5 @@
 import api from "../../plugins/api";
+import { ref } from "vue";
 import { defineStore } from "pinia";
 import { useOngStore } from "../../stores/OngsStore";
 import { useRequestUrlStore } from "../../stores/RequestsUrls";
@@ -6,14 +7,20 @@ const ongStore = useOngStore();
 const urlStore = useRequestUrlStore()
 
 export const useOngService = defineStore('ongService', () => {
+    const inError = ref(false)
+    const statusError = ref('')
+    const statusText = ref('')
     const getOngs = async () => {
         try{
             const response = await api.get(urlStore.organizacoes)
             ongStore.propriedades = response.data
             console.log('Ongs puxadas com sucesso!')
+            inError.value = false
         } catch(err){
             console.log(err)
-            window.location.href = '/user/login'           
+            inError.value = true
+            statusError.value = err.response.status 
+            statusText.value = err.response.statusText         
         }
     }
     
@@ -31,6 +38,9 @@ export const useOngService = defineStore('ongService', () => {
     }
     return {
         getOngs,
-        postOng
+        postOng,
+        inError,
+        statusError,
+        statusText
     }
 })

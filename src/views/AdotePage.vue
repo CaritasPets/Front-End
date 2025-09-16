@@ -16,14 +16,18 @@ const petStore = usePetStore()
       :text="storeBannerComponent.propriedadesBanners.banner3.text"
       :waves="storeBannerComponent.propriedadesBanners.banner3.waves" />
   </section>
-  <section class="adocao">
-    <FilterComponent/>
-    <div class=" flex flex-wrap mx-40 my-30 gap-x-8 justify-center">
-      <PetsAdocao v-for="pet of petStore.propriedades" :key="pet"
-        :foto="pet.foto"
-        :nome="pet.nome"
-        :genero="pet.genero"
-      />
-    </div>
-  </section>
+    <section class="m-30 ">
+      <h2 class="text-6xl text-[#4C260A] text-center mb-25 mt-10 font-[Handlee]">Pets para Adoção</h2>
+      <FilterComponent/>
+      <div v-if="petStore.filteredPropriedades.length > 0" class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
+        <PetsAdocao v-for="pet of petStore.filteredPropriedades" :key="pet.id"
+          :foto="pet.foto"
+          :nome="pet.nome"
+          :genero="pet.genero"
+        />
+      </div>
+      <div v-else class="text-center text-3xl text-[#4C260A] font-[Handlee] my-20">
+        <p>Não existem pets cadastrados com esses filtros.</p>
+      </div>
+    </section>
 </template>

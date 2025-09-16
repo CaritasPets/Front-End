@@ -12,6 +12,11 @@ const routes = [
         component: () => import("@/views/OngsPage.vue"),
     },
     {
+        path: '/ongs/profile',
+        name: 'ong-profile',
+        component: () => import("@/views/OngProfileView.vue")
+    },
+    {
         path: '/adote',
         component: () => import("@/views/AdotePage.vue")
     },
@@ -29,9 +34,27 @@ const routes = [
         component: () => import("@/views/LoginView.vue")
     },
     {
+
+        path: '/user/profile',
+        name: 'user-profile',
+        component: () => import("@/views/UserView.vue")
+    },
+    {
         path: '/sobre',
         name: 'sobre nós',
         component: () => import("@/views/AboutView.vue")
+    },
+    {
+        path: '/procura-se',
+        name: 'procura-se',
+        component: () => import("@/views/SearchView.vue")
+    },
+
+    //Not found
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'Not Found',
+        component: () => import('@/views/NotFoundPage.vue')
     }
 ];
 

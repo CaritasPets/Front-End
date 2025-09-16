@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
+
 export const useBannerComponentStore = defineStore('bannerStore', () => {
   const propriedadesBanners = ref({
     banner1: {
@@ -20,7 +21,7 @@ export const useBannerComponentStore = defineStore('bannerStore', () => {
     banner3: {
       background: '#FF7700',
       image: '/img_banner3.svg',
-      title: 'Adote o novo membro da sua família',
+      title: 'Adote o novo membro da sua família.',
       text: 'lorem ipsulom doloriam',
       waves: '/orange_waves.svg',
     },
@@ -28,11 +29,23 @@ export const useBannerComponentStore = defineStore('bannerStore', () => {
       background: '#104C00',
       image: '/img_bannerAbout.svg',
       title: 'Sobre Nós',
-      text: 'Conheça nossa equipe e objetivos do site',
+      text: 'Conheça nossa equipe e objetivos do site.',
       waves: '/green_waves.svg'
+    },
+    bannerSearch: {
+      background: '#FDA202',
+      image: '/banner_image_search.svg',
+      title: 'Perdeu seu melhor amigo?',
+      text: 'Divulgue-o aqui para encontrá-lo.',
+      waves: '/yellow_waves.svg',
+      buttonBoolean: true,
+      buttonText: 'Cadastrar pet perdido.',
+      buttonLink: '/',
     },
   })
   return {
     propriedadesBanners,
   }
 })
+
+
