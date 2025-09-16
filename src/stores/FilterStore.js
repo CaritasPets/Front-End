@@ -52,29 +52,6 @@ export const useFilterStore = defineStore("filterStore", () => {
     {
       background: "#104C00",
       background2: "#587911",
-      title: "Idade",
-      options: [
-        {
-          option: "0-1 anos",
-          value: "0-1"
-        },
-        {
-          option: "2-4 anos",
-          value: "2-4"
-        },
-        {
-          option: "5-7 anos",
-          value: "5-7"
-        },
-        {
-          option: "8 anos ou mais",
-          value: "8+"
-        },
-      ],
-    },
-    {
-      background: "#104C00",
-      background2: "#587911",
       title: "Porte",
       options: [
         {
@@ -149,29 +126,7 @@ export const useFilterStore = defineStore("filterStore", () => {
         }
       ],
     },
-    {
-      background: "#FF7700",
-      background2: "#FDA202",
-      title: "Peso",
-      options: [
-        {
-          option: "Até 5kg",
-          value: "-5"
-        },
-        {
-          option: "5kg a 15kg",
-          value: "5-15"
-        },
-        {
-          option: "15kg a 30kg",
-          value: "15-30"
-        },
-        {
-          option: "Acima de 30kg",
-          value: "30+"
-        },
-      ],
-    },
+    
   ]);
 
   return {
