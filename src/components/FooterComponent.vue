@@ -5,6 +5,8 @@ const route = useRoute()
 function validateFooter(url) {
   if(url.startsWith('/user') || url.startsWith('/ongs/profile')){
     return false
+  } else if(url == '/ongs/sign-up'){
+    return false
   } else{
     return true
   }

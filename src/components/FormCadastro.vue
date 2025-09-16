@@ -70,6 +70,7 @@ const handleRegister = async () => {
             placeholder="Usuario."
             type="text"
             v-model="form.username"
+            required
           />
         </li>
         <li class="flex flex-col w-[100%]">
@@ -79,6 +80,8 @@ const handleRegister = async () => {
             placeholder="Senha."
             type="password"
             v-model="form.password"
+            required
+
           />
         </li>
         <li class="flex flex-col w-[100%]">
@@ -88,6 +91,7 @@ const handleRegister = async () => {
             placeholder="Email."
             type="email"
             v-model="form.email"
+            required
           />
         </li>
         <li class="flex flex-col w-[100%]">
@@ -97,6 +101,7 @@ const handleRegister = async () => {
             placeholder="Nome."
             type="text"
             v-model="form.nome"
+            required
           />
         </li>
         <li class="w-full flex justify-baseline gap-10 mt-20">
@@ -122,6 +127,7 @@ const handleRegister = async () => {
             placeholder="CPF."
             type="text"
             v-model="form.cpf"
+            required
           />
         </li>
         <li class="flex flex-col w-[100%]">
@@ -131,6 +137,7 @@ const handleRegister = async () => {
             placeholder="Telefone."
             type="text"
             v-model="form.telefone"
+            required
           />
         </li>
         <li class="flex flex-col w-[100%]">
