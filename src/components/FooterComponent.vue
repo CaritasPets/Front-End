@@ -9,6 +9,8 @@ function validateFooter(url) {
     return false
   } else if(url == '/procura-se/register'){
     return false
+  } else if(url == '//'){
+    return false
   } else {
     return true
   }
