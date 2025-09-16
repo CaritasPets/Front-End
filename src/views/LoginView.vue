@@ -13,3 +13,5 @@ const authService = useAuthService()
     </section>
     <img class="w-full sm:translate-y-[-20%] md:translate-y-[-40%] bg-[#FFF493] absolute z-0" src="/beige_waves.svg" alt="">
 </template>
+
+

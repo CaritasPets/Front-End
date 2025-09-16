@@ -3,7 +3,9 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute()
 function validateFooter(url) {
-  if(url.slice(0, 5) == '/user'){
+  if(url.startsWith('/user') || url.startsWith('/ongs/profile')){
+    return false
+  } else if(url == '/ongs/sign-up'){
     return false
   } else{
     return true
@@ -14,7 +16,6 @@ function validateFooter(url) {
 
 <template>
   <div
-
     v-if="validateFooter(route.path)"
     class="bg-[url('/footer.svg')] bg-no-repeat bg-bottom bg-[length:100%] pt-[25%] pb-20 sm:pt-[60%] md:pt-[60%] lg:pt-[60%]
        ">
