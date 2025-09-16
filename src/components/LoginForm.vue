@@ -13,21 +13,21 @@ const password = ref('')
 <template>
   <form
     @submit.prevent="authService.login(urlStore.token, { username, password })"
-    class="flex flex-col items-center gap-y-12"
+    class="flex flex-col items-center gap-y-8 w-full md:mt-20 md:ml-50 max-w-md px-4 sm:px-0"
   >
-    <div class="flex flex-col gap-y-2">
-      <label class="text-2xl text-white">Nome de usuário:</label>
+    <div class="flex flex-col gap-y-2 w-full">
+      <label class="text-2xl text-[#1E0B00] font-[Sen]">Nome de usuário:</label>
       <input
-        class="text-lg text-[#FDA202] border-2 border-[#FDA202] rounded-xl px-2 py-2 w-100"
+        class="text-base sm:text-lg text-[#FDA202] border-2 border-[#FDA202] rounded-xl px-4 py-2 w-full"
         placeholder="Nome de usuário"
         v-model="username"
         required
       />
     </div>
-    <div class="flex flex-col gap-y-2">
-      <label class="text-2xl text-white">Senha:</label>
+    <div class="flex flex-col gap-y-2 w-full">
+      <label class="text-2xl text-[#1E0B00] font-[Sen]">Senha:</label>
       <input
-        class="text-lg text-[#FF7700] border-2 border-[#FF7700] rounded-xl px-2 py-2 w-100"
+        class="text-base sm:text-lg text-[#FDA202] border-2 border-[#FDA202] rounded-xl px-4 py-2 w-full"
         placeholder="Senha"
         v-model="password"
         type="password"
@@ -36,7 +36,7 @@ const password = ref('')
     </div>
     <button
       type="submit"
-      class="text-xl rounded-xl py-2 px-6 bg-[#FDA202] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FDA202] hover:text-[#FDA202]"
+      class="text-lg sm:text-xl rounded-xl py-2 px-6 bg-[#FDA202] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FDA202] hover:text-[#FDA202] font-[Sen]"
     >
       Fazer Login
     </button>
