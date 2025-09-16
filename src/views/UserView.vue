@@ -2,8 +2,10 @@
 import InfosUserComponent from '@/components/InfosUserComponent.vue';
 import OngsComponent from '@/components/OngsComponent.vue';
 import PetsAdocao from '@/components/PetsAdocao.vue';
-
-
+import { useAuthService } from '../services/Auth';
+import { ref, onMounted } from 'vue';
+const authService = useAuthService();
+const profile = ref({});
 const ongsFavorite = [
   {
     id: 1,
@@ -56,24 +58,24 @@ const petsFavorite = [
     genero: 'macho'
   },
 ]
+onMounted(async () => {
+  const token = localStorage.getItem('accessToken')
+  if (token) {
+    profile.value = await authService.profile();
+  } else {
+    alert('Você precisa fazer login primeiro.')
+    window.location.href = '/user/login'
+  }
+})
 </script>
 <template>
   <InfosUserComponent
-    :user="{
-      nome: 'Breno Otário Rohregger',
-      foto: '/logo.svg',
-      username: 'breno_rohregger',
-      telefone: '47984542516',
-      cpf: '11251526993',
-      data_nascimento: '04/05/2008',
-      email: 'brenoot0405@gmail.com'
-    }"
+    :user="profile"
+    @logout="authService.logOut"
   />
   <h2 class="text-center text-5xl text-[#4c260a] font-[Handlee]">Seus Pets salvos:</h2>
  <div class="flex flex-wrap justify-between mt-20 px-60 font-[Sen]">
     <PetsAdocao v-for="pet of petsFavorite" :key="pet.id"
-
-
       :fotoPet="pet.foto"
       :nome="pet.nome"
       :genero="pet.genero"

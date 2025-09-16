@@ -1,5 +1,6 @@
 <script setup>
 const props = defineProps(['user'])
+defineEmits(['logout'])
 </script>
 
 <template>
@@ -11,9 +12,9 @@ const props = defineProps(['user'])
         </h2>
         <div class="flex gap-10 pt-10">
           <img
-            :src="props?.user?.foto"
+            :src="props?.user?.foto_perfil?.url"
             alt="Foto do usuário"
-            class="w-96 rounded-[115px]"
+            class="h-120 rounded-[115px]"
           />
           <ul class="text-left space-y-6 flex flex-col justify-center ml-4 font-[Sen]">
             <li class="text-3xl"><strong>Username:</strong> {{ props?.user?.username }}</li>
@@ -26,13 +27,18 @@ const props = defineProps(['user'])
           </ul>
         </div>
       </div>
-      <p class="text-center">
+      <div class="flex justify-center gap-10">
         <button
           class="mt-15 px-6 py-2 z-10 relative bg-yellow-500 text-black font-semibold rounded-lg border-2 border-transparent transition-all duration-500 cursor-pointer text-center hover:bg-transparent hover:border-[#FDA202] hover:text-[#FDA202]"
         >
           Alterar informações
         </button>
-      </p>
+        <button @click="$emit('logout')"
+          class="mt-15 px-6 py-2 z-10 relative bg-red-500 text-black font-semibold rounded-lg border-2 border-transparent transition-all duration-500 cursor-pointer text-center hover:bg-transparent hover:border-red-500 hover:text-red-500"
+        >
+          Sair
+        </button>
+      </div>
     </div>
     <img
       src="/blue_waves.svg"
