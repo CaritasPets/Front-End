@@ -40,6 +40,11 @@ const routes = [
         name: 'procura-se',
         component: () => import("@/views/SearchView.vue")
     },
+    {
+        path: '/adote/register',
+        name: 'adote-register',
+        component: () => import("@/views/PetRegisterPage.vue")
+    },
 
     //Not found
     {
