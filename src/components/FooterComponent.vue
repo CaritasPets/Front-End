@@ -3,11 +3,10 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute()
 function validateFooter(url) {
-  if(url.slice(0, 5) == '/user'){
-    return false
-  } else{
-    return true
-  }
+  if(url.slice(0, 5) == '/user') return false
+  if(url == '/adote/register') return false
+  return true
+  
 }
 
 </script>

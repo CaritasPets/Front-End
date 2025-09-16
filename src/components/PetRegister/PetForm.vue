@@ -1,132 +1,178 @@
 <script setup>
-import { ref } from 'vue';
-    const displayTest = ref(false);
-    const racas = ref([
-        {
-            nome: 'Pastor Alemão',
-            value: 'pastoralemao',
-        },
-        {
-            nome:'Pinsher',
-            value: 'pinsher'
-        },
-        {
-            nome: 'Hot Wailer',
-            value:'hotwailer'
-        }
-    ])
-    const pet = ref({
-        nome: '',
-        especie: 'cachorro', //default
-        genero: 'macho', //default
-        porte: 'grande', //default
-        castrado: '', 
-        foto: null,
-        raca: '',
-        vacinado: '',
-    })
+import { ref } from 'vue'
+import { useRacaStore } from '../../stores/RacaStore'
+const racaStore = useRacaStore()
+const file = ref(null)
+const previewUrl = ref(null)
+const pet = ref({
+  nome: '',
+  especie: 'cachorro', //default
+  genero: 'macho', //default
+  porte: 'grande', //default
+  castrado: '',
+  raca: '',
+  vacinado: '',
+})
+
+function onFileChange(event) {
+  const selectedFile = event.target.files[0]
+  if (selectedFile) {
+    if (!selectedFile.type.startsWith('image/')) {
+      return alert('Por favor, selecione apenas arquivos de imagem.')
+    }
+
+    if (selectedFile.size > 5 * 1024 * 1024) {
+      return alert('A imagem deve ter no máximo 5MB.')
+    }
+
+    file.value = selectedFile
+    if (selectedFile) {
+      previewUrl.value = URL.createObjectURL(selectedFile)
+    }
+  }
+}
 </script>
 <template>
-    <form class="py-40" @submit.prevent="">
-        <ul>
-            <li>
-                <p>*Nome do Pet (ou apelido):</p>
-                <input type="text" v-model="pet.nome">
-            </li>
-            <li>
-                <p>*Epécie do pet</p>
-                <select v-model="pet.especie">
-                    <option value="cachorro">Cachorro</option>
-                    <option value="gato">Gato</option>
-                    <option value="passaro">Passaro</option>
-                    <option value="outro">Outro</option>
-                </select>
-            </li>
-            <li>
-                <p>Gênero do Pet</p>
-                <select v-model="pet.genero">
-                    <option value="macho">Macho</option>
-                    <option value="femea">Fêmea</option>
-                </select>
-            </li>
-            <li>
-                <p>Porte do Pet</p>
-                <select v-model="pet.porte">
-                    <option value="pequeno">Pequeno</option>
-                    <option value="medio">Médio</option>
-                    <option value="grande">Grande</option>
-                </select>
-            </li>
-            <li>
-                <p>O pet é castrado?</p>
-                <div>
-                    <label>
-                        <input type="radio" value="sim" v-model="pet.castrado">
-                        Sim
-                    </label>
-                    <label>
-                        <input type="radio" value="nao" v-model="pet.castrado">
-                        Não
-                    </label>
-                    <label>
-                        <input type="radio" value="nao-sei" v-model="pet.castrado">
-                        Não sei
-                    </label>
-                </div>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <p>Raça:</p>
-                <input list="racas" v-model="pet.raca">
-                <div>
-                    <datalist id="racas">
-                        <option v-for="raca of racas" :value="raca.nome" :key="raca.value">
-                            {{ raca.value }}
-                        </option>
-                    </datalist>
-                    <span class="mdi mdi-pencil-circle"></span>
-                </div>
-                <div>
-                    <input type="text">
-                    <input type="text">
-                    <span class="mdi mdi-check-circle"></span>
-                    <span class="mdi mdi-alpha-x-circle"></span>
-                </div>
-            </li>
-            <li>
-                <p>O pet é vacinado?</p>
-                <div>
-                    <label>
-                        <input type="radio" value="sim" v-model="pet.vacinado">
-                        Totalmente
-                    </label>
-                    <label>
-                        <input type="radio" value="parcialmente" v-model="pet.vacinado">
-                        Parcialmente
-                    </label>
-                    <label>
-                        <input type="radio" value="nao" v-model="pet.vacinado">
-                        Não
-                    </label>
-                    <label>
-                        <input type="radio" value="nao-sei" v-model="pet.vacinado">
-                        Não sei
-                    </label>
-                </div>
-            </li>
-            <li>
-                <p>Foto do pet:</p>
-            </li>
-        </ul>
-        <div>
-            <button type="reset">Limpar</button>
-            <button type="submit">Cadastrar Pet</button>
-        </div>
-        <div v-if="displayTest">
-            <p v-for="item of pet" :key="itens">
-                {{ item }}
-            </p>
-        </div>
-    </form>
+  <form class="flex flex-col items-center gap-20">
+    <div class="flex gap-40">
+      <ul class="flex flex-col gap-4">
+        <li>
+          <p class="text-2xl">*Nome do Pet (ou apelido):</p>
+          <input
+            class="text-2xl text-[#104C00] py-1 px-2 my-2 border-2 rounded-xl w-120"
+            type="text"
+            placeholder="Nome do pet"
+            v-model="pet.nome"
+          />
+        </li>
+        <li>
+          <p class="text-2xl">*Epécie do pet</p>
+          <select
+            v-model="pet.especie"
+            class="text-2xl text-[#03497B] py-1 px-2 my-2 border-2 rounded-xl w-120 bg-[#FFF493] cursor-pointer"
+          >
+            <option value="cachorro">Cachorro</option>
+            <option value="gato">Gato</option>
+            <option value="passaro">Pássaro</option>
+            <option value="outro">Outro</option>
+          </select>
+        </li>
+        <li>
+          <p class="text-2xl">Gênero do Pet</p>
+          <select
+            v-model="pet.genero"
+            class="text-2xl text-[#FDA202] py-1 px-2 my-2 border-2 rounded-xl w-120 bg-[#FFF493] cursor-pointer"
+          >
+            <option value="macho">Macho</option>
+            <option value="femea">Fêmea</option>
+          </select>
+        </li>
+        <li>
+          <p class="text-2xl">Porte do Pet</p>
+          <select
+            v-model="pet.porte"
+            class="text-2xl text-[#587911] py-1 px-2 my-2 border-2 rounded-xl w-120 bg-[#FFF493] cursor-pointer"
+          >
+            <option value="pequeno">Pequeno</option>
+            <option value="medio">Médio</option>
+            <option value="grande">Grande</option>
+          </select>
+        </li>
+        <li class="flex flex-col gap-2">
+          <p class="text-2xl">O pet é castrado?</p>
+          <div class="flex gap-10">
+            <label class="flex items-center gap-2">
+              <input type="radio" class="size-6 cursor-pointer" value="sim" v-model="pet.castrado" />
+              Sim
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" class="size-6 cursor-pointer" value="nao" v-model="pet.castrado" />
+              Não
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" class="size-6 cursor-pointer" value="nao-sei" v-model="pet.castrado" />
+              Não sei
+            </label>
+          </div>
+        </li>
+      </ul>
+      <ul class="flex flex-col gap-4">
+        <li>
+          <p class="text-2xl">Raça:</p>
+          <input
+            list="racas"
+            v-model="pet.raca"
+            class="text-2xl text-[#FDA202] py-1 px-2 my-2 border-2 rounded-xl w-120 bg-[#FFF493]"
+            placeholder="Raça (se tiver)"
+          />
+          <div>
+            <datalist v-if="pet.especie == 'cachorro'" id="racas" class="text-6xl">
+              <option v-for="raca of racaStore.racasCachorro" :value="raca.value" :key="raca.value">
+                {{ raca.nome }}
+              </option>
+            </datalist>
+            <datalist v-else-if="pet.especie == 'gato'" id="racas" class="text-6xl">
+              <option v-for="raca of racaStore.racasGatos" :value="raca.value" :key="raca.value">
+                {{ raca.nome }}
+              </option>
+            </datalist>
+            <datalist v-else id="racas" class="text-6xl">
+              <option v-for="raca of racaStore.racasPassaro" :value="raca.value" :key="raca.value">
+                {{ raca.nome }}
+              </option>
+            </datalist>
+          </div>
+        </li>
+        <li class="flex flex-col gap-2">
+          <p class="text-2xl">O pet é vacinado?</p>
+          <div class="flex gap-10">
+            <label class="flex items-center gap-2">
+              <input class="size-6 cursor-pointer" type="radio" value="sim" v-model="pet.vacinado" />
+              Totalmente
+            </label>
+            <label class="flex items-center gap-2">
+              <input class="size-6 cursor-pointer" type="radio" value="parcialmente" v-model="pet.vacinado" />
+              Parcialmente
+            </label>
+            <label class="flex items-center gap-2">
+              <input class="size-6 cursor-pointer" type="radio" value="nao" v-model="pet.vacinado" />
+              Não
+            </label>
+            <label class="flex items-center gap-2">
+              <input class="size-6 cursor-pointer" type="radio" value="nao-sei" v-model="pet.vacinado" />
+              Não sei
+            </label>
+          </div>
+        </li>
+        <li class="flex flex-col w-[100%]">
+          <p class="text-2xl text-[#1E0B00]">Foto de Perfil</p>
+          <input id="fileInput" class="hidden" type="file" @change="onFileChange" />
+          <label for="fileInput" class="w-50 h-60 my-2 cursor-pointer">
+            <img
+              v-if="file"
+              class="w-full h-full rounded-2xl hover:opacity-50 transition-all duration-500"
+              :src="previewUrl"
+              alt="foto-selecionada"
+            />
+            <img
+              v-else
+              class="w-full h-full rounded-2xl bg-amber-50 hover:opacity-50 transition-all duration-500"
+              src="/pet_default.svg"
+              alt=""
+            />
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div class="flex gap-20">
+      <button class="text-xl text-[#FFF493] rounded-xl py-2 px-6 bg-[#03497B] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#03497B] hover:text-[#03497B]" type="reset">
+        <span class="mdi mdi-delete-outline"></span>
+        Limpar
+      </button>
+      <button class="text-xl text-[#FFF493] rounded-xl py-2 px-6 bg-[#104C00] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#104C00] hover:text-[#104C00]" type="submit">
+        <span class="mdi mdi-paw"></span>
+        Cadastrar Pet
+      </button>
+    </div>
+  </form>
 </template>

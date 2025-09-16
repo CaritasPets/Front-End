@@ -20,6 +20,7 @@ const route = useRoute();
 
 
 const headerBackground = computed(() => {
+  if(route.path === "/adote/register") return "#FFF493";
   if (route.path === "/ongs") return "#03497B";
   if (route.path === "/user/profile" || route.path === "/user/login" || route.path === "/user/sign-up") return "#03497B";
   if (route.path === "/adote") return "#FF7700";
@@ -30,7 +31,7 @@ const headerBackground = computed(() => {
 
 
 const linkBaseColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura-se") {
+  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/adote/register") {
     return "#1E0B00";
   }
   return "#DFB468";
@@ -38,7 +39,7 @@ const linkBaseColor = computed(() => {
 
 
 const menuIconColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura-se") {
+  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/adote/register") {
     return "#1E0B00";
   }
   return "#DFB468";
