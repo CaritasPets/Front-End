@@ -12,6 +12,11 @@ const routes = [
         component: () => import("@/views/OngsPage.vue"),
     },
     {
+        path: '/ongs/profile',
+        name: 'ong-profile',
+        component: () => import("@/views/OngProfileView.vue")
+    },
+    {
         path: '/adote',
         component: () => import("@/views/AdotePage.vue")
     },

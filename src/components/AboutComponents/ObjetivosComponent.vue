@@ -7,7 +7,7 @@
         Nosso objetivo ao desenvolver esse projeto é reunir todas as ongs de Joinville no nosso site para facilitar e motivar a adoção, processo que transforma vidas, não só dos pets que podem ter sido vítimas de maus-tratos e abandono, mas também de humanos, que ao adotar conhecem uma nova forma de amar.
         </p>
         <p>
-            <img class="w-750 mx-auto mt-15 lg:ml-15" src="/public/img_gatoDormindo.svg" alt="gato dormindo">
+            <img class="w-750 mx-auto mt-15 ml-15" src="/img_gatoDormindo.svg" alt="gato dormindo">
         </p>
     </div>
 </template>
