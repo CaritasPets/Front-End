@@ -5,7 +5,6 @@ import { RouterLink, useRoute } from "vue-router";
 
 const navItems = [
 
-
   { label: "Home", icon: "mdi mdi-home", link: "/" },
   { label: "ONGs", icon: "mdi mdi-hand-heart", link: "/ongs" },
   { label: "Adote", icon: "mdi mdi-heart", link: "/adote" },
@@ -22,6 +21,10 @@ const route = useRoute();
 const headerBackground = computed(() => {
   if(route.path === "/adote/register") return "#FFF493";
   if (route.path === "/ongs") return "#03497B";
+  if (route.path === "/user/sign-up") return "#FFF493";
+  if (route.path === "/perfil") return "#03497B";
+  if (route.path === "/ongs/profile") return "#03497B";
+  if (route.path === "/user/login/") return "#FFF493";
   if (route.path === "/user/profile" || route.path === "/user/login" || route.path === "/user/sign-up") return "#03497B";
   if (route.path === "/adote") return "#FF7700";
   if (route.path === "/procura-se") return "#FDA202";
@@ -31,7 +34,7 @@ const headerBackground = computed(() => {
 
 
 const linkBaseColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/adote/register") {
+  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/user/profile" || route.path === "/adote/register") {
     return "#1E0B00";
   }
   return "#DFB468";
@@ -39,7 +42,7 @@ const linkBaseColor = computed(() => {
 
 
 const menuIconColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/adote/register") {
+  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/user/profile" ||  route.path === "/adote/register") {
     return "#1E0B00";
   }
   return "#DFB468";
