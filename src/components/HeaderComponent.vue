@@ -20,10 +20,10 @@ const route = useRoute();
 
 const headerBackground = computed(() => {
   if (route.path === "/ongs") return "#03497B";
-  if (route.path.slice(0,5) == "/user") return "#FFF493";
+  if (route.path === "/user/sign-up") return "#FFF493";
   if (route.path === "/perfil") return "#03497B";
   if (route.path === "/ongs/profile") return "#03497B";
-  if (route.path === "/user/login") return "#03497B";
+  if (route.path === "/user/login/") return "#FFF493";
   if (route.path === "/user/profile" || route.path === "/user/login" || route.path === "/user/sign-up") return "#03497B";
   if (route.path === "/adote") return "#FF7700";
   if (route.path === "/procura-se") return "#FDA202";
@@ -33,7 +33,7 @@ const headerBackground = computed(() => {
 
 
 const linkBaseColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura-se" || route.path.slice(0,5) == "/user") {
+  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/user/profile") {
     return "#1E0B00";
   }
   return "#DFB468";
@@ -41,7 +41,7 @@ const linkBaseColor = computed(() => {
 
 
 const menuIconColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura-se" || route.path.slice(0,5) == "/user") {
+  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/user/profile") {
     return "#1E0B00";
   }
   return "#DFB468";
