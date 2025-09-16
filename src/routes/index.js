@@ -56,7 +56,7 @@ const routes = [
     },
     {
         path: '/procura-se/register',
-        name: 'procura-se',
+        name: 'register-perdido',
         component: () => import("@/views/CadastroPerdido.vue")
     },
     //Not found
