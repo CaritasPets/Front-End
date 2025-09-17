@@ -31,6 +31,11 @@ const routes = [
         component: () => import("@/views/CadastroOng.vue")
     },
     {
+        path: '/user',
+        name: 'pre-register',
+        component: () => import("@/views/PreCadastro.vue")
+    },
+    {
         path: '/user/login',
         name: 'login',
         component: () => import("@/views/LoginView.vue")
