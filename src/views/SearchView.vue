@@ -32,8 +32,8 @@ const petStore = usePetStore()
         :foto="pet.foto"
         :nome="pet.nome"
         :genero="pet.genero"
-      />
-</div>
+       />
+      </div>
       <div v-else class="text-center text-3xl text-[#4C260A] font-[Handlee] my-20">
         Não existem pets cadastrados com esses filtros.
       </div>

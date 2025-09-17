@@ -49,6 +49,14 @@ const menuIconColor = computed(() => {
   return "#DFB468";
 });
 
+const hoverClass = computed(() => {
+  if (linkBaseColor.value === '#DFB468') {
+    return { 'hover:bg-[#1E0B00]': true, 'hover:text-[#DFB468]': true };
+  } else {
+    return { 'hover:bg-[#DFB468]': true, 'hover:text-[#1E0B00]': true };
+  }
+});
+
 
 </script>
 
@@ -70,8 +78,8 @@ const menuIconColor = computed(() => {
             :to="item.link"
             class="flex items-center text-nowrap decoration-0 transition-all duration-500 font-[Handlee] px-4 py-1 rounded-lg"
             :class="{
-              'bg-[#1E0B00] text-[#DFB468]': route.path === item.link, // ativo
-              'hover:bg-[#DFB468] hover:text-[#1E0B00]': route.path !== item.link,
+              'bg-[#1E0B00] text-[#DFB468]': route.path === item.link,
+              ...(route.path !== item.link ? hoverClass : {}),
             }"
             :style="{
               color: route.path !== item.link ? linkBaseColor : '#DFB468'
@@ -108,7 +116,7 @@ const menuIconColor = computed(() => {
               class="flex items-center gap-2 text-xl font-[Handlee] px-4 py-2 rounded-lg"
               :class="{
                 'bg-[#1E0B00] text-[#DFB468]': route.path === item.link,
-                'hover:bg-[#1E0B00] hover:text-[#DFB468]': route.path !== item.link,
+                ...(route.path !== item.link ? hoverClass : {}),
               }"
               :style="{
                 color: route.path !== item.link ? linkBaseColor : '#DFB468'

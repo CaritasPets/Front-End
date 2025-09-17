@@ -11,7 +11,12 @@ export const usePetStore = defineStore('petStore', () => {
         'Castrado': 'castrado',
         'Genero': 'genero',
         'Pelagem': 'pelagem',
-        
+
+    };
+
+    // Helper function to normalize strings: lowercase and remove accents
+    const normalizeString = (str) => {
+        return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     };
 
     const propriedades = ref([
@@ -20,7 +25,7 @@ export const usePetStore = defineStore('petStore', () => {
             ongId: '1',
             foto: '/logo.svg',
             nome: 'Rex',
-            genero: 'Macho',
+            genero: 'macho',
             especie: 'cachorro',
             vacinado: 'sim',
             porte: 'medio',
@@ -33,7 +38,7 @@ export const usePetStore = defineStore('petStore', () => {
             ongId: '2',
             foto: '/logo.svg',
             nome: 'Mia',
-            genero: 'Fêmea',
+            genero: 'femea',
             especie: 'gato',
             vacinado: 'nao',
             porte: 'pequeno',
@@ -46,7 +51,7 @@ export const usePetStore = defineStore('petStore', () => {
             ongId: '3',
             foto: '/logo.svg',
             nome: 'Buddy',
-            genero: 'Macho',
+            genero: 'macho',
             especie: 'cachorro',
             vacinado: 'sim',
             porte: 'grande',
@@ -72,7 +77,7 @@ export const usePetStore = defineStore('petStore', () => {
             ongId: '1',
             foto: '/logo.svg',
             nome: 'Max',
-            genero: 'Macho',
+            genero: 'macho',
             especie: 'cachorro',
             vacinado: 'sim',
             porte: 'medio',
@@ -90,16 +95,11 @@ export const usePetStore = defineStore('petStore', () => {
             especie: 'cachorro',
             vacinado: 'nao',
             porte: 'pequeno',
-            castrado: 'nao',
-            pelagem: 'longa',
-            raca: 'raça',
-        },
-        {
             id: '7',
             ongId: '3',
             foto: '/logo.svg',
             nome: 'Charlie',
-            genero: 'Macho',
+            genero: 'macho',
             especie: 'gato',
             vacinado: 'sim',
             porte: 'medio',
