@@ -30,11 +30,18 @@ const routes = [
     },
     {
         path: '/user/sign-up',
+        name: 'login',
         component: () => import("@/views/CadastroPage.vue")
     },
     {
-      path: '/ongs/sign-up',
-      component: () => import("@/views/CadastroOng.vue")
+        path: '/ongs/sign-up',
+        name: 'ong-register',
+        component: () => import("@/views/CadastroOng.vue")
+    },
+    {
+        path: '/user',
+        name: 'pre-register',
+        component: () => import("@/views/PreCadastro.vue")
     },
     {
         path: '/user/login',
@@ -70,7 +77,7 @@ const routes = [
     },
     {
         path: '/procura-se/register',
-        name: 'register-perdido',
+        name: 'register-perdidos',
         component: () => import("@/views/CadastroPerdido.vue")
     },
     {
