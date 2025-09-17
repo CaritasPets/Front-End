@@ -15,6 +15,7 @@ export const useOngService = defineStore('ongService', () => {
             const response = await api.get(urlStore.organizacoes)
             ongStore.propriedades = response.data
             console.log('Ongs puxadas com sucesso!')
+            console.log(response.data)
             inError.value = false
         } catch(err){
             console.log(err)
@@ -26,9 +27,10 @@ export const useOngService = defineStore('ongService', () => {
     
     const postOng = async (objOng) => {
         try{
-            const response = await api.post(urlStore.organizacoes, objOng)
+            const response = await api.post('/organizacoes/', objOng)
             if(response.data){
-                alert(`ONG (${response.data.nome}) criacda com sucesso!`)
+                alert(`ONG (${response.data.nome}) criacda com sucesso!`);
+                getOngs();
                 window.location.href = '/ongs'
             }
         } catch(err) {

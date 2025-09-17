@@ -1,39 +1,62 @@
 <script setup>
 import { ref } from 'vue'
+import { useOngService } from '../services/ongs/ongService'
+import { useImageService } from '../services/image';
+const imageService = useImageService()
+const ongService = useOngService()
 
-const nome = ref('')
-const telefone = ref('')
-const email = ref('')
-const cnpj = ref('')
-const instagram = ref('')
-const facebook = ref('')
-const endereco = ref('') 
-const password = ref('')
-const foto = ref(null)
-const descricao = ref('')
+const file = ref(null)
+const previewUrl = ref(null)
+const ong = ref({
+  nome: '',
+  telefone: '',
+  email: '',
+  cnpj: '',
+  instagram: '',
+  facebook: '',
+  endereco: '',
+  senha: '',
+  foto_perfil: '',
+  descricao: '',
+})
 
 function onFileChange(event) {
   const selectedFile = event.target.files[0]
   if (selectedFile) {
-    foto.value = selectedFile
+    if (!selectedFile.type.startsWith('image/')) {
+      return alert('Por favor, selecione apenas arquivos de imagem.')
+    }
+
+    if (selectedFile.size > 5 * 1024 * 1024) {
+      return alert('A imagem deve ter no máximo 5MB.')
+    }
+
+    file.value = selectedFile
+    if (selectedFile) {
+      previewUrl.value = URL.createObjectURL(selectedFile)
+    }
   }
 }
+const handleRegister = async () => {
+  try{
+    let fileUrl = '';
+    if(file.value){
+      fileUrl = await imageService.uploadFile(file.value)
+      ong.value.foto_perfil = fileUrl;
+    }
 
-function resetForm() {
-  nome.value = ''
-  telefone.value = ''
-  email.value = ''
-  cnpj.value = ''
-  instagram.value = ''
-  facebook.value = ''
-  endereco.value = ''
-  password.value = ''
-  foto.value = null
-  descricao.value = ''
+    await ongService.postOng(ong.value);
+  } catch(err) {
+     if (err.response && err.response.data) {
+      alert(err.response.data)
+    } else {
+      alert('Erro desconhecido. Tente novamente.')
+    }
+  }
 }
 </script>
 <template>
-  <form action="" class="relative z-10" @reset.prevent="resetForm">
+  <form class="relative z-10" @submit.prevent="handleRegister">
     <div class="flex flex-col lg:flex-row lg:justify-around">
       <div class="">
         <ul>
@@ -42,7 +65,7 @@ function resetForm() {
             <input
               class="text-xl sm:text-3xl bg-[#FFF493] text-[#03497B] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
               placeholder="Nome."
-              v-model="nome"
+              v-model="ong.nome"
               type="text"
               required
             />
@@ -52,7 +75,7 @@ function resetForm() {
             <input
               class="text-xl sm:text-3xl bg-[#FFF493] text-[#FF7700] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
               placeholder="Telefone."
-              v-model="telefone"
+              v-model="ong.telefone"
               type="text"
               required
             />
@@ -62,7 +85,7 @@ function resetForm() {
             <input
               class="text-xl sm:text-3xl bg-[#FFF493] text-[#FDA202] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
               placeholder="Email."
-              v-model="email"
+              v-model="ong.email"
               type="email"
               required
             />
@@ -72,7 +95,7 @@ function resetForm() {
             <input
               class="text-xl sm:text-3xl bg-[#FFF493] text-[#104C00] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
               placeholder="CNPJ (se possui)."
-              v-model="cnpj"
+              v-model="ong.cnpj"
               type="text"
             />
           </li>
@@ -81,7 +104,7 @@ function resetForm() {
             <input
               class="text-xl sm:text-3xl bg-[#FFF493] text-[#03497B] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
               placeholder="Instagram (se possui)."
-              v-model="instagram"
+              v-model="ong.instagram"
               type="text"
             />
           </li>
@@ -94,7 +117,7 @@ function resetForm() {
             <input
               class="text-xl sm:text-3xl bg-[#FFF493] text-[#FDA202] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
               placeholder="Facebook (se possui)."
-              v-model="facebook"
+              v-model="ong.facebook"
               type="text"
             />
           </li>
@@ -103,7 +126,7 @@ function resetForm() {
             <input
               class="text-xl sm:text-3xl bg-[#FFF493] text-[#104C00] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
               placeholder="........"
-              v-model="password"
+              v-model="ong.senha"
               type="password"
               required
             />
@@ -113,32 +136,36 @@ function resetForm() {
             <input
               class="text-xl sm:text-3xl bg-[#FFF493] text-[#03497B] py-2 px-4 my-2 gap-y-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
               placeholder="Endereço da ONG (se possui)."
-              v-model="endereco"
+              v-model="ong.endereco"
               type="text"
             />
-          </li>
-          <li class="flex flex-col gap-y-2">
-            <p class="text-xl sm:text-3xl text-[#1E0B00]">Foto de Perfil</p>
-            <input id="fileInput" class="hidden" type="file" @change="onFileChange" />
-            <label
-            for="fileInput"
-            class="text-xl sm:text-3xl bg-[#FFF493] text-[#FF7700] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135 cursor-pointer">
-            Selecionar Arquivo
-            <span class="m-80 mdi mdi-folder-plus-outline"></span>
-            </label>
-            <div v-if="foto" class="text-base sm:text-xl text-[#FF7700]">
-              <p>Arquivo para foto selecionado:</p>
-              <p>{{ foto.name }}</p>
-            </div>
           </li>
           <li class="flex flex-col gap-y-2">
           <label class="text-xl sm:text-3xl text-[#1E0B00]">Descrição:</label>
           <input
             class="text-xl sm:text-3xl bg-[#FFF493] text-[#FDA202] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
             placeholder="Descrição."
-            v-model="descricao"
+            v-model="ong.descricao"
             type="text"
             />
+          </li>
+          <li class="flex flex-col gap-y-2">
+            <p class="text-xl sm:text-3xl text-[#1E0B00]">Foto de Perfil</p>
+            <input id="fileInput" class="hidden" type="file" @change="onFileChange" />
+            <label for="fileInput" class="w-50 h-60 my-2 cursor-pointer">
+            <img
+              v-if="file"
+              class="w-full h-full rounded-2xl hover:opacity-50 transition-all duration-500"
+              :src="previewUrl"
+              alt="foto-selecionada"
+            />
+            <img
+              v-else
+              class="w-full h-full rounded-2xl bg-amber-50 hover:opacity-50 transition-all duration-500"
+              src="/pet_default.svg"
+              alt=""
+            />
+          </label>
           </li>
         </ul>
       </div>

@@ -71,6 +71,7 @@ export const useAuthService = defineStore('authService', () => {
     try{
       const response = await api.get('auth/profile/');
       console.log('Perfil atualizado!')
+      console.log(response.data.user)
       return response.data.user
     } catch (err){
       if (err.response) {
