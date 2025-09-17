@@ -73,17 +73,21 @@ const routes = [
         name: 'register-perdido',
         component: () => import("@/views/CadastroPerdido.vue")
     },
-    //Not found
     {
         path: '/:pathMatch(.*)*',
         name: 'Not Found',
         component: () => import('@/views/NotFoundPage.vue')
     }
+    
 ];
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
+    scrollBehavior(to, from, savedPosition) {
+      
+        return { top: 0 }
+    }
 });
 
 export default router
