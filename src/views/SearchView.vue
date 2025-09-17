@@ -3,11 +3,19 @@ import BannerComponent from '../components/BannerComponent.vue';
 import FilterComponent from '@/components/FilterComponent.vue';
 import PetPerdidoCardComponent from '@/components/PetPerdidoCardComponent.vue';
 
+import { onMounted } from 'vue';
+
 import { useBannerComponentStore } from '../stores/BannerComponentStore';
 const bannerStore = useBannerComponentStore();
-import { usePetStore } from '../stores/PetStore';
-const petStore = usePetStore()
+import { usePetPerdidoStore } from '../stores/PetPerdidoStore';
+const petPerdidoStore = usePetPerdidoStore();
 
+import { usePetPerdidoService } from '../services/pets/petsPerdidos';
+const petPerdidoService = usePetPerdidoService()
+
+onMounted(() => {
+  petPerdidoService.getPerdidos()
+})
 </script>
 <template>
     <section class="banner">
@@ -25,8 +33,8 @@ const petStore = usePetStore()
     <section class="m-30">
       <h2 class="text-center text-6xl my-10 mb-25 text-[#4c260a] font-[Handlee]">Pets perdidos</h2>
       <FilterComponent/>
-      <div v-if="petStore.petPerdido.length > 0" class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
-      <PetPerdidoCardComponent v-for="pet in petStore.petPerdido"
+      <div v-if="petPerdidoStore.propriedades.length > 0" class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
+      <PetPerdidoCardComponent v-for="pet of petPerdidoStore.propriedades"
         :key="pet.id"
         :id="pet.id"
         :foto="pet.foto"

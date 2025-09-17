@@ -49,13 +49,5 @@ const reset = () => {
         </div>
       </form>
     </div>
-    <!-- <div class="w-full px-4">
-      <h3 class="text-xl sm:text-2xl md:text-3xl font-[Handlee] text-center">Filtros Selecionados</h3>
-      <div class="bg-amber-300 rounded-lg p-4 mt-2">
-        <p v-for="item of filterStore.filters" :key="item" class="text-sm sm:text-base md:text-lg">
-          {{ item }}
-        </p>
-      </div>
-    </div> -->
   </section>
 </template>

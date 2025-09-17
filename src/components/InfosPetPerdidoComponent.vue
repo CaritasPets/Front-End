@@ -21,21 +21,21 @@ function goToProcuraSe() {
         </h2>
         <div class="flex justify-between pt-10 px-40 relative z-10">
             <div>
-                <img :src="props?.petPerdido?.foto" alt="Foto do Pet" class="w-200 rounded-[85px]" />
+                <img :src="props?.petPerdido?.foto" alt="Foto do Pet" class="w-200 h-100 object-cover rounded-[85px]" />
             </div>
             <div class="flex px-20 gap-10 items-stretch">
                 <ul class="space-y-8 flex flex-col justify-center ml-4 mr-2 font-['Sen'] w-80 h-full">
                     <li class="text-3xl"><strong>Gênero:</strong> {{ props?.petPerdido?.genero }}</li>
-                    <li class="text-3xl"><strong>Espécie:</strong> {{ props?.petPerdido?.especie }}</li>
+                    <li class="text-3xl"><strong>Visto por último em:</strong> {{ props?.petPerdido?.local }}</li>
                 </ul>
                 <ul class="space-y-8 flex flex-col justify-center ml-2 font-['Sen'] w-80 h-full">
-                    <li class="text-3xl"><strong>Local:</strong> {{ props?.petPerdido?.localDesaparecimento }}</li>
+                    <li class="text-3xl"><strong>Espécie:</strong> {{ props?.petPerdido?.especie }}</li>
                     <li class="text-3xl"><strong>Características:</strong> {{ props?.petPerdido?.caracteristicas }}</li>
                 </ul>
             </div>
         </div>
         <div class="z-10 relative mx-40 flex items-center gap-5 mt-20">
-            <img v-if="props?.user?.foto" :src="props.user.foto" alt="Foto do Dono" class="w-50 rounded-full" />
+            <img v-if="props?.user?.foto_perfil" :src="props.user.foto_perfil.file" alt="Foto do Dono" class="w-50 h-50 object-cover rounded-full" />
             <div>
                 <p class="text-3xl font-['Sen']">{{ props?.user?.nome }}</p>
                 <p class="text-2xl font-['Sen']">{{ props?.user?.telefone }}</p>
