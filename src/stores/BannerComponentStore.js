@@ -40,7 +40,7 @@ export const useBannerComponentStore = defineStore('bannerStore', () => {
       waves: '/yellow_waves.svg',
       buttonBoolean: true,
       buttonText: 'Cadastrar pet perdido.',
-      buttonLink: '/',
+      buttonLink: '/procura-se/register',
     },
   })
   return {

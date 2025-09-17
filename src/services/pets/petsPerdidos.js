@@ -19,16 +19,13 @@ export const usePetPerdidoService = defineStore('petPerdidoService', () => {
         }
     }
 
-    const postPerdidos = async (objPet, attachment_key) => {
+    const postPerdidos = async (objPet) => {
         try{
-            const response = await api.post('perdidos/', {
-                ...objPet,
-                attachment_key
-            })
+            const response = await api.post('perdidos/', objPet)
             if(response.data){
+                alert('Pet perdido cadastrado!');
                 getPerdidos()
             }
-            alert('Pet perdido cadastrado!');
             window.location.href = '/procura-se'
         } catch(err) {
             if (err.response && err.response.data) {

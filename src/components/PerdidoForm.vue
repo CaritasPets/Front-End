@@ -10,26 +10,28 @@ const pet = ref({
   especie: '',
   sexo: '',
   localidade: '',
-  caracteristicas: ''
+  caracteristicas: '',
+  foto: ''
 })
 
-const foto = ref(null)
+const file = ref(null)
 const previewUrl = ref(null)
 function onFileChange(event) {
   const selectedFile = event.target.files[0]
   if (selectedFile) {
-    foto.value = selectedFile
+    file.value = selectedFile
     previewUrl.value = URL.createObjectURL(selectedFile)
   }
 }
 const handleRegister = async () => {
   try{
-    let attachmentKey = null
-    if(foto.value){
-      attachmentKey = await imageService.uploadImage(foto.value)
+    let fileUrl = '';
+    if(file.value){
+      fileUrl = await imageService.uploadFile(file.value)
+      pet.value.foto = fileUrl;
     }
 
-    await petPerdidoService.postPerdidos(pet.value, attachmentKey);
+    await petPerdidoService.postPerdidos(pet.value);
   } catch(err) {
      if (err.response && err.response.data) {
       alert(err.response.data)
@@ -92,7 +94,7 @@ const handleRegister = async () => {
             <input id="fileInput" class="hidden" type="file" @change="onFileChange" />
           <label for="fileInput" class="w-50 h-60 my-2 cursor-pointer">
             <img
-              v-if="foto"
+              v-if="file"
               class="w-full h-full rounded-2xl hover:opacity-50 transition-all duration-500"
               :src="previewUrl"
               alt="foto-selecionada"
