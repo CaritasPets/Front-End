@@ -19,7 +19,34 @@ export const usePetPerdidoService = defineStore('petPerdidoService', () => {
         }
     }
 
+    const postPerdidos = async (objPet, attachment_key) => {
+        try{
+            const response = await api.post('perdidos/', {
+                ...objPet,
+                attachment_key
+            })
+            if(response.data){
+                getPerdidos()
+            }
+            alert('Pet perdido cadastrado!');
+            window.location.href = '/procura-se'
+        } catch(err) {
+            if (err.response && err.response.data) {
+                if (typeof err.response.data === 'string') {
+                    alert(err.response.data);
+                } else if (err.response.data.detail) {
+                    alert(err.response.data.detail);
+                } else {
+                    alert('Erro de validação: ' + JSON.stringify(err.response.data));
+                }
+            } else {
+                alert('Erro no cadastro. Verifique sua conexão.');
+            }
+            console.log(err)
+        }
+    }
     return {
-        getPerdidos
+        getPerdidos,
+        postPerdidos
     }
 })

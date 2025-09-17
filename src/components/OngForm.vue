@@ -71,7 +71,7 @@ function resetForm() {
             <label class="text-3xl text-[#1E0B00]">CNPJ:</label>
             <input
               class="text-2xl bg-[#FFF493] text-[#104C00] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-150"
-              placeholder="CNPJ (se possui)."@reset.prevent="resetForm"
+              placeholder="CNPJ (se possui)."
               v-model="cnpj"
               type="text"
             />
