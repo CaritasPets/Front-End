@@ -5,9 +5,8 @@ import PetsAdocao from '@/components/PetsAdocao.vue';
 
 import { useBannerComponentStore } from '../stores/BannerComponentStore';
 const bannerStore = useBannerComponentStore();
-import { usePetStore } from '../stores/PetStore';
-const petStore = usePetStore()
-
+import { usePetPerdidoStore } from '../stores/PetPerdidoStore';
+const petPerdidoStore = usePetPerdidoStore();
 </script>
 <template>
     <section class="banner">
@@ -25,8 +24,8 @@ const petStore = usePetStore()
     <section class="m-30">
       <h2 class="text-center text-6xl my-10 mb-25 text-[#4c260a] font-[Handlee]">Pets perdidos</h2>
       <FilterComponent/>
-      <div v-if="petStore.filteredPropriedades.length > 0" class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
-        <PetsAdocao v-for="pet of petStore.filteredPropriedades" :key="pet.id"
+      <div v-if="petPerdidoStore.filteredPropriedades.length > 0" class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
+        <PetsAdocao v-for="pet of petPerdidoStore.filteredPropriedades" :key="pet.id"
           :foto="pet.foto"
           :nome="pet.nome"
           :genero="pet.genero"
