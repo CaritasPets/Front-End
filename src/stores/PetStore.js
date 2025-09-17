@@ -122,6 +122,89 @@ export const usePetStore = defineStore('petStore', () => {
         }
     ]);
 
+    const petPerdido = ref([
+    {
+        id: '1',
+        userId: '1',
+        foto: '/logo.svg',
+        nome: 'Toby',
+        genero: 'Macho',
+        especie: 'cachorro',
+        localDesaparecimento: 'Rua das Flores, 123',
+        caracteristicas: 'Toby sumiu perto do parque, é dócil e tem uma coleira azul.'
+    },
+    {
+        id: '2',
+        userId: '2',
+        foto: '/logo.svg',
+        nome: 'Lola',
+        genero: 'Fêmea',
+        especie: 'gato',
+        localDesaparecimento: 'Av. Central, 456',
+        caracteristicas: 'Lola é assustada, pelagem branca longa e olhos azuis. Sumiu à noite.'
+    },
+    {
+        id: '3',
+        userId: '3',
+        foto: '/logo.svg',
+        nome: 'Bidu',
+        genero: 'Macho',
+        especie: 'cachorro',
+        localDesaparecimento: 'Praça da Paz, 789',
+        caracteristicas: 'Bidu é brincalhão, pequeno, pelagem cinza, estava sem coleira.'
+    },
+    {
+        id: '4',
+        userId: '4',
+        foto: '/logo.svg',
+        nome: 'Mel',
+        genero: 'Fêmea',
+        especie: 'gato',
+        localDesaparecimento: 'Rua do Sol, 321',
+        caracteristicas: 'Mel é dócil, pelagem média, rajada, sumiu no fim da tarde.'
+    },
+    {
+        id: '5',
+        userId: '1',
+        foto: '/logo.svg',
+        nome: 'Thor',
+        genero: 'Macho',
+        especie: 'cachorro',
+        localDesaparecimento: 'Rua das Palmeiras, 654',
+        caracteristicas: 'Thor é preto, grande, muito amigável, sumiu durante uma caminhada.'
+    },
+    {
+        id: '6',
+        userId: '2',
+        foto: '/logo.svg',
+        nome: 'Nina',
+        genero: 'Fêmea',
+        especie: 'gato',
+        localDesaparecimento: 'Av. Brasil, 987',
+        caracteristicas: 'Nina tem olhos verdes, pelagem longa, sumiu de madrugada.'
+    },
+    {
+        id: '7',
+        userId: '3',
+        foto: '/logo.svg',
+        nome: 'Duque',
+        genero: 'Macho',
+        especie: 'cachorro',
+        localDesaparecimento: 'Rua das Acácias, 222',
+        caracteristicas: 'Duque é pastor alemão, porte médio, sumiu do quintal de casa.'
+    },
+    {
+        id: '8',
+        userId: '4',
+        foto: '/logo.svg',
+        nome: 'Lucy',
+        genero: 'Fêmea',
+        especie: 'gato',
+        localDesaparecimento: 'Rua Nova, 555',
+        caracteristicas: 'Lucy é cinza, pelagem curta, muito carinhosa, sumiu pela manhã.'
+    }
+]);
+
     const filterStore = useFilterStore();
 
     const filteredPropriedades = computed(() => {
@@ -151,6 +234,7 @@ export const usePetStore = defineStore('petStore', () => {
 
     return {
         propriedades,
+        petPerdido,
         filteredPropriedades,
     }
 })

@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute()
 function validateFooter(url) {
-  if(url.startsWith('/user') || url.startsWith('/ongs/profile') || url.startsWith('/adote/pet')){
+  if(url.startsWith('/user') || url.startsWith('/ongs/profile') || url.startsWith('/adote/pet') || route.path.startsWith("/procura-se/petperdido/")){
     return false
   }
   if(url == '/user/profile') return true
