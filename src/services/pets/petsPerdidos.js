@@ -1,8 +1,8 @@
 import api from "../../plugins/api";
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { usePetStore } from "../../stores/PetStore";
-const petStore = usePetStore()
+import { usePetPerdidoStore } from "../../stores/PetPerdidoStore";
+const petPerdidoStore = usePetPerdidoStore()
 
 export const usePetPerdidoService = defineStore('petPerdidoService', () => {
     const error = ref(false)
@@ -10,7 +10,7 @@ export const usePetPerdidoService = defineStore('petPerdidoService', () => {
     const getPerdidos = async () => {
         try {
             const response = await api.get('perdidos/');
-            petStore.propriedades
+            petPerdidoStore.propriedades = response.data
             console.log(response.data)
             return response.data
         } catch(err){

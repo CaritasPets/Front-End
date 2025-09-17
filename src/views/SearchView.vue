@@ -3,10 +3,19 @@ import BannerComponent from '../components/BannerComponent.vue';
 import FilterComponent from '@/components/FilterComponent.vue';
 import PetsAdocao from '@/components/PetsAdocao.vue';
 
+import { onMounted } from 'vue';
+
 import { useBannerComponentStore } from '../stores/BannerComponentStore';
 const bannerStore = useBannerComponentStore();
 import { usePetPerdidoStore } from '../stores/PetPerdidoStore';
 const petPerdidoStore = usePetPerdidoStore();
+
+import { usePetPerdidoService } from '../services/pets/petsPerdidos';
+const petPerdidoService = usePetPerdidoService()
+
+onMounted(() => {
+  petPerdidoService.getPerdidos()
+})
 </script>
 <template>
     <section class="banner">
