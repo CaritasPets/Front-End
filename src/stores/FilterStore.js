@@ -88,7 +88,7 @@ export const useFilterStore = defineStore("filterStore", () => {
     {
       background: "#FF7700",
       background2: "#FDA202",
-      title: "Sexo",
+      title: "Genero",
       options: [
         {
           option: "Fêmea",
