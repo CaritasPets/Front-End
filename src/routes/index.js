@@ -30,7 +30,7 @@ const routes = [
     },
     {
         path: '/user/sign-up',
-        name: 'login',
+        name: 'user-sign-up',
         component: () => import("@/views/CadastroPage.vue")
     },
     {
@@ -85,7 +85,7 @@ const routes = [
         name: 'Not Found',
         component: () => import('@/views/NotFoundPage.vue')
     }
-    
+
 ];
 
 const router = createRouter({
