@@ -9,7 +9,7 @@ export const usePetStore = defineStore('petStore', () => {
         'Vacinado': 'vacinado',
         'Porte': 'porte',
         'Castrado': 'castrado',
-        'Sexo': 'sexo',
+        'Genero': 'genero',
         'Pelagem': 'pelagem',
         
     };
@@ -17,18 +17,20 @@ export const usePetStore = defineStore('petStore', () => {
     const propriedades = ref([
         {
             id: '1',
+            ongId: '1',
             foto: '/logo.svg',
             nome: 'Rex',
             genero: 'Macho',
             especie: 'cachorro',
             vacinado: 'sim',
+            porte: 'medio',
             castrado: 'sim',
-            sexo: 'macho',
             pelagem: 'curta',
-    
+            raca: 'raça',
         },
         {
             id: '2',
+            ongId: '2',
             foto: '/logo.svg',
             nome: 'Mia',
             genero: 'Fêmea',
@@ -36,12 +38,12 @@ export const usePetStore = defineStore('petStore', () => {
             vacinado: 'nao',
             porte: 'pequeno',
             castrado: 'nao',
-            sexo: 'femea',
             pelagem: 'longa',
-           
+            raca: 'raça',
         },
         {
             id: '3',
+            ongId: '3',
             foto: '/logo.svg',
             nome: 'Buddy',
             genero: 'Macho',
@@ -49,11 +51,12 @@ export const usePetStore = defineStore('petStore', () => {
             vacinado: 'sim',
             porte: 'grande',
             castrado: 'sim',
-            sexo: 'macho',
             pelagem: 'curta',
+            raca: 'raça',
         },
         {
             id: '4',
+            ongId: '4',
             foto: '/logo.svg',
             nome: 'Luna',
             genero: 'Fêmea',
@@ -61,11 +64,12 @@ export const usePetStore = defineStore('petStore', () => {
             vacinado: 'parcialmente',
             porte: 'pequeno',
             castrado: 'sim',
-            sexo: 'femea',
             pelagem: 'media',
+            raca: 'raça',
         },
         {
             id: '5',
+            ongId: '1',
             foto: '/logo.svg',
             nome: 'Max',
             genero: 'Macho',
@@ -73,12 +77,13 @@ export const usePetStore = defineStore('petStore', () => {
             vacinado: 'sim',
             porte: 'medio',
             castrado: 'nao',
-            sexo: 'macho',
             pelagem: 'curta',
+            raca: 'raça',
 
         },
         {
             id: '6',
+            ongId: '2',
             foto: '/logo.svg',
             nome: 'Bella',
             genero: 'Fêmea',
@@ -86,11 +91,12 @@ export const usePetStore = defineStore('petStore', () => {
             vacinado: 'nao',
             porte: 'pequeno',
             castrado: 'nao',
-            sexo: 'femea',
             pelagem: 'longa',
+            raca: 'raça',
         },
         {
             id: '7',
+            ongId: '3',
             foto: '/logo.svg',
             nome: 'Charlie',
             genero: 'Macho',
@@ -98,12 +104,12 @@ export const usePetStore = defineStore('petStore', () => {
             vacinado: 'sim',
             porte: 'medio',
             castrado: 'sim',
-            sexo: 'macho',
             pelagem: 'curta',
-
+            raca: 'raça',
         },
         {
             id: '8',
+            ongId: '4',
             foto: '/logo.svg',
             nome: 'Daisy',
             genero: 'Fêmea',
@@ -111,9 +117,8 @@ export const usePetStore = defineStore('petStore', () => {
             vacinado: 'sim',
             porte: 'grande',
             castrado: 'sim',
-            sexo: 'femea',
             pelagem: 'media',
-
+            raca: 'raça',
         }
     ]);
 
