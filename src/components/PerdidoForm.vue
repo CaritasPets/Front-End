@@ -9,7 +9,7 @@ const pet = ref({
   nome: '',
   especie: '',
   sexo: '',
-  localidade: '',
+  local: '',
   caracteristicas: '',
   foto: ''
 })
@@ -78,7 +78,7 @@ const handleRegister = async () => {
           <li class="flex flex-col gap-y-2">
             <label class="text-3xl text-[#1E0B00]">*Localidade:</label>
             <input class="text-2xl bg-[#FFF493] text-[#587911] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-150"
-              placeholder="Endereço no qual seu pet foi visto por último." v-model="pet.localidade" type="text" required />
+              placeholder="Endereço no qual seu pet foi visto por último." v-model="pet.local" type="text" required />
           </li>
         </ul>
       </div>
