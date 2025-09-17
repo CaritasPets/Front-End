@@ -8,6 +8,7 @@ const storeBannerComponent = useBannerComponentStore();
 import { usePetStore } from '../stores/PetStore';
 const petStore = usePetStore()
 </script>
+
 <template>
   <section class="banner">
     <BannerComponent :background="storeBannerComponent.propriedadesBanners.banner3.background"
@@ -20,7 +21,9 @@ const petStore = usePetStore()
       <h2 class="text-6xl text-[#4C260A] text-center mb-25 mt-10 font-[Handlee]">Pets para Adoção</h2>
       <FilterComponent/>
       <div v-if="petStore.filteredPropriedades.length > 0" class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
-        <PetsAdocao v-for="pet of petStore.filteredPropriedades" :key="pet.id"
+        <PetsAdocao v-for="pet of petStore.filteredPropriedades"
+          :key="pet.id"
+          :id="pet.id"
           :foto="pet.foto"
           :nome="pet.nome"
           :genero="pet.genero"
@@ -31,3 +34,4 @@ const petStore = usePetStore()
       </div>
     </section>
 </template>
+

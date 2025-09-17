@@ -2,14 +2,14 @@
 import { useRouter } from 'vue-router';
 
 const props = defineProps(['id', 'foto', 'nome', 'genero']);
-const backgrounds = ["#03497B", "#587911", "#FDA202"];
+const backgrounds = ["#FDA202", "#03497B", "#FF7700"];
 function sortBackground() {
-  const randomNum = Math.floor(Math.random() * 3);
+  const randomNum = Math.floor(Math.random() * backgrounds.length);
   return backgrounds[randomNum];
 }
 const router = useRouter()
 function goToProfile() {
-  router.push({ name: 'pet-profile', params: { id: props.id } })
+  router.push({ name: 'pet-perdido-profile', params: { id: props.id } })
 }
 </script>
 
@@ -24,7 +24,3 @@ function goToProfile() {
       </div>
   </div>
 </template>
-
-
-
-

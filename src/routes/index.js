@@ -12,13 +12,21 @@ const routes = [
         component: () => import("@/views/OngsPage.vue"),
     },
     {
-        path: '/ongs/profile',
+        path: '/ongs/profile/:id',
         name: 'ong-profile',
-        component: () => import("@/views/OngProfileView.vue")
+        component: () => import("@/views/OngProfileView.vue"),
+        props: true
     },
     {
         path: '/adote',
+        name: 'adote',
         component: () => import("@/views/AdotePage.vue")
+    },
+    {
+        path: '/adote/pet/:id',
+        name: 'pet-profile',
+        component: () => import("@/views/PetProfileView.vue"),
+        props: true
     },
     {
         path: '/user/sign-up',
@@ -57,21 +65,36 @@ const routes = [
         component: () => import("@/views/SearchView.vue")
     },
     {
+        path: '/procura-se/petperdido/:id',
+        name: 'pet-perdido-profile',
+        component: () => import("@/views/PetPerdidoProfileView.vue"),
+        props: true
+    },
+    {
+        path: '/adote/register',
+        name: 'adote-register',
+        component: () => import("@/views/PetRegisterPage.vue")
+    },
+    {
         path: '/procura-se/register',
         name: 'register-perdidos',
         component: () => import("@/views/CadastroPerdido.vue")
     },
-    //Not found
     {
         path: '/:pathMatch(.*)*',
         name: 'Not Found',
         component: () => import('@/views/NotFoundPage.vue')
     }
+    
 ];
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
+    scrollBehavior(to, from, savedPosition) {
+      
+        return { top: 0 }
+    }
 });
 
 export default router

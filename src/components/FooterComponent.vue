@@ -3,17 +3,13 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute()
 function validateFooter(url) {
-  if(url.startsWith('/user') || url.startsWith('/ongs/profile')){
-    return false
-  } else if(url == '/ongs/sign-up'){
-    return false
-  } else if(url == '/procura-se/register'){
-    return false
-  } else if(url == '//'){
-    return false
-  } else {
-    return true
-  }
+  if(url.startsWith('/user') || url.startsWith('/ongs/profile') || url.startsWith('/adote/pet') || route.path.startsWith("/procura-se/petperdido/")) return false
+  if(url == '/user/profile') return true
+  if(url.startsWith('/user') || url.startsWith('/ongs/profile')) return false
+  if(url == '/adote/register') return false
+  if(url == '/procura-se/register') return false
+  if(url == '/ongs/sign-up') return false
+  return true
 }
 
 </script>

@@ -29,15 +29,15 @@ const reset = () => {
         selectValuesAll = [...selectValuesPrimary, ...selectValuesSecondary];
         filterStore.filters = selectValuesAll
       "
-      v-if="open" class="w-full sm:w-11/12 md:w-3/4 lg:w-1/2 xl:w-[45%] rounded-4xl p-4 sm:p-6 bg-[#FFE078] flex flex-col gap-6 items-center mt-4">
+      v-if="open" class="w-[140%] h-[150%] sm:w-[120%] md:w-[100%] lg:w-[80%] rounded-4xl p-4 sm:p-6 bg-[#FFE078] flex flex-col gap-6 items-center mt-4">
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 font-[Sen]">
+        <div class="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 font-[Sen] ">
           <FilterCard v-for="filterCard in filterStore.propriedadesFilterVerdes" :key="filterCard.title"
             :options="filterCard.options" :background="filterCard.background" :title="filterCard.title" :background2="filterCard.background2" :category="filterCard.title"
             v-model="selectValuesPrimary"/>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 font-[Sen]">
+        <div class="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 font-[Sen] ">
           <FilterCard v-for="filterCard in filterStore.propriedadesFilterLaranjas" :key="filterCard.title"
             :options="filterCard.options" :background="filterCard.background" :title="filterCard.title" :background2="filterCard.background2" :category="filterCard.title"
             v-model="selectValuesSecondary"
@@ -49,13 +49,5 @@ const reset = () => {
         </div>
       </form>
     </div>
-    <!-- <div class="w-full px-4">
-      <h3 class="text-xl sm:text-2xl md:text-3xl font-[Handlee] text-center">Filtros Selecionados</h3>
-      <div class="bg-amber-300 rounded-lg p-4 mt-2">
-        <p v-for="item of filterStore.filters" :key="item" class="text-sm sm:text-base md:text-lg">
-          {{ item }}
-        </p>
-      </div>
-    </div> -->
   </section>
 </template>
