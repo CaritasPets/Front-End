@@ -129,7 +129,6 @@ export const usePetStore = defineStore('petStore', () => {
             return propriedades.value;
         }
 
-        // Group filters by category
         const filterGroups = {};
         filterStore.filters.forEach(filter => {
             if (!filterGroups[filter.category]) {
@@ -138,7 +137,6 @@ export const usePetStore = defineStore('petStore', () => {
             filterGroups[filter.category].push(filter.value);
         });
 
-        // Filter pets
         return propriedades.value.filter(pet => {
             return Object.keys(filterGroups).every(category => {
                 const allowedValues = filterGroups[category];

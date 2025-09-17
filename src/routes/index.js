@@ -33,6 +33,10 @@ const routes = [
         component: () => import("@/views/CadastroPage.vue")
     },
     {
+      path: '/ongs/sign-up',
+      component: () => import("@/views/CadastroOng.vue")
+    },
+    {
         path: '/user/login',
         name: 'login',
         component: () => import("@/views/LoginView.vue")
@@ -53,7 +57,16 @@ const routes = [
         name: 'procura-se',
         component: () => import("@/views/SearchView.vue")
     },
-
+    {
+        path: '/adote/register',
+        name: 'adote-register',
+        component: () => import("@/views/PetRegisterPage.vue")
+    },
+    {
+        path: '/procura-se/register',
+        name: 'register-perdido',
+        component: () => import("@/views/CadastroPerdido.vue")
+    },
     //Not found
     {
         path: '/:pathMatch(.*)*',
