@@ -12,13 +12,21 @@ const routes = [
         component: () => import("@/views/OngsPage.vue"),
     },
     {
-        path: '/ongs/profile',
+        path: '/ongs/profile/:id',
         name: 'ong-profile',
-        component: () => import("@/views/OngProfileView.vue")
+        component: () => import("@/views/OngProfileView.vue"),
+        props: true
     },
     {
         path: '/adote',
+        name: 'adote',
         component: () => import("@/views/AdotePage.vue")
+    },
+    {
+        path: '/adote/pet/:id',
+        name: 'pet-profile',
+        component: () => import("@/views/PetProfileView.vue"),
+        props: true
     },
     {
         path: '/user/sign-up',
@@ -49,7 +57,16 @@ const routes = [
         name: 'procura-se',
         component: () => import("@/views/SearchView.vue")
     },
-
+    {
+        path: '/adote/register',
+        name: 'adote-register',
+        component: () => import("@/views/PetRegisterPage.vue")
+    },
+    {
+        path: '/procura-se/register',
+        name: 'register-perdido',
+        component: () => import("@/views/CadastroPerdido.vue")
+    },
     //Not found
     {
         path: '/:pathMatch(.*)*',
