@@ -19,30 +19,31 @@ const route = useRoute();
 
 
 const headerBackground = computed(() => {
-  if(route.path === "/adote/register") return "#FFF493";
-  if (route.path === "/ongs") return "#03497B";
-  if (route.path === "/user/sign-up") return "#FFF493";
+  if (route.path === "/ongs" || route.path.startsWith("/ongs/profile/")) return "#03497B";
   if (route.path === "/perfil") return "#03497B";
-  if (route.path === "/ongs/profile") return "#03497B";
+  if(route.path === "/adote/register") return "#FFF493";
+  if (route.path === "/user/sign-up") return "#FFF493";
   if (route.path === "/user/login/") return "#FFF493";
   if (route.path === "/user/profile" || route.path === "/user/login" || route.path === "/user/sign-up") return "#03497B";
-  if (route.path === "/adote") return "#FF7700";
+  if (route.path === "/adote" || route.path.startsWith("/adote/pet/")) return "#FF7700";
   if (route.path === "/procura-se") return "#FDA202";
   if (route.path === "/sobre") return "#104C00";
+  if (route.path === "/ongs/sign-up") return "#FFF493";
+
   return "#104C00";
 });
 
 
 const linkBaseColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/user/profile" || route.path === "/adote/register") {
-    return "#1E0B00";
+  if (route.path === "/adote" || route.path.startsWith("/adote/pet/") || route.path.slice(0,5) == "/user" || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/ongs/sign-up" || route.path === "/user/profile" || route.path === "/adote/register") {
+  return "#1E0B00";
   }
   return "#DFB468";
 });
 
 
 const menuIconColor = computed(() => {
-  if (route.path === "/adote" || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/user/profile" ||  route.path === "/adote/register") {
+  if (route.path === "/adote" || route.path.startsWith("/adote/pet/") || route.path === "/procura-se" || route.path === "/user/sign-up" || route.path === "/user/profile" ||  route.path === "/adote/register") {
     return "#1E0B00";
   }
   return "#DFB468";
@@ -70,7 +71,7 @@ const menuIconColor = computed(() => {
             class="flex items-center text-nowrap decoration-0 transition-all duration-500 font-[Handlee] px-4 py-1 rounded-lg"
             :class="{
               'bg-[#1E0B00] text-[#DFB468]': route.path === item.link, // ativo
-              'hover:bg-[#1E0B00] hover:text-[#DFB468]': route.path !== item.link,
+              'hover:bg-[#DFB468] hover:text-[#1E0B00]': route.path !== item.link,
             }"
             :style="{
               color: route.path !== item.link ? linkBaseColor : '#DFB468'
