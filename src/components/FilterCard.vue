@@ -62,10 +62,10 @@ function isSelected(option) {
 </script>
 <template>
     <div class="rounded-4xl self-start font-[Sen] " :style="`background: ${props.background}`">
-        <div @click="open = !open" class="text-2xl font-[Sen] sm:text-3xl md:text-4xl text-white rounded-t-4xl py-3 px-25 sm:px-6 md:px-8 flex justify-between" >
-            <h3 class=" font-[Sen] text-2xl">{{ props.title }}</h3>
-            <span class="mdi mdi-chevron-down text-2xl sm:text-3xl md:text-25px" v-if="open == false"></span>
-            <span class="mdi mdi-chevron-up text-2xl sm:text-3xl md:text-25px" v-else></span>
+        <div @click="open = !open" class="text-2xl font-[Sen] sm:text-3xl md:text-4xl text-white rounded-t-4xl h-[50px] flex justify-between w-[90%]" >
+            <h3 class=" font-[Sen] text-xl lg:text-2xl pt-2 pl-8">{{ props.title }}</h3>
+            <span class="mdi mdi-chevron-down pt-2 text-1xl sm:text-2xl md:text-20px" v-if="open == false"></span>
+            <span class="mdi mdi-chevron-up pt-2 text-1xl sm:text-2xl md:text-20px" v-else></span>
         </div>
         <div class="rounded-b-4xl flex flex-col px-4 pt-2 pb-8 text-white gap-y-1" :style="`background: ${props.background2}`" v-if="open">
             <label class="text-sm sm:text-base md:text-lg flex gap-2 items-center" v-for="item of props.options" :key="item">
