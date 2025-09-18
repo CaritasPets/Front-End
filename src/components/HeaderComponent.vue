@@ -23,7 +23,7 @@ const headerBackground = computed(() => {
   if (route.path === "/perfil") return "#03497B";
   if(route.path === "/adote/register") return "#FFF493";
   if (route.path === "/user/sign-up") return "#FFF493";
-  if (route.path === "/user/login/") return "#FFF493";
+  if (route.path === "/user/login/" || route.path === "/procura-se/register") return "#FFF493";
   if (route.path === "/user/profile" || route.path === "/user/login" || route.path === "/user/sign-up") return "#03497B";
   if (route.path === "/adote" || route.path.startsWith("/adote/pet/")) return "#FF7700";
   if (route.path === "/procura-se" || route.path.startsWith("/procura-se/petperdido/")) return "#FDA202";
@@ -35,7 +35,7 @@ const headerBackground = computed(() => {
 
 
 const linkBaseColor = computed(() => {
-  if (route.path === "/adote" || route.path.startsWith("/adote/pet/") || route.path.slice(0,5) == "/user" || route.path === "/procura-se" || route.path.startsWith("/procura-se/petperdido/") || route.path === "/user/sign-up" || route.path === "/ongs/sign-up" || route.path === "/user/profile" || route.path === "/adote/register") {
+  if (route.path === "/adote" || route.path.startsWith("/adote/pet/") || route.path.slice(0,5) == "/user" || route.path === "/procura-se" || route.path.startsWith("/procura-se/petperdido/") || route.path === "/user/sign-up" || route.path === "/ongs/sign-up" || route.path === "/user/profile" || route.path === "/adote/register" || route.path === "/procura-se/register") {
   return "#1E0B00";
   }
   return "#DFB468";

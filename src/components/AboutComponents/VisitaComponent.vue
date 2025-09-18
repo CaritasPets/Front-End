@@ -2,10 +2,18 @@
 import { ref, onMounted, onUnmounted } from "vue";
 
 const images = [
-  "/img_cachorros.svg",
-  "/img_gato_e_cachorro.svg",
-  "/img_gatoDormindo.svg",
-  "/img_gatos.svg"
+  "/visita_ong_01.jpg",
+  "/visita_ong_02.jpg",
+  "/visita_ong_03.jpg",
+  "/visita_ong_04.jpg",
+  "/visita_ong_05.jpg",
+  "/visita_ong_06.jpg",
+  "/visita_ong_07.jpg",
+  "/visita_ong_08.jpg",
+  "/visita_ong_09.jpg",
+  "/visita_ong_10.jpg",
+  "/visita_ong_11.jpg",
+  "/visita_ong_12.jpg"
 ];
 
 const borderColors = [
