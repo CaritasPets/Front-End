@@ -18,11 +18,16 @@ onMounted(() => {
 
 <template>
   <section class="banner">
-    <BannerComponent :background="storeBannerComponent.propriedadesBanners.banner3.background"
+    <BannerComponent 
+      :background="storeBannerComponent.propriedadesBanners.banner3.background"
       :image="storeBannerComponent.propriedadesBanners.banner3.image"
       :title="storeBannerComponent.propriedadesBanners.banner3.title"
       :text="storeBannerComponent.propriedadesBanners.banner3.text"
-      :waves="storeBannerComponent.propriedadesBanners.banner3.waves" />
+      :waves="storeBannerComponent.propriedadesBanners.banner3.waves"
+      :buttonBoolean="storeBannerComponent.propriedadesBanners.banner3.buttonBoolean"
+      :buttonText="storeBannerComponent.propriedadesBanners.banner3.buttonText"
+      :buttonLink="storeBannerComponent.propriedadesBanners.banner3.buttonLink" />
+
   </section>
     <section class="m-30 ">
       <h2 class="text-6xl text-[#4C260A] text-center mb-25 mt-10 font-[Handlee]">Pets para Adoção</h2>

@@ -32,18 +32,14 @@ onMounted(() => {
     </section>
     <section class="m-30">
       <h2 class="text-center text-6xl my-10 mb-25 text-[#4c260a] font-[Handlee]">Pets perdidos</h2>
-      <FilterComponent/>
-      <div v-if="petPerdidoStore.propriedades.length > 0" class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
-      <PetPerdidoCardComponent v-for="pet of petPerdidoStore.filteredPropriedades"
+      <div class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
+      <PetPerdidoCardComponent v-for="pet of petPerdidoStore"
         :key="pet.id"
         :id="pet.id"
         :foto="pet.foto"
         :nome="pet.nome"
         :genero="pet.genero"
        />
-      </div>
-      <div v-else class="text-center text-3xl text-[#4C260A] font-[Handlee] my-20">
-        Não existem pets cadastrados com esses filtros.
       </div>
     </section>
 </template>

@@ -17,6 +17,9 @@ export const useBannerComponentStore = defineStore('bannerStore', () => {
       title: 'Conheça nossas ONGs parceiras',
       text: 'Cada Ong carrega uma história de amor.',
       waves: '/blue_waves.svg',
+      buttonBoolean: true,
+      buttonText: 'Você é uma ONG? Cadastre-se.',
+      buttonLink: '/user',
     },
     banner3: {
       background: '#FF7700',
@@ -24,6 +27,9 @@ export const useBannerComponentStore = defineStore('bannerStore', () => {
       title: 'Adote o novo membro da sua família.',
       text: 'Conheça os pets que estão a espera de um lar',
       waves: '/orange_waves.svg',
+      buttonBoolean: true,
+      buttonText: 'Cadastrar pet para Adoção.',
+      buttonLink: '/adote/register',
     },
     bannerAbout: {
       background: '#104C00',

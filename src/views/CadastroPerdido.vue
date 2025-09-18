@@ -4,8 +4,8 @@ import PerdidoForm from '@/components/PerdidoForm.vue';
 <template>
   <section class="bg-[#FFF493] pt-20 px-10">
     <div class="z-10 relative pl-51 mt-20 mb-20">
-      <h2 class="text-7xl text-[#1E0B00]">Cadastro de Pet Perdido</h2>
-      <p class="text-3xl text-[#1E0B00] font-light">Para cadastrar seu pet, preencha as informações:</p>
+      <h2 class="text-7xl text-[#1E0B00] font-[Handlee]">Cadastro de Pet Perdido</h2>
+      <p class="text-3xl text-[#1E0B00] font-light font-[Sen]">Para cadastrar seu pet, preencha as informações:</p>
     </div>
     <PerdidoForm class="pl-15 z-10 relative" />
   </section>

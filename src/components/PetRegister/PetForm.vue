@@ -11,9 +11,9 @@ const file = ref(null)
 const previewUrl = ref(null)
 const pet = ref({
   nome: '',
-  especie: 'cachorro', //default
-  genero: 'macho', //default
-  porte: 'grande', //default
+  especie: 'cachorro', 
+  genero: 'macho', 
+  porte: 'grande',
   castrado: '',
   raca: '',
   vacinado: '',
@@ -60,7 +60,7 @@ const handleRegister = async () => {
     <div class="flex gap-40">
       <ul class="flex flex-col gap-4">
         <li>
-          <p class="text-2xl">*Nome do Pet (ou apelido):</p>
+          <p class="text-2xl font-[Sen]">*Nome do Pet (ou apelido):</p>
           <input
             class="text-2xl text-[#104C00] py-1 px-2 my-2 border-2 rounded-xl w-120"
             type="text"
@@ -69,7 +69,7 @@ const handleRegister = async () => {
           />
         </li>
         <li>
-          <p class="text-2xl">*Epécie do pet</p>
+          <p class="text-2xl font-[Sen]">*Epécie do pet</p>
           <select
             v-model="pet.especie"
             class="text-2xl text-[#03497B] py-1 px-2 my-2 border-2 rounded-xl w-120 bg-[#FFF493] cursor-pointer"
@@ -81,7 +81,7 @@ const handleRegister = async () => {
           </select>
         </li>
         <li>
-          <p class="text-2xl">Gênero do Pet</p>
+          <p class="text-2xl font-[Sen]">Gênero do Pet</p>
           <select
             v-model="pet.genero"
             class="text-2xl text-[#FDA202] py-1 px-2 my-2 border-2 rounded-xl w-120 bg-[#FFF493] cursor-pointer"
@@ -91,7 +91,7 @@ const handleRegister = async () => {
           </select>
         </li>
         <li>
-          <p class="text-2xl">Porte do Pet</p>
+          <p class="text-2xl font-[Sen]">Porte do Pet</p>
           <select
             v-model="pet.porte"
             class="text-2xl text-[#587911] py-1 px-2 my-2 border-2 rounded-xl w-120 bg-[#FFF493] cursor-pointer"
@@ -102,7 +102,7 @@ const handleRegister = async () => {
           </select>
         </li>
         <li class="flex flex-col gap-2">
-          <p class="text-2xl">O pet é castrado?</p>
+          <p class="text-2xl font-[Sen]">O pet é castrado?</p>
           <div class="flex gap-10">
             <label class="flex items-center gap-2">
               <input type="radio" class="size-6 cursor-pointer" value="sim" v-model="pet.castrado" />
@@ -121,7 +121,7 @@ const handleRegister = async () => {
       </ul>
       <ul class="flex flex-col gap-4">
         <li>
-          <p class="text-2xl">Raça:</p>
+          <p class="text-2xl font-[Sen]">Raça:</p>
           <input
             list="racas"
             v-model="pet.raca"
@@ -147,7 +147,7 @@ const handleRegister = async () => {
           </div>
         </li>
         <li class="flex flex-col gap-2">
-          <p class="text-2xl">O pet é vacinado?</p>
+          <p class="text-2xl font-[Sen]">O pet é vacinado?</p>
           <div class="flex gap-10">
             <label class="flex items-center gap-2">
               <input class="size-6 cursor-pointer" type="radio" value="sim" v-model="pet.vacinado" />
@@ -168,7 +168,7 @@ const handleRegister = async () => {
           </div>
         </li>
         <li class="flex flex-col w-[100%]">
-          <p class="text-2xl text-[#1E0B00]">Foto de Perfil</p>
+          <p class="text-2xl text-[#1E0B00] font-[Sen]">Foto de Perfil</p>
           <input id="fileInput" class="hidden" type="file" @change="onFileChange" />
           <label for="fileInput" class="w-50 h-60 my-2 cursor-pointer">
             <img
@@ -188,11 +188,11 @@ const handleRegister = async () => {
       </ul>
     </div>
     <div class="flex gap-20">
-      <button class="text-xl text-[#FFF493] rounded-xl py-2 px-6 bg-[#03497B] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#03497B] hover:text-[#03497B]" type="reset">
+      <button class="text-xl text-[#FFF493] rounded-xl py-2 px-6 bg-[#03497B] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#03497B] hover:text-[#03497B] font-[Sen]" type="reset">
         <span class="mdi mdi-delete-outline"></span>
         Limpar
       </button>
-      <button class="text-xl text-[#FFF493] rounded-xl py-2 px-6 bg-[#104C00] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#104C00] hover:text-[#104C00]" type="submit">
+      <button class="text-xl text-[#FFF493] rounded-xl py-2 px-6 bg-[#104C00] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#104C00] hover:text-[#104C00] font-[Sen]" type="submit">
         <span class="mdi mdi-paw"></span>
         Cadastrar Pet
       </button>

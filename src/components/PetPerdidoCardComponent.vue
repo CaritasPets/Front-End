@@ -19,8 +19,8 @@ function goToProfile() {
     :style="`background: ${sortBackground()}`">
       <img class="w-25 h-35 object-cover rounded-4xl mt-4 mb-2 lg:w-40 lg:h-45" :src="props.foto" :alt="`${props.nome}-image`">
       <div class="flex flex-col items-center ">
-        <p class="my-1 text-[1rem]  text-white text-center truncate overflow-hidden w-35 sm:text-[1.3rem] md:w-40">{{ props.nome }}</p>
-        <p class="my-1 text-[0.8rem]  text-white -mt-2 mb-5.5 text-center sm:text-[1rem]">{{ props.genero }}</p>
+        <p class="my-1 text-[1rem]  text-white text-center truncate overflow-hidden w-35 sm:text-[1.3rem] md:w-40 font-[Sen]">{{ props.nome }}</p>
+        <p class="my-1 text-[0.8rem]  text-white -mt-2 mb-5.5 text-center sm:text-[1rem] font-[Sen]">{{ props.genero }}</p>
       </div>
   </div>
 </template>

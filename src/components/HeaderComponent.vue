@@ -22,8 +22,8 @@ const headerBackground = computed(() => {
   if (route.path === "/ongs" || route.path.startsWith("/ongs/profile/")) return "#03497B";
   if (route.path === "/perfil") return "#03497B";
   if(route.path === "/adote/register") return "#FFF493";
-  if (route.path === "/user/sign-up") return "#FFF493";
-  if (route.path === "/user/login/" || route.path === "/procura-se/register") return "#FFF493";
+  if (route.path === "/user/sign-up" || route.path === "") return "#FFF493";
+  if (route.path === "/user/login" || route.path === "/procura-se/register") return "#FFF493";
   if (route.path === "/user/profile" || route.path === "/user/login" || route.path === "/user/sign-up") return "#03497B";
   if (route.path === "/adote" || route.path.startsWith("/adote/pet/")) return "#FF7700";
   if (route.path === "/procura-se" || route.path.startsWith("/procura-se/petperdido/")) return "#FDA202";

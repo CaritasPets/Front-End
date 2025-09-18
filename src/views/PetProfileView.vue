@@ -14,7 +14,7 @@ const ong = ongStore.ong.find(o => pet && String(o.id) === String(pet.ongId))
 
 <template>
   <InfosPetComponent v-if="pet" :propriedades="pet" :ong="ong" />
-  <p v-else class="text-center text-2xl text-red-600 mt-10">
+  <p v-else class="text-center text-2xl text-[#1E0B00] mt-10 font-[Sen]">
     Pet não encontrado.
   </p>
 </template>

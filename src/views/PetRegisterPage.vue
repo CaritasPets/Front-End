@@ -4,8 +4,8 @@ import PetForm from '../components/PetRegister/PetForm.vue';
 <template>
     <section class="flex flex-col gap-20 bg-[#FFF493] py-40">
         <div class="px-30">
-            <h2 class="text-6xl font-[Handlee]">Cadastro para adoção</h2>
-            <p class="text-2xl">Para cadastrar o pet para adoção, preencha as informações:</p>
+            <h2 class="text-6xl font-[Handlee] md:mr-20 lg:ml-35">Cadastro para adoção</h2>
+            <p class="text-2xl font-[Sen] md:mr-20 lg:ml-35">Para cadastrar o pet para adoção, preencha as informações:</p>
         </div>
         <PetForm
             class="z-10 relative"

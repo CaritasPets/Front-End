@@ -25,7 +25,7 @@ export const useRecolhivelStore = defineStore('recolhiveis', () => {
             icon: 'mdi mdi-magnify',
             title: 'Como descobrir o dono de um pet perdido?',
             background: 'bg-[#fda202]',
-            text: 'Basta ir à Página Procura-se, ver os pets perdidos cadastrados e entrar em contato com o dono do pet perdido quando encontrar seu pet.',
+            text: 'Basta ir à Página Procura-se, ver os pets perdidos cadastrados e entrar em contato com o dono do pet perdido quando encontrar o pet.',
         }
     })
 

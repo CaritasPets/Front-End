@@ -25,7 +25,9 @@ onMounted(() => {
       :title="bannerStore.propriedadesBanners.banner2.title"
       :text="bannerStore.propriedadesBanners.banner2.text"
       :image="bannerStore.propriedadesBanners.banner2.image"
-    />
+      :buttonBoolean="bannerStore.propriedadesBanners.banner2.buttonBoolean"
+      :buttonText="bannerStore.propriedadesBanners.banner2.buttonText"
+      :buttonLink="bannerStore.propriedadesBanners.banner2.buttonLink" />
   </section>
   <section class="mx-4 sm:mx-8 md:mx-16 lg:mx-40">
     <PapelOngs />
