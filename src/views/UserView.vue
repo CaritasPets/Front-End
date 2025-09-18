@@ -11,7 +11,7 @@ onMounted(async () => {
     profile.value = await authService.profile();
   } else {
     alert('Você precisa fazer login primeiro.')
-    window.location.href = '/user/login'
+    window.location.href = '#/user/login'
   }
 })
 </script>
