@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import FilterCard from './FilterCard.vue';
 import { useFilterStore } from '@/stores/FilterStore';
 
@@ -15,6 +15,9 @@ const reset = () => {
   selectValuesAll.value = [];
   filterStore.contador = 0;
 }
+
+watch(() => filterStore.filters, (newFilters) => {
+}, { deep: true });
 </script>
 <template>
   <section class="flex flex-col items-center">
