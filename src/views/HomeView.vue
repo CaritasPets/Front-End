@@ -1,10 +1,9 @@
 <script setup>
-    import CardFuncionalidade from '../components/CardFuncionalidade.vue';
-    import InfoAdocao from '../components/InfoAdocao.vue';
-    import RecolhivelComponent from '../components/RecolhivelComponent.vue';
-    import HeaderComponent from '@/components/HeaderComponent.vue';
+    import CardFuncionalidade from '../components/HomeComponents/CardFuncionalidade.vue';
+    import InfoAdocao from '../components/HomeComponents/InfoAdocao.vue';
+    import RecolhivelComponent from '../components/HomeComponents/RecolhivelComponent.vue';
     import BannerComponent from '@/components/BannerComponent.vue';
-    
+
     import { useCardFuncionalidadeStore } from '../stores/CardFuncionalidadeStore';
     import { useBannerComponentStore } from '@/stores/BannerComponentStore';
     import { useRecolhivelStore } from '../stores/RecolhiveisStore';
@@ -14,9 +13,6 @@
 </script>
 
 <template>
-  <header>
-    <HeaderComponent/>
-  </header>
     <section class="banner">
       <BannerComponent
         :background="storeBannerComponent.propriedadesBanners.banner1.background"
@@ -26,19 +22,20 @@
         :waves="storeBannerComponent.propriedadesBanners.banner1.waves"
       />
     </section>
-    <section class="funcionalidades">
+    <section class="flex justify-center flex-wrap sm:mx-10 lg:mx-20 xl:gap-10">
         <CardFuncionalidade v-for="card in storeCardFuncionalidades.propriedades" :key="card"
             :icon="card.icon"
             :icon-background="card.iconBackground"
             :text="card.text"
             :background="card.background"
+            :link="card.link"
         />
     </section>
-    <section class="info-adocao">
+    <section class="mx-10 mt-10 xl:mt-25 sm:mx-20 md:mx-30 lg:mx-40">
         <InfoAdocao/>
     </section>
-    <section class="duvidas">
-        <h2>Dúvidas Frequentes</h2>
+    <section class="bg-[#FFE078] my-30 mx-10 px-5 py-10 rounded-4xl sm:mx-10 md:mx-20 lg:mx-40 lg:px-10">
+        <h2 class="text-center text-5xl text-[#361300] py-3 font-[Handlee] sm:text-6xl sm:py-10">Dúvidas Frequentes</h2>
         <RecolhivelComponent v-for="recolhivel in recolhivelStore.propriedades" :key="recolhivel"
             :icon="recolhivel.icon"
             :title="recolhivel.title"
@@ -47,37 +44,3 @@
         />
     </section>
 </template>
-
-<style scoped>
-    header{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2vw;
-      background-color: #FFDB58;
-    }
-    section.funcionalidades{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        padding: 5% 10%;
-        margin-top: 40%;
-    }
-    section.info-adocao{
-        margin: 2% 0;
-        padding: 0;
-    }
-    section.duvidas{
-        background: #FFE078;
-        margin: 8% 4%;
-        padding: 8% 8%;
-        border-radius: 80px;
-
-        h2{
-            text-align: center;
-            font-size: 500%;
-            color: #361300;
-            margin-bottom: 10%;
-        }
-    }
-</style>
