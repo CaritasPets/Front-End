@@ -22,7 +22,7 @@ export const useBannerComponentStore = defineStore('bannerStore', () => {
       background: '#FF7700',
       image: '/img_banner3.svg',
       title: 'Adote o novo membro da sua família.',
-      text: 'lorem ipsulom doloriam',
+      text: 'Conheça os pets que estão a espera de um lar',
       waves: '/orange_waves.svg',
     },
     bannerAbout: {

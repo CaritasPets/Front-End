@@ -11,7 +11,7 @@ const props = defineProps(['background', 'image', 'title', 'text', 'waves', 'but
 
       <h1 class="text-4xl text-center font-[Handlee] mt-10 mb-5 sm:mt-25 sm:mb-15 sm:text-6xl lg:text-7xl sm:text-left">{{ props.title }}</h1>
       <p class="text-2xl text-rigth mx-10 text-center sm:text-left">{{ props.text }}</p>
-      <RouterLink :to="props.buttonLink" v-if="props.buttonBoolean" class="bg-[#03497B] mt-10 w-70 pl-10 text-lg pt-2 pb-2 rounded-2xl font-[Sen]">
+      <RouterLink :to="props.buttonLink" v-if="props.buttonBoolean" class="bg-[#03497B] mt-10 w-70 pl-10 text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#03497B] hover:text-[#03497B]">
         <button>
           {{ props.buttonText }}
         </button>
