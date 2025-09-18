@@ -6,7 +6,7 @@ export const useOngStore = defineStore('ongStore', () => {
         {
             id: '1',
             nome: 'Abrigo Animal',
-            foto: '/logo.svg',
+            foto: '/ongs/img_ong2.jpg',
             telefone: '47984542516',
             email: 'brenoot0405@gmail.com',
             endereco: 'Rua das Palmeiras',
@@ -16,7 +16,7 @@ export const useOngStore = defineStore('ongStore', () => {
         {
             id: '2',
             nome: 'Patinhas Felizes',
-            foto: '/logo.svg',
+            foto: '/ongs/img_ong1.jpg',
             telefone: '47999999999',
             email: 'patinhasfelizes@gmail.com',
             endereco: 'Rua dos Gatos',
@@ -26,7 +26,7 @@ export const useOngStore = defineStore('ongStore', () => {
         {
             id: '3',
             nome: 'Cão Amigo',
-            foto: '/logo.svg',
+            foto: '/ongs/img_ong3.jpg',
             telefone: '47888888888',
             email: 'caoamigo@gmail.com',
             endereco: 'Rua dos Cachorros',
@@ -36,7 +36,7 @@ export const useOngStore = defineStore('ongStore', () => {
         {
             id: '4',
             nome: 'Bichos do Bem',
-            foto: '/logo.svg',
+            foto: '/ongs/img_ong4.jpg',
             telefone: '47777777777',
             email: 'bichosdobem@gmail.com',
             endereco: 'Rua dos Animais',
