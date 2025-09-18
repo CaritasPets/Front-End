@@ -27,7 +27,7 @@ export const usePetService = defineStore('petService', () => {
                 alert('Pet cadastrado com sucesso!');
                 getPets();
             }
-            window.location.href = '#/adote'
+            window.location.href = '/adote'
         } catch(err) {
             if (err.response && err.response.data) {
                 if (typeof err.response.data === 'string') {

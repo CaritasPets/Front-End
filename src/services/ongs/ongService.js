@@ -31,7 +31,7 @@ export const useOngService = defineStore('ongService', () => {
             if(response.data){
                 alert(`ONG (${response.data.nome}) criacda com sucesso!`);
                 getOngs();
-                window.location.href = '#/ongs'
+                window.location.href = '/ongs'
             }
         } catch(err) {
             console.log(err)
