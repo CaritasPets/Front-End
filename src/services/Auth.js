@@ -22,7 +22,7 @@ export const useAuthService = defineStore('authService', () => {
         localStorage.setItem('accessToken', accessToken);
         localStorage.setItem('refreshToken', refreshToken);
         alert(`Bem vindo(a) ${response.data.user.name}`);
-        window.location.href = '/user/profile'
+        window.location.href = '#/user/profile'
       }
     } catch (err) {
       if(err.response && err.response.data){
@@ -53,7 +53,7 @@ export const useAuthService = defineStore('authService', () => {
 
       const name = response.data.user.nome
       alert(`Bem vindo(a) ${name}`);
-      window.location.href = '/user/profile'
+      window.location.href = '#/user/profile'
     } catch (err) {
       error.value = 'Usuário ou senha inválidos'
       alert(error.value)
@@ -65,7 +65,7 @@ export const useAuthService = defineStore('authService', () => {
   }
   const logOut = () => {
     localStorage.clear();
-    window.location.href = '/user/login'
+    window.location.href = '#/user/login'
   }
   const profile = async () => {
     try{
@@ -79,7 +79,7 @@ export const useAuthService = defineStore('authService', () => {
           alert('Token inválido ou expirado. Faça login novamente.')
           localStorage.removeItem('accessToken')
           localStorage.removeItem('refreshToken')
-          window.location.href = '/user/login'
+          window.location.href = '#/user/login'
         } else {
           alert(`Erro: ${err.response.status} - ${err.response.data.message || 'Erro desconhecido'}`)
         }
