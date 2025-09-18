@@ -1,0 +1,1 @@
+import{h as e}from"./index-C7_-OQ5S.js";const t=e("requestUrlStore",()=>({organizacoes:"/organizacoes/",perdidos:"/perdidos/",pets:"/pets/",portes:"/portes/",racas:"/racas/",register:"/auth/register/",refresh:"/auth/refresh/",token:"/auth/token/"}));export{t as u};
