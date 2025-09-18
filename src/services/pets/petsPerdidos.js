@@ -26,7 +26,7 @@ export const usePetPerdidoService = defineStore('petPerdidoService', () => {
                 alert('Pet perdido cadastrado!');
                 getPerdidos()
             }
-            window.location.href = '/procura-se'
+            window.location.href = '#/procura-se'
         } catch(err) {
             if (err.response && err.response.data) {
                 if (typeof err.response.data === 'string') {

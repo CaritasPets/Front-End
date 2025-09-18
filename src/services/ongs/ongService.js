@@ -27,11 +27,11 @@ export const useOngService = defineStore('ongService', () => {
     
     const postOng = async (objOng) => {
         try{
-            const response = await api.post('/organizacoes/', objOng)
+            const response = await api.post('organizacoes/', objOng)
             if(response.data){
                 alert(`ONG (${response.data.nome}) criacda com sucesso!`);
                 getOngs();
-                window.location.href = '/ongs'
+                window.location.href = '#/ongs'
             }
         } catch(err) {
             console.log(err)

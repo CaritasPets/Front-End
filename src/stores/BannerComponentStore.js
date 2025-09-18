@@ -1,57 +1,65 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
+// Importar imagens do src/assets
+import imgBanner1 from '@/assets/img_banner.svg'
+import imgBanner2 from '@/assets/img_banner2.svg'
+import imgBanner3 from '@/assets/img_banner3.svg'
+import imgBannerAbout from '@/assets/img_bannerAbout.svg'
+import imgBannerSearch from '@/assets/banner_image_search.svg'
+
+import greenWaves from '@/assets/green_waves.svg'
+import blueWaves from '@/assets/blue_waves.svg'
+import orangeWaves from '@/assets/orange_waves.svg'
+import yellowWaves from '@/assets/yellow_waves.svg'
 
 export const useBannerComponentStore = defineStore('bannerStore', () => {
   const propriedadesBanners = ref({
     banner1: {
       background: '#104C00',
-      image: '/img_banner.svg',
+      image: imgBanner1,
       title: 'Encontre seu novo melhor amigo!',
-      text: 'Conheça nossas ONGS e encontre seu novo companheiro hoje mesmo!',
-      waves: '/green_waves.svg',
+      text: 'Conheça nossas ONGs e encontre seu novo companheiro hoje mesmo!',
+      waves: greenWaves,
     },
     banner2: {
       background: '#03497B',
-      image: '/img_banner2.svg',
+      image: imgBanner2,
       title: 'Conheça nossas ONGs parceiras',
-      text: 'Cada Ong carrega uma história de amor.',
-      waves: '/blue_waves.svg',
+      text: 'Cada ONG ajuda a gerar histórias de amor',
+      waves: blueWaves,
       buttonBoolean: true,
       buttonText: 'Você é uma ONG? Cadastre-se.',
       buttonLink: '/user',
     },
     banner3: {
       background: '#FF7700',
-      image: '/img_banner3.svg',
+      image: imgBanner3,
       title: 'Adote o novo membro da sua família.',
       text: 'Conheça os pets que estão a espera de um lar',
-      waves: '/orange_waves.svg',
+      waves: orangeWaves,
       buttonBoolean: true,
       buttonText: 'Cadastrar pet para Adoção.',
       buttonLink: '/adote/register',
     },
     bannerAbout: {
       background: '#104C00',
-      image: '/img_bannerAbout.svg',
+      image: imgBannerAbout,
       title: 'Sobre Nós',
-      text: 'Conheça nossa equipe e objetivos do site.',
-      waves: '/green_waves.svg'
+      text: 'Conheça nossa equipe e objetivos do site',
+      waves: greenWaves,
     },
     bannerSearch: {
       background: '#FDA202',
-      image: '/banner_image_search.svg',
+      image: imgBannerSearch,
       title: 'Perdeu seu melhor amigo?',
-      text: 'Divulgue-o aqui para encontrá-lo.',
-      waves: '/yellow_waves.svg',
+      text: 'Divulgue-o aqui para encontrá-lo',
+      waves: yellowWaves,
       buttonBoolean: true,
       buttonText: 'Cadastrar pet perdido.',
       buttonLink: '/procura-se/register',
     },
   })
-  return {
-    propriedadesBanners,
-  }
+
+  return { propriedadesBanners }
 })
-
-

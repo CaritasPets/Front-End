@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
     {
@@ -30,7 +30,7 @@ const routes = [
     },
     {
         path: '/user/sign-up',
-        name: 'login',
+        name: 'user-sign-up',
         component: () => import("@/views/CadastroPage.vue")
     },
     {
@@ -85,11 +85,11 @@ const routes = [
         name: 'Not Found',
         component: () => import('@/views/NotFoundPage.vue')
     }
-    
+
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes,
     scrollBehavior() {
         return { top: 0 }
