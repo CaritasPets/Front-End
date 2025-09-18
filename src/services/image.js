@@ -9,7 +9,7 @@ export const useImageService = defineStore('imageService', () => {
         formData.append('file', file)
         
         try {
-          const response = await axios.post('http://localhost:8000/api/media/images/', formData, {
+          const response = await axios.post('https://back-end-1elh.onrender.com/api/media/images/', formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
