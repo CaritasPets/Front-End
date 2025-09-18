@@ -9,7 +9,7 @@ export const usePetService = defineStore('petService', () => {
     const getPets = async () => {
         try{
             const response = await api.get('pets/')
-            if(response.data){
+            if(response.data && response.data.length > 0){
                 petStore.propriedades = response.data
                 console.log(response.data)
                 return response.data
