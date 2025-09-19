@@ -1,21 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-
-import { useRequestUrlStore } from '../stores/RequestsUrls'
-import { useAuthService } from '../services/Auth'
-import { useImageService } from '../services/image'
-const requestUrls = useRequestUrlStore()
-const authService = useAuthService()
-const imageService = useImageService()
-const form = ref({
-  username: '',
-  password: '',
-  email: '',
-  nome: '',
-  cpf: '',
-  telefone: '',
-  data_nascimento: ''
-})
 const file = ref(null)
 const previewUrl = ref(null)
 
@@ -39,22 +23,6 @@ function onFileChange(event) {
   }
 }
 
-const handleRegister = async () => {
-  try {
-    let attachmentKey = null
-    if (file.value) {
-      attachmentKey = await imageService.uploadImage(file.value)
-    }
-
-    await authService.register(requestUrls.register, form.value, attachmentKey)
-  } catch (err) {
-    if (err.response && err.response.data) {
-      alert(err.response.data)
-    } else {
-      alert('Erro desconhecido. Tente novamente.')
-    }
-  }
-}
 </script>
 <template>
   <form @submit.prevent="handleRegister" class="flex flex-col items-center gap-10 sm:gap-16 lg:gap-20">

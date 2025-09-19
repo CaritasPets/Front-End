@@ -1,9 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import { useOngService } from '../services/ongs/ongService'
-import { useImageService } from '../services/image';
-const imageService = useImageService()
-const ongService = useOngService()
 
 const file = ref(null)
 const previewUrl = ref(null)
@@ -37,26 +33,9 @@ function onFileChange(event) {
     }
   }
 }
-const handleRegister = async () => {
-  try{
-    let fileUrl = '';
-    if(file.value){
-      fileUrl = await imageService.uploadFile(file.value)
-      ong.value.foto_perfil = fileUrl;
-    }
-
-    await ongService.postOng(ong.value);
-  } catch(err) {
-     if (err.response && err.response.data) {
-      alert(err.response.data)
-    } else {
-      alert('Erro desconhecido. Tente novamente.')
-    }
-  }
-}
 </script>
 <template>
-  <form class="relative z-10" @submit.prevent="handleRegister">
+  <form class="relative z-10">
     <div class="flex flex-col lg:flex-row lg:justify-around">
       <div class="">
         <ul>

@@ -2,18 +2,11 @@
 import BannerComponent from '../components/BannerComponent.vue';
 import FilterComponent from '@/components/FilterComponent.vue';
 import PetsAdocao from '@/components/PetsAdocao.vue';
-import { onMounted } from 'vue';
 
 import { useBannerComponentStore } from '../stores/BannerComponentStore';
 const storeBannerComponent = useBannerComponentStore();
 import { usePetStore } from '../stores/PetStore';
 const petStore = usePetStore()
-import { usePetService } from '../services/pets/pets';
-const petService = usePetService()
-
-onMounted(() => {
-  petService.getPets();
-})
 </script>
 
 <template>

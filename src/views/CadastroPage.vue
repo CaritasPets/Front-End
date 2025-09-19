@@ -1,11 +1,8 @@
 <script setup>
 import FormCadastro from '../components/FormCadastro.vue'
-import LoadingComponent from '../components/LoadingComponent.vue'
-import { useAuthService } from '../services/Auth'
-const authService = useAuthService()
+
 </script>
 <template>
-  <LoadingComponent v-if="authService.loading" />
   <section class="bg-[#FFF493] pt-20 px-6 sm:px-10">
     <div class="flex-col text-center sm:text-left sm:flex-row items-center gap-6 lg:gap-20 text-[#1E0B00] z-10 relative sm:pl-15 mb-20">
       <div class="text-[#1E0B00]">

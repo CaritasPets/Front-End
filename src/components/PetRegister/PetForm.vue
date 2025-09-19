@@ -1,10 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import { useRacaStore } from '../../stores/RacaStore'
-import { usePetService } from '../../services/pets/pets'
-import { useImageService } from '../../services/image'
-const imageService = useImageService()
-const petService = usePetService()
 const racaStore = useRacaStore()
 
 const file = ref(null)
@@ -37,26 +33,9 @@ function onFileChange(event) {
     }
   }
 }
-const handleRegister = async () => {
-  try{
-    let fileUrl = '';
-    if(file.value){
-      fileUrl = await imageService.uploadFile(file.value)
-      pet.value.foto = fileUrl;
-    }
-
-    await petService.postPets(pet.value);
-  } catch(err) {
-     if (err.response && err.response.data) {
-      alert(err.response.data)
-    } else {
-      alert('Erro desconhecido. Tente novamente.')
-    }
-  }
-}
 </script>
 <template>
-  <form class="flex flex-col items-center gap-20" @submit.prevent="handleRegister">
+  <form class="flex flex-col items-center gap-20">
     <div class="flex gap-40">
       <ul class="flex flex-col gap-4">
         <li>

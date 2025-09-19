@@ -1,18 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 
-import { useRequestUrlStore } from '../stores/RequestsUrls'
-const urlStore = useRequestUrlStore()
-
-import { useAuthService } from '../services/Auth'
-const authService = useAuthService()
-
 const username = ref('')
 const password = ref('')
 </script>
 <template>
   <form
-    @submit.prevent="authService.login(urlStore.token, { username, password })"
     class="flex flex-col items-center gap-y-8 w-full md:mt-20 md:ml-50 max-w-md px-4 sm:px-0"
   >
     <div class="flex flex-col gap-y-2 w-full">

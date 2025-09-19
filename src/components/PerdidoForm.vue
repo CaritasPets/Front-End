@@ -1,10 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import { usePetPerdidoService } from '../services/pets/petsPerdidos'
-import { useImageService } from '../services/image';
-const petPerdidoService = usePetPerdidoService();
-const imageService = useImageService();
-
 const pet = ref({
   nome: '',
   especie: '',
@@ -23,26 +18,9 @@ function onFileChange(event) {
     previewUrl.value = URL.createObjectURL(selectedFile)
   }
 }
-const handleRegister = async () => {
-  try{
-    let fileUrl = '';
-    if(file.value){
-      fileUrl = await imageService.uploadFile(file.value)
-      pet.value.foto = fileUrl;
-    }
-
-    await petPerdidoService.postPerdidos(pet.value);
-  } catch(err) {
-     if (err.response && err.response.data) {
-      alert(err.response.data)
-    } else {
-      alert('Erro desconhecido. Tente novamente.')
-    }
-  }
-}
 </script>
 <template>
-  <form action="" class="relative z-10" @submit.prevent="handleRegister">
+  <form action="" class="relative z-10">
     <div class="flex justify-around">
       <div class="">
         <ul>
