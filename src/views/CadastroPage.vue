@@ -1,5 +1,5 @@
 <script setup>
-import FormCadastro from '../components/FormCadastro.vue'
+import FormCadastro from '../components/FormsComponents/FormCadastro.vue'
 
 </script>
 <template>
