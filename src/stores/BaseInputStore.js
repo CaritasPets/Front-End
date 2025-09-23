@@ -5,24 +5,20 @@ export const useBaseInputStore = defineStore('baseInputStore', () => {
   const campos = ref({
     input1: {
       type: 'text',
-      label: 'Nome do pet',
+      label: '*Nome do Pet (ou apelido):',
       placeholder: 'Digite o nome...',
-      value: ''
-    },
-    input2: {
-      type: 'text',
-      label: 'Teste',
-      placeholder: 'A',
-      value: ''
+      value: '',
+      required: true
     },
     radio1: {
       background: '#40A9F4',
       type: 'radio',
       label: 'Gênero do Pet',
       options: [
-        { value: 'fêmea', text: 'Fêmea' },
+        { value: 'femea', text: 'Fêmea' },
         { value: 'macho', text: 'Macho' }
       ],
+      required: true
     }
   })
 

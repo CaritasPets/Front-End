@@ -11,19 +11,19 @@ const props = defineProps({
 const inputStore = useBaseInputStore()
 </script>
 <template>
-  <div class="flex flex-col">
-    <label class="">
+  <div class="flex flex-col font-[Sen]">
+    <label class="text-xl lg:text-2xl text-[#1E0B00] mb-2">
       {{ inputStore.campos[props.name].label }}
     </label>
     <div class="flex overflow-hidden rounded-full bg-white p-2 w-fit">
       <label
         v-for="opt in inputStore.campos[props.name].options"
         :key="opt.value"
-        class="cursor-pointer rounded-full px-4 py-2 m-1 text-center transition-colors duration-200"
+        class="text-xl lg:text-2xl cursor-pointer rounded-full px-4 py-2 m-1 lg:mx-2 text-center transition-colors duration-200"
         :class="[
           inputStore.campos[props.name].value === opt.value
             ? 'text-white'
-            : 'text-gray-700 hover:bg-gray-100'
+            : 'text-[#1E0B00]'
         ]"
         :style="[
           inputStore.campos[props.name].value === opt.value

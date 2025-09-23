@@ -47,9 +47,6 @@ function onFileChange(event) {
           <ToggleComponent name="radio1"/>
         </li>
         <li>
-          <BaseInput name="input2"/>
-        </li>
-        <li>
           <p class="text-2xl font-[Sen]">*Nome do Pet (ou apelido):</p>
           <input
             class="text-2xl text-[#104C00] py-1 px-2 my-2 border-2 rounded-xl w-120"
