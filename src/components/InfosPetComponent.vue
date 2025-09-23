@@ -4,61 +4,76 @@ const props = defineProps(['propriedades', 'ong'])
 const router = useRouter()
 
 function goToOngProfile() {
-  if (props.ong?.id) {
-    router.push({ name: 'ong-profile', params: { id: props.ong.id } })
-  }
+    if (props.ong?.id) {
+        router.push({ name: 'ong-profile', params: { id: props.ong.id } })
+    }
 }
 
 function goToAdote() {
-  router.push({ name: 'adote' })
+    router.push({ name: 'adote' })
 }
 </script>
 
 <template>
-    <section class="text-white bg-[#FF7700] relative">
-         <h2 class="px-40 relative z-10 pt-40 text-7xl font-['Handlee']">
-            {{ props?.propriedades?.nome }}
-        </h2>
-        <div class="flex justify-between pt-10 px-40 relative z-10">
-            <div>
-                <img :src="props?.propriedades?.foto" alt="Foto do Pet" class="w-102 rounded-[85px]" />
-            </div>
-            <div class="flex px-20 gap-30">
-                <ul class="space-y-8 flex flex-col justify-center ml-4 mr-2 font-['Sen']">
-                    <li class="text-3xl"><strong>Gênero:</strong> {{ props?.propriedades?.genero }}</li>
-                    <li class="text-3xl"><strong>Espécie:</strong> {{ props?.propriedades?.especie }}</li>
-                    <li class="text-3xl"><strong>Raça:</strong> {{ props?.propriedades?.raca }}</li>
+    <div class="bg-[#F7F5E0] pt-15 overflow-hidden">
+        <img :src="props?.propriedades?.foto" alt="Foto do Pet" class="w-full h-[610px] object-cover md:w-[50%] md:ml-[25%] md:max-h-[500px] lg:max-h-[700px] md:rounded-[25%] md:h-[100%] md:border-15 md:border-[#FF953C]"/>
+    </div>
+    <section class="bg-[#F7F5E0]">
+        <div class="h-[520px] bg-[#F7F5E0] rounded-t-4xl -mt-20 relative z-10 md:mt-0">
+            <h2 class="font-['Handlee'] text-5xl text-center p-15">
+                {{ props?.propriedades?.nome }}
+            </h2>
+            <div class="w-full h-full">
+                <ul class="font-['Sen'] flex flex-wrap w-[100%] gap-6 align-center justify-center mb-5">
+                    <li
+                        class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]">
+                        <img src="/petInformationIcons/especie-icon.svg" alt="Ícone Especie" class="w-12 h-12 mb-2">
+                        <strong>Espécie:</strong> {{ props?.propriedades?.especie }} </li>
+                    <li
+                        class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]">
+                        <img src="/petInformationIcons/genero-icon.svg" alt="Ícone Gênero"
+                            class="w-12 h-12 mb-2"><strong>Gênero:</strong> {{ props?.propriedades?.genero }} </li>
+                    <li
+                        class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]">
+                        <img src="/petInformationIcons/raca-icon.svg" alt="Ícone Pata"
+                            class="w-12 h-12 mb-2"><strong>Raça:</strong> {{ props?.propriedades?.raca }} </li>
                 </ul>
-                <ul class="space-y-8 flex flex-col justify-center ml-2 font-['Sen']">
-                    <li class="text-3xl"><strong>Porte:</strong> {{ props?.propriedades?.porte }}</li>
-                    <li class="text-3xl"><strong>Vacinado:</strong> {{ props?.propriedades?.vacinado }}</li>
-                    <li class="text-3xl"><strong>Castrado:</strong> {{ props?.propriedades?.castrado }}</li>
+                <ul class="font-['Sen'] flex flex-wrap w-[100%] gap-6 align-center justify-center">
+                    <li
+                        class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]">
+                        <img src="/petInformationIcons/porte-icon.svg" alt="Ícone Tamanho"
+                            class="w-12 h-12 mb-2"><strong>Porte:</strong> {{ props?.propriedades?.porte }} </li>
+                    <li
+                        class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]">
+                        <img src="/petInformationIcons/vacinado-icon.svg" alt="Ícone Vacina"
+                            class="w-12 h-12 mb-2"><strong>Vacinado:</strong> {{ props?.propriedades?.vacinado }} </li>
+                    <li
+                        class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]">
+                        <img src="/petInformationIcons/castrado_icon.svg" alt="Ícone Doutor"
+                            class="w-12 h-12 mb-2"><strong>Castrado:</strong> {{ props?.propriedades?.castrado }} </li>
                 </ul>
             </div>
         </div>
-        <div class="z-50 relative mx-40 flex items-center gap-5 mt-20">
-            <img v-if="props?.ong?.foto" :src="props.ong.foto" alt="Foto da ONG" class="w-50 rounded-full" />
-            <div>
-                <p class="text-3xl font-['Sen']">{{ props?.ong?.nome }}</p>
-                <p class="text-2xl font-['Sen']">{{ props?.ong?.telefone }}</p>
+        <div class="w-[90%] h-full bg-[#EEEBD1] flex flex-col sm:flex-row items-center gap-6 p-6 mr-5 ml-5 rounded-2xl max-w-[650px] mx-auto md:w-full md:ml-[18%] lg:ml-[29%]">
+            <img v-if="props?.ong?.foto" :src="props.ong.foto" alt="Foto da ONG" class="w-24 h-24 rounded-full object-cover border-4 border-[#FF953C] sm:w-34 sm:h-24" />
+            <div class="flex flex-col text-center sm:text-left">
+                <p class="text-2xl font-['Sen'] font-semibold">{{ props?.ong?.nome }}</p>
+                <p class="text-lg font-['Sen'] flex items-center gap-2 justify-center"><img src="/petInformationIcons/phone-icon.svg" alt="Ícone de telefone" class="w-[5%]"> {{ props?.ong?.telefone }}</p>
             </div>
-        </div>
-        <div class="flex justify-center gap-5 mt-20 z-50 relative">
+        </div> 
+        <div class="text-center flex flex-wrap mb-10 gap-5 justify-center bg-[#F7F5E0] lg:ml-66  sm:max-w-[1000px] md:gap-10">
             <button
-                class="font-['Sen'] text-[20px] px-15 py-2 bg-[#03497B] rounded-lg border-2 border-transparent duration-500 hover:bg-transparent hover:border-[#03497B] hover:text-[#03497B]"
+                class="bg-[#40A9F4] mt-10 w-[90%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#40A9F4] hover:text-[#40A9F4] sm:w-[20%]"
                 @click="goToOngProfile">
                 <span class="mdi mdi-home-search-outline"></span>
                 Visitar ONG
             </button>
             <button
-                class="font-['Sen'] text-[20px] px-10 py-2 bg-[#104C00] rounded-lg border-2 border-transparent duration-500 hover:bg-transparent hover:border-[#104C00] hover:text-[#104C00]"
+                class="bg-[#98CB2A] mt-10 w-[90%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#98CB2A] hover:text-[#98CB2A] sm:w-[40%]" 
                 @click="goToAdote">
                 <span class="mdi mdi-arrow-left-bold-outline"></span>
                 Retornar para Página de Adoção
             </button>
-        </div>
-        <div class="overflow-hidden">
-            <img src="/orange_waves.svg" alt="ondas" class="absolute w-full transform-[translateY(-20%)] bg-gradient-to-t from-[#FFC693] from-50% to-[#FF7700] to-50% z-0" />
         </div>
     </section>
 </template>

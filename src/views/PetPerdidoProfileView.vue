@@ -10,8 +10,10 @@ const pet = petPerdidoStore.propriedades.find(p => String(p.id) === String(route
 </script>
 
 <template>
+  <section class="md:pt-15">
   <InfosPetPerdidoComponent v-if="pet" :petPerdido="pet" :user="pet.dono" />
   <p v-else class="text-center text-2xl text[#1E0B00] mt-10 font-[Sen]">
     Pet perdido não encontrado.
   </p>
+  </section>
 </template>
