@@ -1,5 +1,5 @@
 <script setup>
-import PetForm from '../components/PetRegister/PetForm.vue';
+import PetForm from '../components/FormsComponents/PetForm.vue';
 </script>
 <template>
     <section class="flex flex-col gap-20 bg-[#FFF493] py-40">
