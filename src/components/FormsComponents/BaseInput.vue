@@ -25,7 +25,7 @@ const inputStore = useBaseInputStore()
       :type="inputStore.campos[props.name].type"
       :placeholder="inputStore.campos[props.name].placeholder"
       :required="inputStore.campos[props.name].required"
-      class="bg-white text-[#1E0B00] rounded-full text-2xl px-4 py-4"
+      class="bg-white text-[#1E0B00] rounded-full text-2xl px-4 py-4.5"
     >
   </div>
 </template>

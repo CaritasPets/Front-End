@@ -1,44 +1,26 @@
 <script setup>
+import { ref } from 'vue'
 
+const file = ref(null)
+
+function handleFileChange(event) {
+  const selected = event.target.files[0]
+  if (selected) {
+    file.value = selected
+    console.log('Arquivo selecionado:', selected.name)
+  }
+}
 </script>
 <template>
-<li class="flex flex-col w-[100%]">
-  <p class="text-2xl text-[#1E0B00] font-[Sen]">Foto de Perfil</p>
-  <input id="fileInput" class="hidden" type="file" @change="onFileChange" />
-  <label for="fileInput" class="w-50 h-60 my-2 cursor-pointer">
-    <img
-      v-if="file"
-      class="w-full h-full rounded-2xl hover:opacity-50 transition-all duration-500"
-      :src="previewUrl"
-      alt="foto-selecionada"
-    />
-    <img
-      v-else
-      class="w-full h-full rounded-2xl bg-amber-50 hover:opacity-50 transition-all duration-500"
-      src="/pet_default.svg"
-      alt=""
-    />
+<div class="font-[Sen]">
+  <label class="flex items-center gap-2 cursor-pointer px-4 py-4 rounded-full bg-white">
+    <span class="mdi mdi-camera text-2xl lg:text-3xl pt-0.5 text-[#1E0B00]"></span>
+    <span class="text-xl lg:text-2xl text-[#1E0B00]">Foto de Perfil</span>
+    <input type="file" class="hidden" @change="handleFileChange" />
   </label>
-</li>
+  <div v-if="file" class="mt-3 text-sm text-[#1E0B00]">
+    {{ file.name }}
+  </div>
+</div>
+
 </template>
-
-
-
-<li class="flex flex-col w-[100%]">
-          <p class="text-2xl text-[#1E0B00] font-[Sen]">Foto de Perfil</p>
-          <input id="fileInput" class="hidden" type="file" @change="onFileChange" />
-          <label for="fileInput" class="w-50 h-60 my-2 cursor-pointer">
-            <img
-              v-if="file"
-              class="w-full h-full rounded-2xl hover:opacity-50 transition-all duration-500"
-              :src="previewUrl"
-              alt="foto-selecionada"
-            />
-            <img
-              v-else
-              class="w-full h-full rounded-2xl bg-amber-50 hover:opacity-50 transition-all duration-500"
-              src="/pet_default.svg"
-              alt=""
-            />
-          </label>
-        </li>

@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useRacaStore } from '../../stores/RacaStore'
 import BaseInput from './BaseInput.vue'
 import ToggleComponent from './RadioInput.vue'
+import PictureInput from './PictureInput.vue'
 const racaStore = useRacaStore()
 
 const file = ref(null)
@@ -45,6 +46,9 @@ function onFileChange(event) {
         </li>
         <li>
           <ToggleComponent name="radio1"/>
+        </li>
+        <li>
+          <PictureInput/>
         </li>
         <li>
           <p class="text-2xl font-[Sen]">*Nome do Pet (ou apelido):</p>
