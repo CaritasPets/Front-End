@@ -2,7 +2,7 @@
 import InfosUserComponent from '@/components/InfosUserComponent.vue';
 </script>
 <template>
-  <section class="bg-[#B8E0FC]">
+  <section class="md:pt-15">
   <InfosUserComponent
     :user="profile"
   />
