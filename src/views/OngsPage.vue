@@ -29,8 +29,7 @@ const ongStore = useOngStore();
     <div class="flex flex-wrap sm:mx-2 lg:mx-3 my-30 justify-center">
       <OngsComponent
         v-for="ong of ongStore.ong" :key="ong.id"
-        :foto="ong.foto"
-        :nome="ong.nome"
+        :ong="ong"
       />
     </div>
   </section>
