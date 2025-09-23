@@ -7,14 +7,17 @@ const props = defineProps({
     required: true
   }
 })
-
 const inputStore = useBaseInputStore()
 </script>
 <template>
   <div class="flex flex-col font-[Sen]">
-    <label class="text-xl lg:text-2xl text-[#1E0B00] mb-2">
+    <label
+      v-if="inputStore.campos[props.name]?.label"
+      class="text-xl lg:text-2xl text-[#1E0B00] mb-2"
+    >
       {{ inputStore.campos[props.name].label }}
     </label>
+
     <div class="flex overflow-hidden rounded-full bg-white p-2 w-fit">
       <label
         v-for="opt in inputStore.campos[props.name].options"
@@ -28,7 +31,7 @@ const inputStore = useBaseInputStore()
         :style="[
           inputStore.campos[props.name].value === opt.value
             ? `background: ${inputStore.campos[props.name].background}`
-            : `background: white`
+            : 'background: white'
         ]"
       >
         <input
@@ -37,6 +40,7 @@ const inputStore = useBaseInputStore()
           :name="props.name"
           :value="opt.value"
           v-model="inputStore.campos[props.name].value"
+          :required="inputStore.campos[props.name].required"
         />
         {{ opt.text }}
       </label>

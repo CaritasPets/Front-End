@@ -1,14 +1,18 @@
 <script setup>
 import { useBaseInputStore } from '@/stores/BaseInputStore'
+import { computed } from 'vue'
 
 const props = defineProps({
-  name: {
-    type: String,
-    required: true
+  name: { type: String, required: true }
+})
+const inputStore = useBaseInputStore()
+const model = computed({
+  get: () => inputStore.campos[props.name]?.value ?? '',
+  set: (val) => {
+    if (!inputStore.campos[props.name]) return
+    inputStore.campos[props.name].value = val
   }
 })
-
-const inputStore = useBaseInputStore()
 </script>
 <template>
   <div class="flex flex-col font-[Sen]">
@@ -21,11 +25,11 @@ const inputStore = useBaseInputStore()
     </label>
     <input
       :id="props.name"
-      v-model="inputStore.campos[props.name].value"
-      :type="inputStore.campos[props.name].type"
-      :placeholder="inputStore.campos[props.name].placeholder"
-      :required="inputStore.campos[props.name].required"
+      v-model="model"
+      :type="inputStore.campos[props.name]?.type ?? 'text'"
+      :placeholder="inputStore.campos[props.name]?.placeholder ?? ''"
+      :required="inputStore.campos[props.name]?.required ?? false"
       class="bg-white text-[#1E0B00] rounded-full text-2xl px-4 py-4.5"
-    >
+    />
   </div>
 </template>

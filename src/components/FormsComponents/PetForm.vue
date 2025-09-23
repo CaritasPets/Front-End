@@ -1,41 +1,9 @@
 <script setup>
-import { ref } from 'vue'
 import { useRacaStore } from '../../stores/RacaStore'
-import BaseInput from './BaseInput.vue'
-import ToggleComponent from './RadioInput.vue'
-import PictureInput from './PictureInput.vue'
+import BaseInput from '../InputComponents/BaseInput.vue'
+import ToggleComponent from '../InputComponents/RadioInput.vue'
+import PictureInput from '../InputComponents/PictureInput.vue'
 const racaStore = useRacaStore()
-
-const file = ref(null)
-const previewUrl = ref(null)
-const pet = ref({
-  nome: '',
-  especie: 'cachorro',
-  genero: 'macho',
-  porte: 'grande',
-  castrado: '',
-  raca: '',
-  vacinado: '',
-  foto: ''
-})
-
-function onFileChange(event) {
-  const selectedFile = event.target.files[0]
-  if (selectedFile) {
-    if (!selectedFile.type.startsWith('image/')) {
-      return alert('Por favor, selecione apenas arquivos de imagem.')
-    }
-
-    if (selectedFile.size > 5 * 1024 * 1024) {
-      return alert('A imagem deve ter no máximo 5MB.')
-    }
-
-    file.value = selectedFile
-    if (selectedFile) {
-      previewUrl.value = URL.createObjectURL(selectedFile)
-    }
-  }
-}
 </script>
 <template>
   <form class="flex flex-col items-center gap-20">
@@ -48,66 +16,13 @@ function onFileChange(event) {
           <ToggleComponent name="radio1"/>
         </li>
         <li>
-          <PictureInput/>
+          <ToggleComponent name="radio2"/>
         </li>
         <li>
-          <p class="text-2xl font-[Sen]">*Nome do Pet (ou apelido):</p>
-          <input
-            class="text-2xl text-[#104C00] py-1 px-2 my-2 border-2 rounded-xl w-120"
-            type="text"
-            placeholder="Nome do pet"
-            v-model="pet.nome"
-          />
+          <ToggleComponent name="radio3"/>
         </li>
         <li>
-          <p class="text-2xl font-[Sen]">*Espécie do pet</p>
-          <select
-            v-model="pet.especie"
-            class="text-2xl text-[#03497B] py-1 px-2 my-2 border-2 rounded-xl w-120 bg-[#FFF493] cursor-pointer"
-          >
-            <option value="cachorro">Cachorro</option>
-            <option value="gato">Gato</option>
-            <option value="passaro">Pássaro</option>
-            <option value="outro">Outro</option>
-          </select>
-        </li>
-        <li>
-          <p class="text-2xl font-[Sen]">Gênero do Pet</p>
-          <select
-            v-model="pet.genero"
-            class="text-2xl text-[#FDA202] py-1 px-2 my-2 border-2 rounded-xl w-120 bg-[#FFF493] cursor-pointer"
-          >
-            <option value="macho">Macho</option>
-            <option value="femea">Fêmea</option>
-          </select>
-        </li>
-        <li>
-          <p class="text-2xl font-[Sen]">Porte do Pet</p>
-          <select
-            v-model="pet.porte"
-            class="text-2xl text-[#587911] py-1 px-2 my-2 border-2 rounded-xl w-120 bg-[#FFF493] cursor-pointer"
-          >
-            <option value="pequeno">Pequeno</option>
-            <option value="medio">Médio</option>
-            <option value="grande">Grande</option>
-          </select>
-        </li>
-        <li class="flex flex-col gap-2">
-          <p class="text-2xl font-[Sen]">O pet é castrado?</p>
-          <div class="flex gap-10">
-            <label class="flex items-center gap-2">
-              <input type="radio" class="size-6 cursor-pointer" value="sim" v-model="pet.castrado" />
-              Sim
-            </label>
-            <label class="flex items-center gap-2">
-              <input type="radio" class="size-6 cursor-pointer" value="nao" v-model="pet.castrado" />
-              Não
-            </label>
-            <label class="flex items-center gap-2">
-              <input type="radio" class="size-6 cursor-pointer" value="nao-sei" v-model="pet.castrado" />
-              Não sei
-            </label>
-          </div>
+          <ToggleComponent name="radio4"/>
         </li>
       </ul>
       <ul class="flex flex-col gap-4">
@@ -137,26 +52,11 @@ function onFileChange(event) {
             </datalist>
           </div>
         </li>
-        <li class="flex flex-col gap-2">
-          <p class="text-2xl font-[Sen]">O pet é vacinado?</p>
-          <div class="flex gap-10">
-            <label class="flex items-center gap-2">
-              <input class="size-6 cursor-pointer" type="radio" value="sim" v-model="pet.vacinado" />
-              Totalmente
-            </label>
-            <label class="flex items-center gap-2">
-              <input class="size-6 cursor-pointer" type="radio" value="parcialmente" v-model="pet.vacinado" />
-              Parcialmente
-            </label>
-            <label class="flex items-center gap-2">
-              <input class="size-6 cursor-pointer" type="radio" value="nao" v-model="pet.vacinado" />
-              Não
-            </label>
-            <label class="flex items-center gap-2">
-              <input class="size-6 cursor-pointer" type="radio" value="nao-sei" v-model="pet.vacinado" />
-              Não sei
-            </label>
-          </div>
+        <li>
+          <ToggleComponent name="radio5"/>
+        </li>
+        <li>
+          <PictureInput/>
         </li>
         <li class="flex flex-col w-[100%]">
           <p class="text-2xl text-[#1E0B00] font-[Sen]">Foto de Perfil</p>
