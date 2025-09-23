@@ -4,7 +4,7 @@ const props = defineProps(['ong'])
 
 <template>
   <div class="bg-[#F7F5E0] pt-15 overflow-hidden">
-    <img :src="props?.ong?.foto" alt="Foto da ONG" class="w-full h-[610px] object-cover md:w-[50%] md:ml-[25%]  md:rounded-[25%] md:max-h-[500px] lg:max-h-[580px] md:h-[80%] lg:border-15 lg:border-[#FF953C]" />
+    <img :src="props?.ong?.foto" alt="Foto da ONG" class="w-full h-[610px] object-cover md:w-[50%] md:ml-[25%]  md:rounded-[25%] md:max-h-[500px] lg:max-h-[700px] md:h-[80%] lg:border-15 lg:border-[#FF953C]" />
   </div>
   <section class="bg-[#F7F5E0]">
     <div class="h-[520px] bg-[#F7F5E0] rounded-t-4xl -mt-7 relative z-10 lg:mt-0">
@@ -36,13 +36,12 @@ const props = defineProps(['ong'])
               class="w-12 h-12 mb-2"><strong>CNPJ:</strong> {{ props?.ong?.cnpj }}
           </li>
         </ul>
-        <p
-          class="w-[90%] h-[250px] bg-[#EEEBD1] flex flex-wrap items-center gap-6 pl-6 pr-4 pt-5 mt-15 rounded-2xl max-w-[650px] mx-auto md:h-[200px] max-h[300px] sm:w-[55%] md:w-[65%] lg:w-[50%]">
+        <p class="w-[90%] h-[250px] bg-[#EEEBD1] flex flex-wrap items-center gap-6 pl-6 pr-4 pt-5 mt-15 rounded-2xl max-w-[600px] mx-auto md:h-[200px] max-h[300px] sm:w-[55%] md:w-[65%] lg:w-[45%]">
           <img src="/petInformationIcons/coment-icon.svg" alt="Ícone Comentário" class="w-10 h-10"><strong
             class="text-xl">Descrição:</strong> {{ props?.ong.descricao }}</p>
       </div>
     </div>
-    <div class="text-center flex mb-10 gap-5 justify-center mt-60 bg-[#F7F5E0] lg:ml-40 sm:max-w-[900px] md:gap-10">
+    <div class="text-center flex flex-wrap mb-10 gap-5 justify-center mt-60 bg-[#F7F5E0] lg:ml-85 sm:max-w-[850px] md:gap-10">
       <button
         class="bg-[#40A9F4] mt-10 w-[80%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#40A9F4] hover:text-[#40A9F4] sm:w-[25%]">
         <span class="mdi mdi-pencil-outline"></span> Alterar informações
