@@ -15,11 +15,11 @@ function goToAdote() {
 </script>
 
 <template>
-    <div class="bg-[#F7F5E0] pt-6">
-        <img :src="props?.propriedades?.foto" alt="Foto do Pet" class="border-15 border-[#FF953C] w-full h-[610px] object-cover md:w-[50%] md:ml-[25%] md:rounded-b-[25%] md:h-[700px]"/>
+    <div class="bg-[#F7F5E0] pt-15 overflow-hidden">
+        <img :src="props?.propriedades?.foto" alt="Foto do Pet" class="w-full h-[610px] object-cover md:w-[50%] md:ml-[25%] md:max-h-[500px] lg:max-h-[580px] md:rounded-[25%] md:h-[100%] md:border-15 md:border-[#FF953C]"/>
     </div>
     <section class="bg-[#F7F5E0]">
-        <div class="h-[520px] bg-[#F7F5E0] rounded-t-4xl -mt-7 relative z-10 lg:mt-0">
+        <div class="h-[520px] bg-[#F7F5E0] rounded-t-4xl -mt-20 relative z-10 md:mt-0">
             <h2 class="font-['Handlee'] text-5xl text-center p-15">
                 {{ props?.propriedades?.nome }}
             </h2>
@@ -54,7 +54,7 @@ function goToAdote() {
                 </ul>
             </div>
         </div>
-        <div class="w-full h-full bg-[#EEEBD1] flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl max-w-[650px] mx-auto">
+        <div class="w-[90%] h-full bg-[#EEEBD1] flex flex-col sm:flex-row items-center gap-6 p-6 mr-5 ml-5 rounded-2xl max-w-[650px] mx-auto md:w-full md:ml-[11%] lg:ml-[23%]">
             <img v-if="props?.ong?.foto" :src="props.ong.foto" alt="Foto da ONG" class="w-24 h-24 rounded-full object-cover border-4 border-[#FF953C] sm:w-34 sm:h-24" />
             <div class="flex flex-col text-center sm:text-left">
                 <p class="text-2xl font-['Sen'] font-semibold">{{ props?.ong?.nome }}</p>
