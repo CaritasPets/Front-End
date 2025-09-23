@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute()
 function validateFooter(url) {
-  if(url.startsWith('/user') || url.startsWith('/ongs/profile') || url.startsWith('/adote/pet') || route.path.startsWith("/procura-se/petperdido/")) return false
+  if(url.startsWith('/user') || url.startsWith('/ongs/profile')) return false
   if(url == '/user/profile') return true
   if(url.startsWith('/user') || url.startsWith('/ongs/profile')) return false
   if(url == '/adote/register') return false
@@ -17,9 +17,9 @@ function validateFooter(url) {
 <template>
   <div
     v-if="validateFooter(route.path)"
-    class="bg-[url('/footer.svg')] bg-no-repeat bg-bottom bg-[length:100%] pt-[25%] pb-20 sm:pb-20 lg:pb-80 md:pb-50 sm:pt-[60%] md:pt-[60%] lg:pt-[60%]
+    class="bg-[url('/footer.svg')] bg-no-repeat bg-bottom bg-[length:100%] pt-[25%] pb-20 sm:pb-20 lg:pb-50 md:pb-40 sm:pt-[60%] md:pt-[60%] lg:pt-[40%]
        ">
- <p class="text-center text-sm md:text-base font-[Sen] ">
+ <p class="text-center text-sm md:text-base font-[Sen]">
     &copy; 2025 CaritasPets. Todos os direitos reservados.
   </p>
   <p class="text-center text-sm md:text-base font-[Sen] ">

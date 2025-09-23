@@ -47,8 +47,8 @@ watch(() => filterStore.filters, (newFilters) => {
             />
         </div>
         <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6 font-[Sen] text-lg sm:text-xl md:text-2xl lg:text-3xl">
-          <button type="reset" class="text-lg sm:text-xl md:text-2xl lg:text-3xl px-6 sm:px-8 md:px-10 py-2 border-4 font-[Handlee] border-blue-700 rounded-xl hover:bg-[#FAF9B4] transition" @click="reset()">Limpar</button>
-          <button type="submit" class="text-lg sm:text-xl md:text-2xl lg:text-3xl px-12 sm:px-16 md:px-20 py-2 border-4 font-[Handlee] border-orange-400 rounded-xl hover:bg-[#FAF9B4] transition">Filtrar</button>
+          <button type="reset" class="text-lg sm:text-xl md:text-2xl lg:text-3xl px-6 sm:px-8 md:px-10 py-2 border-4 font-[Handlee] border-blue-700 rounded-xl hover:bg-[#F7F5E0] transition" @click="reset()">Limpar</button>
+          <button type="submit" class="text-lg sm:text-xl md:text-2xl lg:text-3xl px-12 sm:px-16 md:px-20 py-2 border-4 font-[Handlee] border-orange-400 rounded-xl hover:bg-[#F7F5E0] transition">Filtrar</button>
         </div>
       </form>
     </div>
