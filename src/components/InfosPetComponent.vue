@@ -15,8 +15,8 @@ function goToAdote() {
 </script>
 
 <template>
-    <div class="bg-[#F7F5E0] ">
-        <img :src="props?.propriedades?.foto" alt="Foto do Pet" class="w-full h-[610px] object-cover md:w-[50%] md:ml-[25%] md:rounded-b-[25%] md:pt-20"/>
+    <div class="bg-[#F7F5E0] pt-6">
+        <img :src="props?.propriedades?.foto" alt="Foto do Pet" class="border-15 border-[#FF953C] w-full h-[610px] object-cover md:w-[50%] md:ml-[25%] md:rounded-b-[25%] md:h-[700px]"/>
     </div>
     <section class="bg-[#F7F5E0]">
         <div class="h-[520px] bg-[#F7F5E0] rounded-t-4xl -mt-7 relative z-10 lg:mt-0">
@@ -75,6 +75,5 @@ function goToAdote() {
                 Retornar para Página de Adoção
             </button>
         </div>
-
     </section>
 </template>

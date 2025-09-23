@@ -15,48 +15,45 @@ function goToProcuraSe() {
 </script>
 
 <template>
-    <section class="text-white bg-[#FDA202] relative">
-         <h2 class="px-40 relative z-10 pt-40 text-7xl font-['Handlee']">
+    <div class="pt-6 ">
+        <img :src="props?.petPerdido?.foto" alt="Foto do Pet" class="border-15 border-[#FFBC46] w-full h-[610px] object-cover md:w-[50%] md:ml-[25%] md:rounded-b-[25%] md:h-[700px]"/>
+    </div>
+    <section class="bg-[#F7F5E0]">
+        <div class="h-[520px] bg-[#F7F5E0] rounded-t-4xl -mt-7 relative z-10 lg:mt-0">
+         <h2 class="font-['Handlee'] text-5xl text-center p-15">
             {{ props?.petPerdido?.nome }}
-        </h2>
-        <div class="flex justify-between pt-10 px-40 relative z-10">
-            <div>
-                <img :src="props?.petPerdido?.foto" alt="Foto do Pet" class="w-200 h-100 object-cover rounded-[85px]" />
-            </div>
-            <div class="flex px-20 gap-10 items-stretch">
-                <ul class="space-y-8 flex flex-col justify-center ml-4 mr-2 font-['Sen'] w-80 h-full">
-                    <li class="text-3xl"><strong>Gênero:</strong> {{ props?.petPerdido?.genero }}</li>
-                    <li class="text-3xl"><strong>Visto por último em:</strong> {{ props?.petPerdido?.local }}</li>
+         </h2>
+            <div class="w-full h-full">
+                <ul class="font-['Sen'] flex flex-wrap w-[100%] gap-6 align-center justify-center mb-5">
+                    <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/genero-icon.svg" alt="Ícone Especie" class="w-12 h-12 mb-2"><strong>Gênero:</strong> {{ props?.petPerdido?.genero }}</li>
+                    <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/location-icon.svg" alt="Ícone Especie" class="w-12 h-12 mb-2"><strong>Visto por último em:</strong> {{ props?.petPerdido?.local }}</li>
                 </ul>
-                <ul class="space-y-8 flex flex-col justify-center ml-2 font-['Sen'] w-80 h-full">
-                    <li class="text-3xl"><strong>Espécie:</strong> {{ props?.petPerdido?.especie }}</li>
-                    <li class="text-3xl"><strong>Características:</strong> {{ props?.petPerdido?.caracteristicas }}</li>
+                <ul class="font-['Sen'] flex flex-wrap w-[100%] gap-6 align-center justify-center">
+                    <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/especie-icon.svg" alt="Ícone Especie" class="w-12 h-12 mb-2"><strong>Espécie:</strong> {{ props?.petPerdido?.especie }}</li>
+                    <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/coment-icon.svg" alt="Ícone Especie" class="w-12 h-12 mb-2"><strong>Características:</strong> {{ props?.petPerdido?.caracteristicas }}</li>
                 </ul>
             </div>
         </div>
-        <div class="z-10 relative mx-40 flex items-center gap-5 mt-20">
-            <img v-if="props?.user?.foto_perfil" :src="props.user.foto_perfil.file" alt="Foto do Dono" class="w-50 h-50 object-cover rounded-full" />
-            <div>
-                <p class="text-3xl font-['Sen']">{{ props?.user?.nome }}</p>
-                <p class="text-2xl font-['Sen']">{{ props?.user?.telefone }}</p>
+        <div class="w-full h-full bg-[#EEEBD1] flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl max-w-[650px] mx-auto">
+            <img v-if="props?.user?.foto_perfil" :src="props.user.foto_perfil.file" alt="Foto do Dono" class="w-24 h-24 rounded-full object-cover border-4 border-[#FF953C] sm:w-34 sm:h-24" />
+            <div class="flex flex-col text-center sm:text-left">
+                <p class="text-2xl font-['Sen'] font-semibold">{{ props?.user?.nome }}</p>
+                <p class="text-lg font-['Sen'] flex items-center gap-2 justify-center"><img src="/petInformationIcons/phone-icon.svg" alt="Ícone de telefone" class="w-[5%]"> {{ props?.user?.telefone }}</p>
             </div>
         </div>
-        <div class="flex justify-center gap-5 mt-20 z-50 relative">
+        <div class="text-center flex flex-wrap mb-10 gap-5 justify-center bg-[#F7F5E0] lg:ml-27 sm:max-w-[1000px] md:gap-10">
             <button
-                class="font-['Sen'] text-[20px] px-15 py-2 bg-[#03497B] rounded-lg border-2 border-transparent duration-500 hover:bg-transparent hover:border-[#03497B] hover:text-[#03497B]"
+                class="bg-[#40A9F4] mt-10 w-[90%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#40A9F4] hover:text-[#40A9F4] sm:w-[20%]"
                 @click="goToUserProfile">
                 <span class="mdi mdi-account-search-outline"></span>
                 Visitar Dono
             </button>
             <button
-                class="font-['Sen'] text-[20px] px-10 py-2 bg-[#104C00] rounded-lg border-2 border-transparent duration-500 hover:bg-transparent hover:border-[#104C00] hover:text-[#104C00]"
+                class="bg-[#98CB2A] mt-10 w-[90%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#98CB2A] hover:text-[#98CB2A] sm:w-[40%]"
                 @click="goToProcuraSe">
                 <span class="mdi mdi-arrow-left-bold-outline"></span>
                 Retornar para Página de Perdidos
             </button>
-        </div>
-        <div class="overflow-hidden">
-            <img src="/yellow_waves.svg" alt="ondas" class="absolute w-full transform-[translateY(-20%)] bg-gradient-to-t from-[#FFDCA0] from-50% to-[#FDA202] to-50% z-0" />
         </div>
     </section>
 </template>
