@@ -55,10 +55,35 @@ export const usePerdidoService = defineStore('perdidoService', () => {
             console.log(err)
         }
     }
+    const toggleFavoritePerdido = async (id) => {
+        try{
+            const response = await api.post(`favoritos/perdidos/${id}/toggle/`)
+            if(response.data.isFavorito){
+                    console.log('Favorito adicionado')
+            } else{
+                console.log('Favorito removido')                
+            }
+        } catch(err){
+            console.log(err)
+        }
+    }
+
+    const getFavoritePerdido = async () => {
+        try{
+            const response = await api.get('favoritos/perdidos/');
+            if(response.data) {
+                console.log(response.data)
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    }
     return{
         getPerdidos,
         postPerdidos,
         patchPerdidos,
-        deletePerdido
+        deletePerdido,
+        toggleFavoritePerdido,
+        getFavoritePerdido
     }
 })

@@ -52,11 +52,37 @@ export const useAdocaoService = defineStore('adocaoService', () => {
             console.log(err);
         }
     }
+
+    const toggleFavoriteAdocao = async (id) => {
+        try{
+            const response = await api.post(`favoritos/adocao/${id}/toggle/`)
+            if(response.data.isFavorito){
+                console.log('Favorito adicionado')
+            } else{
+                console.log('Favorito removido')
+            }
+        } catch(err){
+            console.log(err)
+        }
+    }
+
+    const getFavoriteAdocao = async () => {
+        try{
+            const response = await api.get('favoritos/adocao/');
+            if(response.data) {
+                console.log(response.data)
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    }
     return{
         getAdocao,
         postAdocao,
         patchAdocao,
         deleteAdocao,
+        toggleFavoriteAdocao,
+        getFavoriteAdocao
     }
 })
 
