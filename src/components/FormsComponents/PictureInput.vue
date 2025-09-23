@@ -22,5 +22,4 @@ function handleFileChange(event) {
     {{ file.name }}
   </div>
 </div>
-
 </template>
