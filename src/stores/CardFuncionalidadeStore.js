@@ -6,22 +6,22 @@ export const useCardFuncionalidadeStore = defineStore('card-store', () => {
         cardAdocao: {
             text: 'Dê um lar para um pet',
             icon: 'mdi mdi-home-heart',
-            background: '#03497B',
-            iconBackground: '#69A2A8',
+            background: '#FFBC46',
+            iconBackground: '#FDA202',
             link: '/adote'
         },
         cardOngs: {
             text: 'Conheça nossas ONGs',
             icon: 'mdi mdi-hand-heart',
-            background: '#587911',
-            iconBackground: '#104C00',
+            background: '#40A9F4',
+            iconBackground: '#03497B',
             link: '/ongs'
         },
         cardProcuraSe: {
             text: 'Ache seu pet perdido',
             icon: 'mdi mdi-magnify',
-            background: '#FDA202',
-            iconBackground: '#EE7104',
+            background: '#FF953C',
+            iconBackground: '#FF7400',
             link: '/procura-se'
         }
     })
