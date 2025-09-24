@@ -1,5 +1,5 @@
 <script setup>
-import OngForm from '../components/OngForm.vue'
+import OngForm from '../components/FormsComponents/OngForm.vue'
 </script>
 <template>
   <section class="bg-[#FFF493] pt-20 px-4 sm:px-10 overflow-x-hidden">
