@@ -1,5 +1,5 @@
 <script setup>
-import PerdidoForm from '@/components/PerdidoForm.vue';
+import PerdidoForm from '@/components/FormsComponents/PerdidoForm.vue';
 </script>
 <template>
   <section class="bg-[#FFF493] pt-20 px-10">

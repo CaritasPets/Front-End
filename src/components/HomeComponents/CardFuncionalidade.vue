@@ -4,7 +4,7 @@
 <template>
   <router-link
     :to="props.link"
-    class="text-white w-45 lg:w-60 xl:w-85 text-center rounded-4xl pt-10 lg:pt-20 pb-5 lg:pb-15 pl-5 pr-5 transform scale-80 transition duration-300 hover:opacity-80 hover:cursor-pointer"
+    class="text-white w-45 lg:w-60 xl:w-85 text-center rounded-4xl pt-10 lg:pt-20 pb-5 lg:pb-15 pl-5 pr-5 transform scale-80 transition duration-300 hover:scale-85 hover:cursor-pointer bg-amber-50"
     :style="'background:' + props.background"
   >
     <span

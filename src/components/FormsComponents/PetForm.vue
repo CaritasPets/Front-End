@@ -1,14 +1,17 @@
 <script setup>
 import { ref } from 'vue'
 import { useRacaStore } from '../../stores/RacaStore'
+import BaseInput from './BaseInput.vue'
+import ToggleComponent from './RadioInput.vue'
+import PictureInput from './PictureInput.vue'
 const racaStore = useRacaStore()
 
 const file = ref(null)
 const previewUrl = ref(null)
 const pet = ref({
   nome: '',
-  especie: 'cachorro', 
-  genero: 'macho', 
+  especie: 'cachorro',
+  genero: 'macho',
   porte: 'grande',
   castrado: '',
   raca: '',
@@ -39,6 +42,15 @@ function onFileChange(event) {
     <div class="flex gap-40">
       <ul class="flex flex-col gap-4">
         <li>
+          <BaseInput name="input1"/>
+        </li>
+        <li>
+          <ToggleComponent name="radio1"/>
+        </li>
+        <li>
+          <PictureInput/>
+        </li>
+        <li>
           <p class="text-2xl font-[Sen]">*Nome do Pet (ou apelido):</p>
           <input
             class="text-2xl text-[#104C00] py-1 px-2 my-2 border-2 rounded-xl w-120"
@@ -48,7 +60,7 @@ function onFileChange(event) {
           />
         </li>
         <li>
-          <p class="text-2xl font-[Sen]">*Epécie do pet</p>
+          <p class="text-2xl font-[Sen]">*Espécie do pet</p>
           <select
             v-model="pet.especie"
             class="text-2xl text-[#03497B] py-1 px-2 my-2 border-2 rounded-xl w-120 bg-[#FFF493] cursor-pointer"

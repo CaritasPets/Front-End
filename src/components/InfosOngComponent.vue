@@ -4,7 +4,7 @@ const props = defineProps(['ong'])
 
 <template>
   <div class="bg-[#F7F5E0] pt-15 overflow-hidden">
-    <img :src="props?.ong?.foto" alt="Foto da ONG" class="w-full h-[610px] object-cover md:w-[50%] md:ml-[25%]  md:rounded-[25%] md:max-h-[500px] lg:max-h-[700px] md:h-[80%] lg:border-15 lg:border-[#FF953C]" />
+    <img :src="props?.ong?.foto" alt="Foto da ONG" class="w-full h-[610px] object-cover md:w-[50%] md:ml-[25%]  md:rounded-[25%] md:max-h-[500px] lg:max-h-[700px] md:h-[80%] lg:border-15 lg:border-[#40A9F4]" />
   </div>
   <section class="bg-[#F7F5E0]">
     <div class="h-[520px] bg-[#F7F5E0] rounded-t-4xl -mt-7 relative z-10 lg:mt-0">
