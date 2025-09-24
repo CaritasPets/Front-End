@@ -25,6 +25,55 @@ export const useBaseInputStore = defineStore('baseInputStore', () => {
       value: '',
       required: true
     },
+    input4:{
+      type: 'text',
+      label: '*Username:',
+      placeholder: 'Insira aqui seu nome de usuário',
+      value: '',
+      required: true
+    },
+    input5:{
+      type: 'text',
+      label: '*Email:',
+      placeholder: 'Insira aqui seu email',
+      value: '',
+      required: true
+    },
+    input6:{
+      type: 'password',
+      label: '*Senha:',
+      placeholder: 'Insira aqui sua senha',
+      value: '',
+      required: true
+    },
+    input7:{
+      type: 'text',
+      label: '*Nome Completo:',
+      placeholder: 'Insira aqui seu nome completo',
+      value: '',
+      required: true
+    },
+    input8:{
+      type: 'text',
+      label: '*Telefone:',
+      placeholder: 'Insira aqui seu número de telefone',
+      value: '',
+      required: true
+    },
+    input9:{
+      type: 'text',
+      label: '*CPF:',
+      placeholder: 'Insira aqui seu CPF',
+      value: '',
+      required: true
+    },
+    input10:{
+      type: 'date',
+      label: 'Data de Nascimento:',
+      placeholder: 'Insira aqui seu nome completo',
+      value: '',
+      required: false
+    },
     radio1: {
       background: '#40A9F4',
       type: 'radio',
