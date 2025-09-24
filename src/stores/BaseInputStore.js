@@ -74,6 +74,20 @@ export const useBaseInputStore = defineStore('baseInputStore', () => {
       value: '',
       required: false
     },
+    loginInput1:{
+      type: 'text',
+      label: 'Usuário:',
+      placeholder: 'Insira aqui seu usuário',
+      value: '',
+      required: true
+    },
+    loginInput2:{
+      type: 'password',
+      label: 'Senha:',
+      placeholder: 'Insira aqui sua senha',
+      value: '',
+      required: true
+    },
     radio1: {
       background: '#40A9F4',
       type: 'radio',

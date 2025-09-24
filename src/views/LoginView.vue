@@ -1,13 +1,15 @@
 <script setup>
+import DecorationCadastro from '../components/FormsComponents/DecorationCadastro.vue';
 import LoginForm from '../components/LoginForm.vue';
-import LoginInstructions from '../components/LoginInstructions.vue';
 </script>
 <template>
-    <section class="flex flex-col md:flex-row justify-center gap-y-10 md:gap-x-20 py-20 md:py-40 px-6 sm:px-12 lg:px-20 bg-[#FFF493]">
-        <LoginInstructions class="z-10" />
-        <LoginForm class="z-10" />
+    <section class="bg-black/80 flex sm:px-20 sm:py-20">
+        <DecorationCadastro
+            class="rounded-l-4xl"
+            :title="'Login de usuário'"
+        />
+        <LoginForm class="rounded-r-4xl" />
     </section>
-    <img class="w-full sm:translate-y-[-20%] md:translate-y-[-40%] bg-[#FFF493] absolute z-0" src="/beige_waves.svg" alt="">
 </template>
 
 

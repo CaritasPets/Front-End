@@ -8,7 +8,7 @@ import BaseInput from '../InputComponents/BaseInput.vue'
 
 </script>
 <template>
-  <form @submit.prevent="handleRegister" class="flex flex-col items-center gap-10 bg-amber-200 sm:gap-16 lg:gap-20">
+  <form @submit.prevent="handleRegister" class="flex flex-col items-center py-20 gap-10 bg-amber-200 sm:gap-16 lg:gap-20">
     <div class=" sm:flex md:flex lg:flex justify-around gap-10 w-full">
       <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
         <li class="flex flex-col w-[100%]">
