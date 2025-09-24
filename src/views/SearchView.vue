@@ -23,9 +23,9 @@ const petPerdidoStore = usePetPerdidoStore();
       :buttonLink="bannerStore.propriedadesBanners.bannerSearch.buttonLink"
     />
     </section>
-    <section class="md:mx-30">
-      <h2 class="text-center text-4xl md:text-6xl my-10 mb-25 text-[#4c260a] lg:text-7xl font-[Handlee]">Pets perdidos</h2>
-      <div class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
+    <section class="mx-10 md:mt-25 md:mx-30">
+      <h2 class="text-center text-4xl md:text-5xl my-10 mb-10 md:mb-25 text-[#4c260a] lg:text-6xl font-[Handlee]">Pets perdidos</h2>
+      <div class="flex flex-wrap sm:mx-2 lg:mx-5 my-10 md:my-30 justify-center">
       <PetPerdidoCardComponent v-for="pet of petPerdidoStore.propriedades"
         :key="pet.id"
         :id="pet.id"

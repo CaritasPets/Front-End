@@ -29,7 +29,7 @@ const recolhivelStore = useRecolhivelStore();
     <InfoAdocao />
   </section>
   <section class="bg-[#fae8ad] my-10 mx-10 px-5 py-10 rounded-4xl sm:mx-10 md:mx-20 lg:mx-40 lg:px-10">
-    <h2 class="text-center text-5xl text-[#361300] py-3 font-[Handlee] sm:text-6xl sm:py-10">Dúvidas Frequentes</h2>
+    <h2 class="text-center text-4xl text-[#361300] py-3 font-[Handlee] sm:text-6xl sm:py-10">Dúvidas Frequentes</h2>
     <RecolhivelComponent v-for="recolhivel in recolhivelStore.propriedades" :key="recolhivel" :icon="recolhivel.icon"
       :title="recolhivel.title" :background="recolhivel.background" :text="recolhivel.text" />
   </section>

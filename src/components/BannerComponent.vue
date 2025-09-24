@@ -34,9 +34,9 @@ const buttonStyle = computed(() => {
 
 </script>
 <template>
-  <div class="flex flex-col-reverse justify-center py-20 md:flex-row sm:flex sm:justify-between sm:pt-20 sm:pl-20" :style="'background:' + props.background">
-    <div class="text-black relative z-10 flex flex-col items-center mt-25 gap-y-4 sm:items-baseline">
-      <h1 class="text-5xl text-center mx-10 font-[Handlee] mt-10 mb-5 sm:mt-25 sm:mb-15 sm:text-6xl lg:w-220 lg:text-8xl sm:text-left">{{ props.title }}</h1>
+  <div class="flex flex-col-reverse justify-center py-20 md:flex-row sm:flex sm:justify-between sm:pt-23 sm:pl-20" :style="'background:' + props.background">
+    <div class="text-black relative z-10 flex flex-col items-center mt-25 sm:mt-10 gap-y-4 sm:items-baseline sm:w-1/2">
+      <h1 class="text-5xl text-center mx-10 font-[Handlee] mt-10 mb-5 sm:mt-25 sm:mb-15 sm:text-6xl lg:text-7xl sm:text-left">{{ props.title }}</h1>
       <p class="text-2xl text-rigth mx-10 text-center sm:text-left">{{ props.text }}</p>
       <RouterLink
         v-if="buttonStyle"
@@ -47,7 +47,7 @@ const buttonStyle = computed(() => {
         {{ props.buttonText }}
       </RouterLink>
     </div>
-    <div class="max-w-7xl mt-20 sm:mr-20">
+    <div class="sm:w-1/2 mt-20 sm:mr-20">
       <img
         :src="props.image"
         :class="['z-10 w-full']"

@@ -22,10 +22,10 @@ const petStore = usePetStore()
       :buttonLink="storeBannerComponent.propriedadesBanners.banner3.buttonLink" />
 
   </section>
-    <section class="md:mx-30 ">
-      <h2 class="md:text-6xl text-4xl lg:text-7xl text-[#4C260A] text-center mb-25 mt-10 font-[Handlee]">Pets para Adoção</h2>
+    <section class="mx-10 md:mx-30">
+      <h2 class="md:text-5xl text-4xl lg:text-6xl text-[#4C260A] text-center mb-10 md:mb-25 mt-10 md:mt-35 font-[Handlee]">Pets para Adoção</h2>
       <FilterComponent/>
-      <div v-if="petStore.filteredPropriedades.length > 0" class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
+      <div v-if="petStore.filteredPropriedades.length > 0" class="flex flex-wrap sm:mx-2 lg:mx-5 my-10 md:my-30 justify-center">
         <PetsAdocao v-for="pet of petStore.filteredPropriedades"
           :key="pet.id"
           :id="pet.id"
@@ -34,7 +34,7 @@ const petStore = usePetStore()
           :genero="pet.genero"
         />
       </div>
-      <div v-else class="text-center text-3xl text-[#4C260A] font-[Handlee] my-20">
+      <div v-else class="text-center text-2xl md:text-3xl text-[#4C260A] font-[Handlee] my-20">
         <p>Não existem pets cadastrados com esses filtros.</p>
       </div>
     </section>

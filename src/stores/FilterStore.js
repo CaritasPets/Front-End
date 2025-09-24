@@ -8,8 +8,8 @@ export const useFilterStore = defineStore("filterStore", () => {
 
   const propriedadesFilterVerdes = ref([
     {
-      background: "#104C00",
-      background2: "#587911",
+      background: "#03497B",
+      background2: "#2983C3",
       title: "Espécie",
       options: [
         {
@@ -31,8 +31,8 @@ export const useFilterStore = defineStore("filterStore", () => {
       ],
     },
     {
-      background: "#104C00",
-      background2: "#587911",
+      background: "#03497B",
+      background2: "#2983C3",
       title: "Vacinado",
       options: [
         {
@@ -50,8 +50,8 @@ export const useFilterStore = defineStore("filterStore", () => {
       ],
     },
     {
-      background: "#104C00",
-      background2: "#587911",
+      background: "#03497B",
+      background2: "#2983C3",
       title: "Porte",
       options: [
         {
@@ -72,7 +72,7 @@ export const useFilterStore = defineStore("filterStore", () => {
   const propriedadesFilterLaranjas = ref([
     {
       background: "#FF7700",
-      background2: "#FDA202",
+      background2: "#FF953C",
       title: "Castrado",
       options: [
         {
@@ -87,7 +87,7 @@ export const useFilterStore = defineStore("filterStore", () => {
     },
     {
       background: "#FF7700",
-      background2: "#FDA202",
+      background2: "#FF953C",
       title: "Gênero",
       options: [
         {
@@ -106,7 +106,7 @@ export const useFilterStore = defineStore("filterStore", () => {
     },
     {
       background: "#FF7700",
-      background2: "#FDA202",
+      background2: "#FF953C",
       title: "Pelagem",
       options: [
         {
