@@ -14,6 +14,7 @@ export const useRequestUrlStore = defineStore('requestUrlStore', () => {
         refresh: 'refresh/',
         delete: 'delete-user/',
         update: 'update/',
+        profile: 'profile/'
     }
 
     return (

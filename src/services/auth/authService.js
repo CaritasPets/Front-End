@@ -1,9 +1,14 @@
 import { defineStore } from "pinia";
 import api from "../../plugins/api";
 import { useRequestUrlStore } from "../../stores/RequestsUrls";
+import { ref } from "vue";
 
 export const useAuthService = defineStore('authService', () => {
     
+    const user = ref(null)
+
+    const loading = ref(false)
+
     const urlStore = useRequestUrlStore()
 
     const register = async (formData) => {
@@ -27,17 +32,28 @@ export const useAuthService = defineStore('authService', () => {
     const login = async (username, password) => {
         try{
             const response = await api.post(urlStore.login, { username, password });
-            if(response.data && response.data.tokens){
-                const { access, refresh } = response.data.tokens;
-                localStorage.setItem('accessToken', access);
-                localStorage.setItem('refreshToken', refresh)
-            }
+            const { access, refresh } = response.data;
+            localStorage.setItem('accessToken', access);
+            localStorage.setItem('refreshToken', refresh)
             window.location.href = '/user/profile'
         } catch(err){
             console.log(err)
         }
     }
-
+    const profile = async () => {
+        try{
+            loading.value = true
+            const response = await api.get(urlStore.profile)
+            console.log('Informações puxadas com sucesso!')
+            user.value = response.data
+        } catch(err){
+            alert('Você precisa fazer login primeiro')
+            console.log(err)
+            window.location.href = '/user/login/'
+        } finally{
+            loading.value = false
+        }
+    }
     const logout = () => {
         localStorage.clear()
         window.location.href = '/user/login/'
@@ -69,6 +85,9 @@ export const useAuthService = defineStore('authService', () => {
         login,
         logout,
         deleteUser,
-        patchUser
+        patchUser,
+        profile,
+        loading,
+        user
     }
 })
