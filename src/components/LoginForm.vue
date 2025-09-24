@@ -22,7 +22,7 @@ const getValues = () => {
 </script>
 <template>
   <form
-    class="flex flex-col items-center gap-10 py-30 w-300 bg-amber-200"
+    class="flex flex-col items-center gap-10 py-30 w-300 bg-[#FAE8AD]"
     @submit.prevent="getValues"
   >
     <h3 class="text-xl">Você ainda não possui nenhum cadastro?</h3>
