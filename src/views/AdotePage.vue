@@ -17,13 +17,13 @@ const petStore = usePetStore()
       :title="storeBannerComponent.propriedadesBanners.banner3.title"
       :text="storeBannerComponent.propriedadesBanners.banner3.text"
       :waves="storeBannerComponent.propriedadesBanners.banner3.waves"
-      :buttonBoolean="storeBannerComponent.propriedadesBanners.banner3.buttonBoolean"
+      :buttonBooleanAdote="storeBannerComponent.propriedadesBanners.banner3.buttonBooleanAdote"
       :buttonText="storeBannerComponent.propriedadesBanners.banner3.buttonText"
       :buttonLink="storeBannerComponent.propriedadesBanners.banner3.buttonLink" />
 
   </section>
-    <section class="m-30 ">
-      <h2 class="text-6xl text-[#4C260A] text-center mb-25 mt-10 font-[Handlee]">Pets para Adoção</h2>
+    <section class="md:mx-30 ">
+      <h2 class="md:text-6xl text-4xl lg:text-7xl text-[#4C260A] text-center mb-25 mt-10 font-[Handlee]">Pets para Adoção</h2>
       <FilterComponent/>
       <div v-if="petStore.filteredPropriedades.length > 0" class="flex flex-wrap sm:mx-2 lg:mx-5 my-30 justify-center">
         <PetsAdocao v-for="pet of petStore.filteredPropriedades"
