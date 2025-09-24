@@ -11,6 +11,7 @@ onMounted(async() => {
   <section class="md:pt-15">
   <InfosUserComponent v-if="!authService.loading"
     :user="authService.user"
+    @logout="authService.logout"
   />
   </section>
 </template>
