@@ -34,9 +34,6 @@ import BaseInput from '../InputComponents/BaseInput.vue'
         <li class="flex flex-col w-[100%]">
           <BaseInput name="input10"/>
         </li>
-        <li class="flex flex-col w-[100%]">
-          
-        </li>
       </ul>
     </div>
       <div class="flex items-center gap-4 sm:gap-6 sm:text-lg lg:text-xl text-[#1E0B00] w-[90%]">

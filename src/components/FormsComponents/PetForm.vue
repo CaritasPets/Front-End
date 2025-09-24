@@ -1,32 +1,51 @@
 <script setup>
+import { ref } from 'vue'
 import { useRacaStore } from '../../stores/RacaStore'
 import BaseInput from '../InputComponents/BaseInput.vue'
 import ToggleComponent from '../InputComponents/RadioInput.vue'
 import PictureInput from '../InputComponents/PictureInput.vue'
+import { useBaseInputStore } from '@/stores/BaseInputStore'
+
+const inputStore = useBaseInputStore()
 const racaStore = useRacaStore()
+
+const formUserData = ref({
+  username: '',
+  password: ''
+})
+
+const getValues = () => {
+  const valores = Object.fromEntries(
+    Object.entries(inputStore.campos).map(([key, field]) => [key, field.value])
+  )
+
+  formUserData.value.username = valores.input1
+  formUserData.value.password = valores.input2
+  alert(valores)
+}
 </script>
 <template>
-  <form class="flex flex-col items-center gap-20">
-    <div class="flex gap-40">
-      <ul class="flex flex-col gap-4">
-        <li>
+  <form @submit.prevent="handleSubmit" class="flex flex-col items-center py-20 gap-10 bg-amber-200 sm:gap-16 lg:gap-20">
+    <div class="sm:flex md:flex lg:flex justify-around gap-10 w-full">
+      <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
+        <li class="flex flex-col w-[100%]">
           <BaseInput name="input1"/>
         </li>
-        <li>
+        <li class="flex flex-col w-[100%]">
           <ToggleComponent name="radio1"/>
         </li>
-        <li>
+        <li class="flex flex-col w-[100%]">
           <ToggleComponent name="radio2"/>
         </li>
-        <li>
+        <li class="flex flex-col w-[100%]">
           <ToggleComponent name="radio3"/>
         </li>
-        <li>
+        <li class="flex flex-col w-[100%]">
           <ToggleComponent name="radio4"/>
         </li>
       </ul>
-      <ul class="flex flex-col gap-4">
-        <li>
+      <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
+        <li class="flex flex-col w-[100%]">
           <p class="text-2xl font-[Sen]">Raça:</p>
           <input
             list="racas"
@@ -52,10 +71,10 @@ const racaStore = useRacaStore()
             </datalist>
           </div>
         </li>
-        <li>
+        <li class="flex flex-col w-[100%]">
           <ToggleComponent name="radio5"/>
         </li>
-        <li>
+        <li class="flex flex-col w-[100%]">
           <PictureInput/>
         </li>
         <li class="flex flex-col w-[100%]">

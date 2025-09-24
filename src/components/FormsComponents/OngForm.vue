@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import BaseInput from '../InputComponents/BaseInput.vue'
 
 const file = ref(null)
 const previewUrl = ref(null)
@@ -16,141 +17,44 @@ const ong = ref({
   descricao: '',
 })
 
-function onFileChange(event) {
-  const selectedFile = event.target.files[0]
-  if (selectedFile) {
-    if (!selectedFile.type.startsWith('image/')) {
-      return alert('Por favor, selecione apenas arquivos de imagem.')
-    }
-
-    if (selectedFile.size > 5 * 1024 * 1024) {
-      return alert('A imagem deve ter no máximo 5MB.')
-    }
-
-    file.value = selectedFile
-    if (selectedFile) {
-      previewUrl.value = URL.createObjectURL(selectedFile)
-    }
-  }
-}
 </script>
 <template>
-  <form class="relative z-10">
-    <div class="flex flex-col lg:flex-row lg:justify-around">
-      <div class="">
-        <ul>
-          <li class="flex flex-col gap-y-2">
-            <label class="text-xl sm:text-3xl text-[#1E0B00] font-[Sen]">*Nome:</label>
-            <input
-              class="text-xl sm:text-3xl bg-[#FFF493] text-[#03497B] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
-              placeholder="Nome."
-              v-model="ong.nome"
-              type="text"
-              required
-            />
+  <form class="flex flex-col items-center py-20 gap-10 bg-amber-200 sm:gap-16 lg:gap-20">
+    <div class="sm:flex md:flex lg:flex justify-around gap-10 w-full">
+        <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
+          <li class="flex flex-col w-[100%]">
+            <BaseInput name="input11"/>
           </li>
-          <li class="flex flex-col gap-y-2">
-            <label class="text-xl sm:text-3xl text-[#1E0B00] font-[Sen]">*Telefone:</label>
-            <input
-              class="text-xl sm:text-3xl bg-[#FFF493] text-[#FF7700] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
-              placeholder="Telefone."
-              v-model="ong.telefone"
-              type="text"
-              required
-            />
+          <li class="flex flex-col w-[100%]">
+            <BaseInput name="input8"/>
           </li>
-          <li class="flex flex-col gap-y-2">
-            <label class="text-xl sm:text-3xl text-[#1E0B00] font-[Sen]">*Email:</label>
-            <input
-              class="text-xl sm:text-3xl bg-[#FFF493] text-[#FDA202] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
-              placeholder="Email."
-              v-model="ong.email"
-              type="email"
-              required
-            />
+          <li class="flex flex-col w-[100%]">
+            <BaseInput name="input5"/>
           </li>
-          <li class="flex flex-col gap-y-2">
-            <label class="text-xl sm:text-3xl text-[#1E0B00] font-[Sen]">CNPJ:</label>
-            <input
-              class="text-xl sm:text-3xl bg-[#FFF493] text-[#104C00] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
-              placeholder="CNPJ (se possui)."
-              v-model="ong.cnpj"
-              type="text"
-            />
+          <li class="flex flex-col w-[100%]">
+            <BaseInput name="input12"/>
           </li>
-          <li class="flex flex-col gap-y-2">
-            <label class="text-xl sm:text-3xl text-[#1E0B00] font-[Sen]">Instagram:</label>
-            <input
-              class="text-xl sm:text-3xl bg-[#FFF493] text-[#03497B] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
-              placeholder="Instagram (se possui)."
-              v-model="ong.instagram"
-              type="text"
-            />
+          <li class="flex flex-col w-[100%]">
+            <BaseInput name="input13"/>
           </li>
         </ul>
-      </div>
-      <div class="w-[]">
-        <ul>
-          <li class="flex flex-col gap-y-2">
-            <label class="text-xl sm:text-3xl text-[#1E0B00] font-[Sen]">Facebook:</label>
-            <input
-              class="text-xl sm:text-3xl bg-[#FFF493] text-[#FDA202] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
-              placeholder="Facebook (se possui)."
-              v-model="ong.facebook"
-              type="text"
-            />
+        <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
+          <li class="flex flex-col w-[100%]">
+            <BaseInput name="input14"/>
           </li>
-          <li class="flex flex-col gap-y-2">
-            <label class="text-xl sm:text-3xl text-[#1E0B00] font-[Sen]">*Senha:</label>
-            <input
-              class="text-xl sm:text-3xl bg-[#FFF493] text-[#104C00] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
-              placeholder="........"
-              v-model="ong.senha"
-              type="password"
-              required
-            />
+          <li class="flex flex-col w-[100%]">
+            <BaseInput name="input6"/>
           </li>
-          <li class="flex flex-col gap-y-2">
-            <label class="text-xl sm:text-3xl text-[#1E0B00] font-[Sen]">Endereço:</label>
-            <input
-              class="text-xl sm:text-3xl bg-[#FFF493] text-[#03497B] py-2 px-4 my-2 gap-y-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
-              placeholder="Endereço da ONG (se possui)."
-              v-model="ong.endereco"
-              type="text"
-            />
+          <li class="flex flex-col w-[100%]">
+            <BaseInput name="input15"/>
           </li>
-          <li class="flex flex-col gap-y-2">
-          <label class="text-xl sm:text-3xl text-[#1E0B00] font-[Sen]">Descrição:</label>
-          <input
-            class="text-xl sm:text-3xl bg-[#FFF493] text-[#FDA202] py-2 px-4 my-2 border-x-6 border-y-3 rounded-2xl w-full md:w-135"
-            placeholder="Descrição."
-            v-model="ong.descricao"
-            type="text"
-            />
-          </li>
-          <li class="flex flex-col gap-y-2">
-            <p class="text-xl sm:text-3xl text-[#1E0B00] font-[Sen]">Foto de Perfil</p>
-            <input id="fileInput" class="hidden" type="file" @change="onFileChange" />
-            <label for="fileInput" class="w-50 h-60 my-2 cursor-pointer">
-            <img
-              v-if="file"
-              class="w-full h-full rounded-2xl hover:opacity-50 transition-all duration-500"
-              :src="previewUrl"
-              alt="foto-selecionada"
-            />
-            <img
-              v-else
-              class="w-full h-full rounded-2xl bg-amber-50 hover:opacity-50 transition-all duration-500"
-              src="/pet_default.svg"
-              alt=""
-            />
-          </label>
+          <li class="flex flex-col w-[100%]">
+            <BaseInput name="input16"/>
           </li>
         </ul>
-      </div>
     </div>
-    <div class="ml-4 sm:ml-36 my-14">
-      <h2 class="text-xl sm:text-3xl font-[Sen]">* Indica campo obrigatório.</h2>
+    <div class="mt-14 mr-180">
+      <h2 class="text-xl font-[Sen] text-[#1E0B00]">* Indica campo obrigatório.</h2>
     </div>
     <div class="flex justify-center gap-4 sm:gap-30">
       <button

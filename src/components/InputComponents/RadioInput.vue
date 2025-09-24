@@ -18,11 +18,11 @@ const inputStore = useBaseInputStore()
       {{ inputStore.campos[props.name].label }}
     </label>
 
-    <div class="flex overflow-hidden rounded-full bg-white p-2 w-fit">
+    <div class="flex overflow-hidden rounded-full bg-white w-fit">
       <label
         v-for="opt in inputStore.campos[props.name].options"
         :key="opt.value"
-        class="text-xl lg:text-2xl cursor-pointer rounded-full px-4 py-2 m-1 lg:mx-2 text-center transition-colors duration-200"
+        class="text-xl cursor-pointer rounded-full px-3 py-1 m-1 lg:mx-2 text-center transition-colors duration-200"
         :class="[
           inputStore.campos[props.name].value === opt.value
             ? 'text-white'

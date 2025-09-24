@@ -1,16 +1,13 @@
 <script setup>
-import OngForm from '../components/FormsComponents/OngForm.vue'
+import OngForm from '../components/FormsComponents/OngForm.vue';
+import DecorationCadastro from '@/components/FormsComponents/DecorationCadastro.vue';
 </script>
 <template>
-  <section class="bg-[#FFF493] pt-20 px-4 sm:px-10 overflow-x-hidden">
-    <div class="z-10 relative pl-4 sm:pl-15 mb-10 sm:mb-20">
-      <h2 class="text-5xl text-center md:text-left sm:text-7xl mt-10 lg:ml-35 text-[#1E0B00] font-[Handlee]">Cadastro de ONG</h2>
-      <p class="text-2xl text-center md:text-left sm:text-3xl mt-10 lg:ml-35 text-[#1E0B00] font-light font-[Sen]">Preencha as informações de cadastro:</p>
-    </div>
-    <OngForm class="pl-4 sm:pl-15 z-10 relative" />
+  <section class="bg-black/80 flex sm:px-20 sm:py-20">
+    <DecorationCadastro
+      class="z-10 rounded-l-4xl"
+      :title="'Cadastro de ONG'"
+    />
+    <OngForm class="rounded-r-4xl z-10 relative max-w-10xl mx-auto w-full px-2 sm:px-4" />
   </section>
-  <img
-    class="w-full transform-[translateY(-70%)] bg-[#FFF493] absolute z-0"
-    src="/cream_waves.svg"
-    alt="bg-image-waves" />
 </template>
