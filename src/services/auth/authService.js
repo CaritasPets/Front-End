@@ -8,7 +8,11 @@ export const useAuthService = defineStore('authService', () => {
 
     const register = async (formData) => {
         try{
-            const response = await api.post(urlStore.register, formData);
+            const response = await api.post(urlStore.register, formData,{
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
+            });
             if (response.data && response.data.tokens) {
                 const { access, refresh } = response.data.tokens;
                 localStorage.setItem("accessToken", access);

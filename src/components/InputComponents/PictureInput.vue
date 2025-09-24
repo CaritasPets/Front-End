@@ -55,7 +55,7 @@ function onFileChange(event) {
       v-else
       class="flex items-center justify-center gap-2 cursor-pointer px-4 py-4 rounded-full bg-gray-300 mt-2 w-32 h-32"
     >
-      <span class="mdi mdi-camera text-2xl lg:text-6xl pt-0.5 text-[#1E0B00]"></span>
+      <span class="mdi mdi-camera text-2xl lg:text-4xl pt-0.5 text-[#1E0B00]"></span>
       <input type="file" class="hidden" @change="onFileChange" />
     </label>
   </div>

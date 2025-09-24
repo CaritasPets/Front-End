@@ -70,7 +70,6 @@ export const useBaseInputStore = defineStore('baseInputStore', () => {
     input10:{
       type: 'date',
       label: 'Data de Nascimento:',
-      placeholder: 'Insira aqui seu nome completo',
       value: '',
       required: false
     },
