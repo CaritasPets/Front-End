@@ -1,79 +1,41 @@
 <script setup>
-import { ref } from 'vue'
-const file = ref(null)
-const previewUrl = ref(null)
+import BaseInput from '../InputComponents/BaseInput.vue'
+//import { useBaseInputStore } from '../../stores/BaseInputStore'
+//const inputStore = useBaseInputStore()
 
-function onFileChange(event) {
-  const selectedFile = event.target.files[0]
-  if (selectedFile) {
-
-    if (!selectedFile.type.startsWith('image/')) {
-      return alert('Por favor, selecione apenas arquivos de imagem.')
-    }
-
-
-    if (selectedFile.size > 5 * 1024 * 1024) {
-      return alert('A imagem deve ter no máximo 5MB.')
-    }
-
-    file.value = selectedFile
-    if (selectedFile) {
-      previewUrl.value = URL.createObjectURL(selectedFile)
-    }
-  }
-}
+//const file = ref(null)
+//const previewUrl = ref(null)
 
 </script>
 <template>
-  <form @submit.prevent="handleRegister" class="flex flex-col items-center gap-10 sm:gap-16 lg:gap-20">
+  <form @submit.prevent="handleRegister" class="flex flex-col items-center py-20 gap-10 bg-amber-200 sm:gap-16 lg:gap-20">
     <div class=" sm:flex md:flex lg:flex justify-around gap-10 w-full">
       <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
         <li class="flex flex-col w-[100%]">
-          <label class="text-2xl text-[#1E0B00] font-[Sen]">*Usuario</label>
-          <input class="text-2xl text-[#104C00] py-1 px-2 my-2 border-2 rounded-xl w-full" placeholder="Usuario."
-            type="text" v-model="form.username" />
+          <BaseInput name="input4"/>
         </li>
         <li class="flex flex-col w-[100%]">
-          <label class="text-2xl text-[#1E0B00] font-[Sen]">*Senha</label>
-          <input class="text-2xl text-[#FDA202] py-1 px-2 my-2 border-2 rounded-xl w-full" placeholder="Senha."
-            type="password" v-model="form.password" />
+          <BaseInput name="input5"/>
         </li>
         <li class="flex flex-col w-[100%]">
-          <label class="text-2xl text-[#1E0B00] font-[Sen]">*Email:</label>
-          <input class="text-2xl text-[#03497B] py-1 px-2 my-2 border-2 rounded-xl w-full" placeholder="Email."
-            type="email" v-model="form.email" />
+          <BaseInput name="input6"/>
         </li>
         <li class="flex flex-col w-[100%]">
-          <label class="text-2xl text-[#1E0B00] font-[Sen]">*Nome completo</label>
-          <input class="text-2xl text-[#EE7104] py-1 px-2 my-2 border-2 rounded-xl w-full" placeholder="Nome."
-            type="text" v-model="form.nome" />
+          <BaseInput name="input7"/>
         </li>
       </ul>
       <ul class="flex flex-col items-center gap-6 w-full lg:w-[40%] font-[Sen]">
         <li class="flex flex-col w-[100%]">
-          <label class="text-2xl text-[#1E0B00] font-[Sen]">*CPF</label>
-          <input class="text-2xl text-[#EE7104] py-1 px-2 my-2 border-2 rounded-xl w-full" placeholder="CPF."
-            type="text" v-model="form.cpf" />
+          <BaseInput name="input8"/>
         </li>
         <li class="flex flex-col w-[100%]">
-          <label class="text-2xl text-[#1E0B00] font-[Sen]">*Telefone</label>
-          <input class="text-2xl text-[#FDA202] py-1 px-2 my-2 border-2 rounded-xl w-full" placeholder="Telefone."
-            type="text" v-model="form.telefone" />
+          <BaseInput name="input9"/>
         </li>
         <li class="flex flex-col w-[100%]">
-          <label class="text-2xl text-[#1E0B00] font-[Sen]">Data de Nascimento</label>
-          <input class="text-2xl text-[#03497B] py-1 px-2 my-2 border-2 rounded-xl w-full hover:cursor-pointer"
-            type="date" v-model="form.data_nascimento" />
+          <BaseInput name="input10"/>
         </li>
         <li class="flex flex-col w-[100%]">
-          <p class="text-2xl text-[#1E0B00] font-[Sen]">Foto de Perfil</p>
-          <input id="fileInput" class="hidden" type="file" @change="onFileChange" />
-          <label for="fileInput" class="w-50 h-60 my-2 cursor-pointer">
-            <img v-if="file" class="w-full h-full rounded-2xl hover:opacity-50 transition-all duration-500"
-              :src="previewUrl" alt="foto-selecionada">
-            <img v-else class="w-full h-full rounded-2xl bg-amber-50 hover:opacity-50 transition-all duration-500"
-              src="/default_user.svg" alt="">
-          </label>
+          
         </li>
       </ul>
     </div>

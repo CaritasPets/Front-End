@@ -57,13 +57,19 @@ const hoverClass = computed(() => {
   }
 });
 
+const verifyHeader = (url) => {
+  if(url == '/user/login/' || url == '/user/login') return false;
+  if(url == '/user/sign-up/' || url == '/user/sign-up') return false;
+  return true
+}
 
 </script>
 
 
 <template>
-  <div
-    class="w-full flex justify-between items-center px-5 py-3 fixed z-100"
+  <div 
+    v-if="verifyHeader(route.path)"
+    class="w-full flex justify-between items-center px-5 py-3 z-100"
     :style="`background: ${headerBackground}`"
   >
     <RouterLink to="/" class="w-15">
