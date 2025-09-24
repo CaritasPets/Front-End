@@ -1,8 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 import BaseInput from './InputComponents/BaseInput.vue';
+import { useAuthService } from '../services/auth/authService';
 import { useBaseInputStore } from '../stores/BaseInputStore';
 const inputStore = useBaseInputStore()
+const authService = useAuthService()
 import { RouterLink } from 'vue-router';
 
 const formUserData = ref({
@@ -17,13 +19,22 @@ const getValues = () => {
 
   formUserData.value.username = valores.loginInput1
   formUserData.value.password = valores.loginInput2
-  alert(valores)
+}
+
+const submitForm = () => {
+  getValues()
+
+  const formData = new FormData()
+  formData.append("username", formUserData.value.username)
+  formData.append("password", formUserData.value.password)
+
+  authService.login(formData.get("username"), formData.get("password"))
 }
 </script>
 <template>
   <form
     class="flex flex-col items-center gap-10 py-30 w-300 bg-[#F7F5E0]"
-    @submit.prevent="getValues"
+    @submit.prevent="submitForm"
   >
     <h3 class="text-xl">Você ainda não possui cadastro?</h3>
     <RouterLink 

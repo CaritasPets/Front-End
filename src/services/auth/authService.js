@@ -32,9 +32,7 @@ export const useAuthService = defineStore('authService', () => {
                 localStorage.setItem('accessToken', access);
                 localStorage.setItem('refreshToken', refresh)
             }
-            if(response.data.user){
-                console.log(`Bem vindo(a) ${response.data.user.username}`)
-            }
+            window.location.href = '/user/profile'
         } catch(err){
             console.log(err)
         }
