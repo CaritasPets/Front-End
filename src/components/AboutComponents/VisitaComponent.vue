@@ -17,10 +17,10 @@ const images = [
 ];
 
 const borderColors = [
-  "#FF7700",
-  "#587911",
-  "#FDA202",
-  "#03497B"
+  "#FF953C",
+  "#98CB2A",
+  "#FFBC46",
+  "#40A9F4"
 ];
 
 const currentIndex = ref(0);
@@ -56,7 +56,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <h2 class="text-center text-4xl text-[#4c260a] font-[Handlee] md:text-6xl lg:text-7xl">Visita ao abrigo</h2>
+  <h2 class="text-center text-4xl text-[#4c260a] font-[Handlee] md:text-5xl lg:text-6xl">Visita ao abrigo</h2>
   <p class="text-1xl my-10 mt-10 text-justify font-[Sen] lg:text-2xl lg:mt-20">
     Quando tivemos a ideia, decidimos visitar um abrigo de animais da nossa região. No local, conhecemos histórias
     marcantes que mudaram o nosso jeito de pensar.

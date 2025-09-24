@@ -1,13 +1,13 @@
 <script setup></script>
 
 <template>
-    <h2 class="text-center text-4xl text-[#4c260a] font-[Handlee] md:text-6xl lg:text-7xl">Quem somos?</h2>
+    <h2 class="text-center text-4xl text-[#4c260a] font-[Handlee] md:text-5xl lg:text-6xl">Quem somos?</h2>
     <p class= "text-1xl my-10 mt-10 text-justify font-[Sen] lg:text-2xl lg:mt-20">
         Somos estudantes do Ensino Médio Integrado ao curso técnico em Informática para Internet, do Instituto Federal Catarinense, Campus Araquari.
     </p>
     <div class="block items-center lg:flex lg:justify-between">
         <p>
-            <img class="w-180 lg:w-210 mx-auto" src="/img_QuemSomos.svg" alt="equipe"/>
+            <img class="w-100 lg:w-150 mx-auto" src="/img_QuemSomos.svg" alt="equipe"/>
         </p>
         <p class= "text-1xl my-10 text-center lg:text-justify font-[Sen] lg:text-2xl">
             A nossa equipe é formada por: <br>
