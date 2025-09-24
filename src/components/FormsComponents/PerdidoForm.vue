@@ -10,39 +10,34 @@ function handleSubmit() {
   const valores = Object.fromEntries(
     Object.entries(inputStore.campos).map(([key, field]) => [key, field.value])
   )
-
   alert(JSON.stringify(valores, null, 2))
 }
 </script>
 <template>
   <form @submit.prevent="handleSubmit" class="relative z-10">
     <div class="flex justify-around">
-      <div>
         <ul>
           <li>
-            <BaseInput name="input1"/>
+            <BaseInput name="input1" class="mb-5"/>
           </li>
           <li>
-            <ToggleComponent name="radio2"/>
-          </li>
-          <li>
-            <ToggleComponent name="radio1"/>
-          </li>
-          <li>
-            <BaseInput name="input2"/>
+            <BaseInput name="input2" class="mb-5"/>
           </li>
           <li>
             <BaseInput name="input3"/>
           </li>
         </ul>
-      </div>
-      <div>
         <ul>
           <li>
-            <PictureInput/>
+            <PictureInput class="mb-5"/>
+          </li>
+          <li>
+            <ToggleComponent name="radio2" class="mb-5"/>
+          </li>
+          <li>
+            <ToggleComponent name="radio1"/>
           </li>
         </ul>
-      </div>
     </div>
     <div class="ml-36 my-14">
       <h2 class="text-2xl">* Indica campo obrigatório.</h2>
@@ -56,18 +51,11 @@ function handleSubmit() {
         Limpar
       </button>
       <button
-        class="text-xl text-[#FFDB58] rounded-xl py-2 pl-5 pr-6 bg-[#104C00] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#104C00] hover:text-[#104C00]"
-        type="submit"
-      >
-        <span class="mr-2 mdi mdi-paw"></span>
-        Cadastrar Pet Perdido
-      </button>
-      <button
         class="mt-6 text-xl text-[#FFF493] rounded-xl py-2 px-6 bg-[#104C00] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#104C00] hover:text-[#104C00] font-[Sen]"
         type="submit"
       >
         <span class="mdi mdi-paw"></span>
-        Cadastrar Pet
+        Cadastrar Pet Perdido
       </button>
     </div>
   </form>
