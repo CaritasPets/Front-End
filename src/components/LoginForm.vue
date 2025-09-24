@@ -22,10 +22,10 @@ const getValues = () => {
 </script>
 <template>
   <form
-    class="flex flex-col items-center gap-10 py-30 w-300 bg-[#FAE8AD]"
+    class="flex flex-col items-center gap-10 py-30 w-300 bg-[#F7F5E0]"
     @submit.prevent="getValues"
   >
-    <h3 class="text-xl">Você ainda não possui nenhum cadastro?</h3>
+    <h3 class="text-xl">Você ainda não possui cadastro?</h3>
     <RouterLink 
       to="/user/sign-up/"
       class="bg-[#FFBC46] py-2 px-6 rounded-xl border-2 border-[#FFBC46] hover:bg-transparent hover:text-[#FFBC46] font-[Sen] transition-all duration-500"
