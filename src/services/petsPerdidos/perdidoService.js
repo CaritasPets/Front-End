@@ -25,9 +25,11 @@ export const usePerdidoService = defineStore('perdidoService', () => {
             const response = await api.post(urlStore.perdidos, formPet);
             if(response.data){
                 console.log('Pet perdido criado com sucesso!');
+                alert('Pet perdido criado com sucesso');
                 getPerdidos()
             }
         } catch(err) {
+            alert(err.response.data.detail)
             console.log(err)
         }
     }

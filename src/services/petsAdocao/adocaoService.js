@@ -27,6 +27,7 @@ export const useAdocaoService = defineStore('adocaoService', () => {
                 getAdocao()
             }
         } catch(err) {
+            alert(err.response.data.detail)
             console.log(err)
         }
     }

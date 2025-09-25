@@ -23,6 +23,7 @@ export const useAuthService = defineStore('authService', () => {
                 localStorage.setItem("accessToken", access);
                 localStorage.setItem("refreshToken", refresh);
                 console.log(response.data);
+                window.location.href = '/user/profile'
             }
         } catch(err) {
             console.log(err)
@@ -35,9 +36,11 @@ export const useAuthService = defineStore('authService', () => {
             const { access, refresh } = response.data;
             localStorage.setItem('accessToken', access);
             localStorage.setItem('refreshToken', refresh)
+            alert(response.data.message)
             window.location.href = '/user/profile'
         } catch(err){
             console.log(err)
+            alert(err.response.data.detail)
         }
     }
     const profile = async () => {
