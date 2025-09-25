@@ -9,7 +9,7 @@ const petStore = usePetStore()
 const ongStore = useOngStore()
 
 const pet = petStore.propriedades.find(p => String(p.id) === String(route.params.id))
-const ong = ongStore.ong.find(o => pet && String(o.id) === String(pet.ongId))
+const ong = ongStore.ong.find(o => pet && String(o.id) === String(pet.user.id))
 </script>
 
 <template>

@@ -35,7 +35,7 @@ onMounted(() => {
         <PetsAdocao v-for="pet of petStore.filteredPropriedades"
           :key="pet.id"
           :id="pet.id"
-          :foto="`http://localhost:8000${pet.foto}`"
+          :foto="pet.foto"
           :nome="pet.nome"
           :genero="pet.genero"
         />

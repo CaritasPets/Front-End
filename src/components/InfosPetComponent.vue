@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router'
 import { useRouter } from 'vue-router'
 const props = defineProps(['propriedades', 'ong'])
 const router = useRouter()
@@ -7,10 +8,6 @@ function goToOngProfile() {
     if (props.ong?.id) {
         router.push({ name: 'ong-profile', params: { id: props.ong.id } })
     }
-}
-
-function goToAdote() {
-    router.push({ name: 'adote' })
 }
 </script>
 
@@ -68,12 +65,12 @@ function goToAdote() {
                 <span class="mdi mdi-home-search-outline"></span>
                 Visitar ONG
             </button>
-            <button
+            <RouterLink to="/adote"
                 class="bg-[#98CB2A] mt-10 w-[90%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#98CB2A] hover:text-[#98CB2A] sm:w-[40%]" 
-                @click="goToAdote">
+            >
                 <span class="mdi mdi-arrow-left-bold-outline"></span>
                 Retornar para Página de Adoção
-            </button>
+            </RouterLink>
         </div>
     </section>
 </template>

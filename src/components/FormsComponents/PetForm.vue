@@ -5,31 +5,52 @@ import BaseInput from '../InputComponents/BaseInput.vue'
 import ToggleComponent from '../InputComponents/RadioInput.vue'
 import PictureInput from '../InputComponents/PictureInput.vue'
 import { useBaseInputStore } from '@/stores/BaseInputStore'
-
+import { useAdocaoService } from '../../services/petsAdocao/adocaoService'
+const adocaoService = useAdocaoService()
 const inputStore = useBaseInputStore()
 const racaStore = useRacaStore()
 
 const pet = ref({
+  nome: '',
+  especie: '',
   raca: '',
-})
-
-const formUserData = ref({
-  username: '',
-  password: ''
+  vacinado: '',
+  genero: '',
+  castrado: '',
+  porte: '',
+  foto: null
 })
 
 const getValues = () => {
   const valores = Object.fromEntries(
     Object.entries(inputStore.campos).map(([key, field]) => [key, field.value])
   )
+  pet.value.nome = valores.input1
+  pet.value.especie = valores.radio2
+  pet.value.vacinado = valores.radio5
+  pet.value.genero = valores.radio1
+  pet.value.castrado = valores.radio4
+  pet.value.porte = valores.radio3
+}
 
-  formUserData.value.username = valores.input1
-  formUserData.value.password = valores.input2
-  alert(valores)
+const submitForm = () => {
+  getValues()
+
+  const formData = new FormData()
+  formData.append("nome", pet.value.nome)
+  formData.append("especie", pet.value.especie)
+  formData.append("raca", pet.value.raca)
+  formData.append("vacinado", pet.value.vacinado)
+  formData.append("genero", pet.value.genero)
+  formData.append("castrado", pet.value.castrado)
+  formData.append("porte", pet.value.porte)
+  formData.append("foto", pet.value.foto)
+
+  adocaoService.postAdocao(formData)
 }
 </script>
 <template>
-  <form @submit.prevent="handleSubmit" @reset.prevent="handleReset" class="flex flex-col items-center py-20 gap-10 bg-[#F7F5E0] sm:gap-16 lg:gap-20">
+  <form @submit.prevent="submitForm" @reset.prevent="handleReset" class="flex flex-col items-center py-20 gap-10 bg-[#F7F5E0] sm:gap-16 lg:gap-20">
     <div class="sm:flex md:flex lg:flex justify-around gap-10 w-full">
       <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
         <li class="flex flex-col w-[100%]">
@@ -96,7 +117,7 @@ const getValues = () => {
           <ToggleComponent name="radio3"/>
         </li>
         <li class="flex flex-col w-[100%]">
-          <PictureInput/>
+          <PictureInput v-model="pet.foto"/>
         </li>
       </ul>
     </div>
