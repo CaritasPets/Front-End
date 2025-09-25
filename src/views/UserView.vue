@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import InfosUserComponent from '@/components/InfosUserComponent.vue';
+import LoadinComponent from '@/components/LoadinComponent.vue';
 import { useAuthService } from '../services/auth/authService';
 const authService = useAuthService()
 onMounted(async() => {
@@ -9,9 +10,11 @@ onMounted(async() => {
 </script>
 <template>
   <section class="md:pt-15">
-  <InfosUserComponent v-if="!authService.loading"
+  <LoadinComponent v-if="authService.loading"/>
+  <InfosUserComponent v-else
     :user="authService.user"
     @logout="authService.logout"
   />
+
   </section>
 </template>

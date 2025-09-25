@@ -2,14 +2,16 @@ import { defineStore } from "pinia";
 import api from "../../plugins/api";
 import { useRequestUrlStore } from "../../stores/RequestsUrls";
 import { usePetStore } from "../../stores/PetStore";
+import { ref } from "vue";
 
 export const useAdocaoService = defineStore('adocaoService', () => {
-
+    const loading = ref(false)
     const petStore = usePetStore()
     const urlStore = useRequestUrlStore()
 
     const getAdocao = async () => {
         try{
+            loading.value = true
             const response = await api.get(urlStore.adocao);
             if(response.data){
                 console.log('Pets puxados com sucesso!')
@@ -17,6 +19,8 @@ export const useAdocaoService = defineStore('adocaoService', () => {
             }
         } catch(err) {
             console.log(err)
+        } finally{
+            loading.value = false
         }
     }
     const postAdocao = async (petData) => {
@@ -97,6 +101,7 @@ export const useAdocaoService = defineStore('adocaoService', () => {
         toggleFavoriteAdocao,
         getFavoriteAdocao,
         profile,
+        loading
     }
 })
 

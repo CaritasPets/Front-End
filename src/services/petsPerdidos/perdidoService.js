@@ -2,14 +2,16 @@ import { defineStore } from "pinia";
 import api from "../../plugins/api";
 import { useRequestUrlStore } from "../../stores/RequestsUrls";
 import { usePetPerdidoStore } from "../../stores/PetPerdidoStore";
+import { ref } from "vue";
 
 export const usePerdidoService = defineStore('perdidoService', () => {
-
+    const loading = ref(false)
     const petPerdidoStore = usePetPerdidoStore()
     const urlStore = useRequestUrlStore()
 
     const getPerdidos = async () => {
         try{
+            loading.value = true
             const response = await api.get(urlStore.perdidos);
             if(response.data){
                 console.log('Pets perdidos puxados com suceso!')
@@ -17,6 +19,8 @@ export const usePerdidoService = defineStore('perdidoService', () => {
             }
         } catch(err) {
             console.log(err)
+        } finally{
+            loading.value = false
         }
     }
 
@@ -85,6 +89,7 @@ export const usePerdidoService = defineStore('perdidoService', () => {
         patchPerdidos,
         deletePerdido,
         toggleFavoritePerdido,
-        getFavoritePerdido
+        getFavoritePerdido,
+        loading
     }
 })
