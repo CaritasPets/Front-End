@@ -29,7 +29,6 @@ export const usePerdidoService = defineStore('perdidoService', () => {
                 getPerdidos()
             }
         } catch(err) {
-            alert(err.response.data.detail)
             console.log(err)
         }
     }

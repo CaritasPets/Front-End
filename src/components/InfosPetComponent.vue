@@ -58,15 +58,16 @@ function goToOngProfile() {
             <img v-if="props?.propriedades?.user.foto" :src="props.propriedades.user.foto" alt="Foto da ONG" class="w-24 h-24 rounded-full object-cover border-4 border-[#FF953C] sm:w-30 sm:h-30" />
             <div class="flex flex-col text-center sm:text-left">
                 <p class="text-2xl font-['Sen'] font-semibold">{{ props?.propriedades?.user.username }}</p>
+                <p class="flex items-center gap-2 mt-5"><img src="/petInformationIcons/mail-icon.svg" alt="Icone Email" class="w-[5%] ">{{ props.propriedades.user.email }}</p>
             </div>
         </div> 
-        <div class="text-center flex flex-wrap mb-10 gap-5 justify-center bg-[#F7F5E0] lg:ml-66  sm:max-w-[1000px] md:gap-10">
-            <button
+        <div class="text-center flex flex-wrap mb-10 gap-5 justify-center bg-[#F7F5E0] lg:ml-70  sm:max-w-[1000px] md:gap-10">
+            <!-- <button
                 class="bg-[#40A9F4] mt-10 w-[90%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#40A9F4] hover:text-[#40A9F4] sm:w-[20%]"
                 @click="goToOngProfile">
                 <span class="mdi mdi-account-search-outline"></span>
                 Visitar Dono
-            </button>
+            </button> -->
             <button
                 class="bg-[#98CB2A] mt-10 w-[90%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#98CB2A] hover:text-[#98CB2A] sm:w-[40%]"
                 @click="goToAdote">

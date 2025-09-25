@@ -87,7 +87,7 @@ const verifyHeader = (url) => {
 <template>
   <div
     v-if="verifyHeader(route.path)"
-    class="w-full flex justify-between items-center px-5 py-3 z-100"
+    class="w-full flex justify-between items-center px-5  fixed py-3 z-100"
     :style="`background: ${headerBackground}`"
   >
     <RouterLink to="/" class="w-15">
