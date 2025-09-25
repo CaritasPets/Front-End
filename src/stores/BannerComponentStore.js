@@ -2,60 +2,50 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 // Importar imagens do src/assets
-import imgBanner1 from '@/assets/img_banner.svg'
-import imgBanner2 from '@/assets/img_banner2.svg'
-import imgBanner3 from '@/assets/img_banner3.svg'
-import imgBannerAbout from '@/assets/img_bannerAbout.svg'
-import imgBannerSearch from '@/assets/banner_image_search.svg'
-
-import greenWaves from '@/assets/green_waves.svg'
-import blueWaves from '@/assets/blue_waves.svg'
-import orangeWaves from '@/assets/orange_waves.svg'
-import yellowWaves from '@/assets/yellow_waves.svg'
+import homeBanner from '@/assets/banner/home.banner.svg'
+import ongBanner from '@/assets/banner/ong.banner.svg'
+import adoteBanner from '@/assets/banner/adote.banner.svg'
+import sobreBanner from '@/assets/banner/sobre.banner.svg'
+import perdidoBanner from '@/assets/banner/perdido.banner.svg'
 
 export const useBannerComponentStore = defineStore('bannerStore', () => {
   const propriedadesBanners = ref({
     banner1: {
-      background: '#104C00',
-      image: imgBanner1,
+      background: '#F7F5E0',
+      image: homeBanner,
       title: 'Encontre seu novo melhor amigo!',
       text: 'Conheça nossas ONGs e encontre seu novo companheiro hoje mesmo!',
-      waves: greenWaves,
     },
     banner2: {
-      background: '#03497B',
-      image: imgBanner2,
+      background: '#F7F5E0',
+      image: ongBanner,
       title: 'Conheça nossas ONGs parceiras',
       text: 'Cada ONG ajuda a gerar histórias de amor',
-      waves: blueWaves,
-      buttonBoolean: true,
+      buttonBooleanOng: true,
       buttonText: 'Você é uma ONG? Cadastre-se.',
       buttonLink: '/user',
     },
     banner3: {
-      background: '#FF7700',
-      image: imgBanner3,
+      background: '#F7F5E0',
+      image: adoteBanner,
       title: 'Adote o novo membro da sua família.',
-      text: 'Conheça os pets que estão a espera de um lar',
-      waves: orangeWaves,
-      buttonBoolean: true,
+      text: 'Conheça os pets que estão à espera de um lar',
+      buttonBooleanAdote: true,
       buttonText: 'Cadastrar pet para Adoção.',
       buttonLink: '/adote/register',
     },
     bannerAbout: {
-      background: '#104C00',
-      image: imgBannerAbout,
+      background: '#F7F5E0',
+      image: sobreBanner,
       title: 'Sobre Nós',
       text: 'Conheça nossa equipe e objetivos do site',
-      waves: greenWaves,
     },
     bannerSearch: {
-      background: '#FDA202',
-      image: imgBannerSearch,
+      background: '#F7F5E0',
+      image: perdidoBanner,
       title: 'Perdeu seu melhor amigo?',
       text: 'Divulgue-o aqui para encontrá-lo',
-      waves: yellowWaves,
-      buttonBoolean: true,
+      buttonBooleanPerdido: true,
       buttonText: 'Cadastrar pet perdido.',
       buttonLink: '/procura-se/register',
     },

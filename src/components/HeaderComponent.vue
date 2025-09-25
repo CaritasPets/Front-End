@@ -19,41 +19,56 @@ const route = useRoute();
 
 
 const headerBackground = computed(() => {
-  if (route.path === "/ongs" || route.path.startsWith("/ongs/profile/")) return "#03497B";
-  if (route.path === "/perfil") return "#03497B";
-  if(route.path === "/adote/register") return "#FFF493";
-  if (route.path === "/user/sign-up" || route.path === "") return "#FFF493";
-  if (route.path === "/user/login" || route.path === "/procura-se/register") return "#FFF493";
-  if (route.path === "/user/profile" || route.path === "/user/login" || route.path === "/user/sign-up") return "#03497B";
-  if (route.path === "/adote" || route.path.startsWith("/adote/pet/")) return "#FF7700";
-  if (route.path === "/procura-se" || route.path.startsWith("/procura-se/petperdido/")) return "#FDA202";
-  if (route.path === "/sobre") return "#104C00";
-  if (route.path === "/ongs/sign-up") return "#FFF493";
-
-  return "#104C00";
+  return "#F7F5E0";
 });
 
 
 const linkBaseColor = computed(() => {
-  if (route.path === "/adote" || route.path.startsWith("/adote/pet/") || route.path.slice(0,5) == "/user" || route.path === "/procura-se" || route.path.startsWith("/procura-se/petperdido/") || route.path === "/user/sign-up" || route.path === "/ongs/sign-up" || route.path === "/user/profile" || route.path === "/adote/register" || route.path === "/procura-se/register") {
+  if (route.path === "/") {
   return "#1E0B00";
-  }
-  return "#DFB468";
+  } else
+  return "#1E0B00";
 });
 
 
 const menuIconColor = computed(() => {
-  if (route.path === "/adote" || route.path.startsWith("/adote/pet/") || route.path === "/procura-se" || route.path.startsWith("/procura-se/petperdido/") || route.path === "/user/sign-up" || route.path === "/user/profile" ||  route.path === "/adote/register") {
+  if (route.path === "/") {
     return "#1E0B00";
   }
-  return "#DFB468";
+  return "#1E0B00";
 });
 
 const hoverClass = computed(() => {
-  if (linkBaseColor.value === '#DFB468') {
-    return { 'hover:bg-[#1E0B00]': true, 'hover:text-[#DFB468]': true };
+  if (route.path.startsWith("/adote") || route.path.startsWith("/user")) {
+    return {
+      "hover:bg-[#FFBC46]": true,
+      "hover:text-[#FFBC46]": true,
+    };
+  } else if (route.path.startsWith("/procura-se")) {
+    return {
+      "hover:bg-[#FF953C]": true,
+      "hover:text-[#FF953C]": true,
+    };
+  } else if (route.path.startsWith("/ongs")) {
+    return {
+      "hover:bg-[#40A9F4]": true,
+      "hover:text-[#40A9F4]": true,
+    };
+  } else if (route.path === "/sobre") {
+    return {
+      "hover:bg-[#81BD01]": true,
+      "hover:text-[#81BD01]": true,
+    };
+  } else if (route.path === "/") {
+    return {
+      "hover:bg-[#81BD01]": true,
+      "hover:text-[#81BD01]": true,
+    };
   } else {
-    return { 'hover:bg-[#DFB468]': true, 'hover:text-[#1E0B00]': true };
+    return {
+      "hover:bg-[#1E0B00]": true,
+      "hover:text-[#DFB468]": true,
+    };
   }
 });
 

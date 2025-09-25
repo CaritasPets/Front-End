@@ -56,12 +56,12 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <h2 class="text-center text-5xl text-[#4c260a] font-[Handlee] md:text-6xl">Visita ao abrigo</h2>
-  <p class="text-xl my-10 mt-10 text-justify font-[Sen] lg:text-2xl lg:mt-20">
+  <h2 class="text-center text-4xl text-[#4c260a] font-[Handlee] md:text-6xl lg:text-7xl">Visita ao abrigo</h2>
+  <p class="text-1xl my-10 mt-10 text-justify font-[Sen] lg:text-2xl lg:mt-20">
     Quando tivemos a ideia, decidimos visitar um abrigo de animais da nossa região. No local, conhecemos histórias
     marcantes que mudaram o nosso jeito de pensar.
   </p>
-  <p class="text-xl my-10 mt-10 text-justify font-[Sen] lg:text-2xl lg:mt-20">
+  <p class="text-1xl my-10 mt-10 text-justify font-[Sen] lg:text-2xl lg:mt-20">
     Brincamos com os pets, oferecemos carinho e recebemos em troca olhares cheios de gratidão. Foi uma experiência
     transformadora que nos motivou ainda mais a agir por aqueles que não têm voz, mas têm muito a dizer.
   </p>
@@ -94,7 +94,7 @@ onUnmounted(() => {
         }"></span>
     </div>
   </div>
-  <p class="text-xl my-10 mb-20 mt-10 text-justify font-[Sen] lg:text-2xl lg:mt-20">
+  <p class="text-1xl my-10 mb-20 mt-10 text-justify font-[Sen] lg:text-2xl lg:mt-20">
     Durante nossa visita ao abrigo de animais, tivemos a oportunidade de conhecer diversos pets adoráveis. Registramos
     alguns momentos especiais com eles cada um com sua própria história e personalidade única. Foi uma experiência
     emocionante e cheia de carinho, reforçando a importância da adoção responsável e do amor pelos animais.

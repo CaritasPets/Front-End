@@ -1,14 +1,59 @@
 <script setup>
+import { ref } from 'vue';
+import { useAuthService } from '../../services/auth/authService';
+import { useBaseInputStore } from '../../stores/BaseInputStore';
 import BaseInput from '../InputComponents/BaseInput.vue'
-//import { useBaseInputStore } from '../../stores/BaseInputStore'
-//const inputStore = useBaseInputStore()
+import PictureInput from '../InputComponents/PictureInput.vue';
+const inputStore = useBaseInputStore()
+const authService = useAuthService()
 
-//const file = ref(null)
-//const previewUrl = ref(null)
+const formUserData = ref({
+  tipo: 'common',
+  username: '',
+  email: '',
+  password: '',
+  foto: null,
+  nome: '',
+  telefone: '',
+  cpf: '',
+  data_nascimento: null,
+})
+
+const getValues = () => {
+  const valores = Object.fromEntries(
+    Object.entries(inputStore.campos).map(([key, field]) => [key, field.value])
+  )
+
+  formUserData.value.username = valores.input4
+  formUserData.value.email = valores.input5
+  formUserData.value.password = valores.input6
+  formUserData.value.nome = valores.input7
+  formUserData.value.telefone = valores.input8
+  formUserData.value.cpf = valores.input9
+  formUserData.value.data_nascimento = valores.input10
+}
+
+const submitForm = () => {
+
+  getValues();
+
+  const formData = new FormData();
+  formData.append("tipo", formUserData.value.tipo)
+  formData.append("username", formUserData.value.username);
+  formData.append("email", formUserData.value.email);
+  formData.append("password", formUserData.value.password);
+  formData.append("foto", formUserData.value.foto);
+  formData.append("nome", formUserData.value.nome);
+  formData.append("telefone", formUserData.value.telefone);
+  formData.append("cpf", formUserData.value.cpf);
+  formData.append("data_nascimento", formUserData.value.data_nascimento);
+
+  authService.register(formData)
+}
 
 </script>
 <template>
-  <form @submit.prevent="handleRegister" class="flex flex-col items-center py-20 gap-10 bg-[#FAE8AD] sm:gap-16 lg:gap-20">
+  <form @submit.prevent="submitForm" class="flex flex-col items-center py-20 gap-10 bg-[#F7F5E0] sm:gap-16 lg:gap-20">
     <div class=" sm:flex md:flex lg:flex justify-around gap-10 w-full">
       <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
         <li class="flex flex-col w-[100%]">
@@ -33,6 +78,9 @@ import BaseInput from '../InputComponents/BaseInput.vue'
         </li>
         <li class="flex flex-col w-[100%]">
           <BaseInput name="input10"/>
+        </li>
+        <li class="flex flex-col w-[100%]">
+          <PictureInput v-model="formUserData.foto"/>
         </li>
       </ul>
     </div>
