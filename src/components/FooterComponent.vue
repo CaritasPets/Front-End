@@ -9,7 +9,7 @@ function validateFooter(url) {
   if(url == '/user/profile') return true
   if(url == '/adote/register') return false
   if(url == '/procura-se/register') return false
-  if(url == '/ongs/sign-up') return false
+  if(url == '/ongs/sign-up/') return false
   return true
 }
 

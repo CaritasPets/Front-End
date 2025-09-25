@@ -23,7 +23,7 @@ export const useBaseInputStore = defineStore('baseInputStore', () => {
       label: 'Características:',
       placeholder: 'Caracteristicas do seu pet...',
       value: '',
-      required: true
+      required: false
     },
     input4:{
       type: 'text',
@@ -70,6 +70,48 @@ export const useBaseInputStore = defineStore('baseInputStore', () => {
     input10:{
       type: 'date',
       label: 'Data de Nascimento:',
+      value: '',
+      required: false
+    },
+    input11:{
+      type: 'text',
+      label: '*Nome:',
+      placeholder: 'Insira aqui o nome da ONG',
+      value: '',
+      required: true
+    },
+    input12:{
+      type: 'text',
+      label: 'CNPJ:',
+      placeholder: 'Insira aqui o CNPJ da ONG',
+      value: '',
+      required: false
+    },
+    input13:{
+      type: 'text',
+      label: 'Instagram:',
+      placeholder: 'Instagram (se possui)',
+      value: '',
+      required: false
+    },
+    input14:{
+      type: 'text',
+      label: 'Facebook:',
+      placeholder: 'Facebook (se possui)',
+      value: '',
+      required: false
+    },
+    input15:{
+      type: 'text',
+      label: 'Endereço:',
+      placeholder: 'Endereço da ONG (se possui)',
+      value: '',
+      required: false
+    },
+    input16:{
+      type: 'text',
+      label: 'Descrição:',
+      placeholder: 'Insira aqui o descrição da ONG',
       value: '',
       required: false
     },

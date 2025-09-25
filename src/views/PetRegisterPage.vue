@@ -1,15 +1,13 @@
 <script setup>
 import PetForm from '../components/FormsComponents/PetForm.vue';
+import DecorationCadastro from '@/components/FormsComponents/DecorationCadastro.vue';
 </script>
 <template>
-    <section class="flex flex-col gap-20 bg-[#FFF493] py-40">
-        <div class="px-30">
-            <h2 class="text-6xl font-[Handlee] md:mr-20 lg:ml-35">Cadastro para adoção</h2>
-            <p class="text-2xl font-[Sen] md:mr-20 lg:ml-35">Para cadastrar o pet para adoção, preencha as informações:</p>
-        </div>
-        <PetForm
-            class="z-10 relative"
-        />
-    </section>
-    <img class="w-full z-0 absolute transform-[translateY(-80%)]" src="/cream_waves.svg" alt="cream_waves">
+  <section class="bg-black/80 flex sm:px-20 sm:py-20">
+    <DecorationCadastro
+      class="z-10 rounded-l-4xl"
+      :title="'Cadastro Pet Adoção'"
+    />
+    <PetForm class="rounded-r-4xl z-10 relative max-w-10xl mx-auto w-full px-2 sm:px-4" />
+  </section>
 </template>
