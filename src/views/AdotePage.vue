@@ -2,11 +2,17 @@
 import BannerComponent from '../components/BannerComponent.vue';
 import FilterComponent from '@/components/FilterComponent.vue';
 import PetsAdocao from '@/components/PetsAdocao.vue';
-
+import { useAdocaoService } from '../services/petsAdocao/adocaoService';
 import { useBannerComponentStore } from '../stores/BannerComponentStore';
 const storeBannerComponent = useBannerComponentStore();
 import { usePetStore } from '../stores/PetStore';
+import { onMounted } from 'vue';
 const petStore = usePetStore()
+const adocaoService = useAdocaoService()
+
+onMounted(() => {
+  adocaoService.getAdocao()
+})
 </script>
 
 <template>
@@ -29,7 +35,7 @@ const petStore = usePetStore()
         <PetsAdocao v-for="pet of petStore.filteredPropriedades"
           :key="pet.id"
           :id="pet.id"
-          :foto="pet.foto"
+          :foto="`http://localhost:8000${pet.foto}`"
           :nome="pet.nome"
           :genero="pet.genero"
         />

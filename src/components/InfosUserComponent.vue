@@ -10,7 +10,7 @@ onMounted(() => {
 
 <template>
   <div class="bg-[#F7F5E0] pt-15 overflow-hidden">
-    <img :src="`http://localhost:8000/${props?.user?.foto}`" alt="Foto do usuário"
+    <img :src="`http://localhost:8000${props?.user?.foto}`" alt="Foto do usuário"
       class="w-full h-[610px] object-cover md:w-[50%] md:ml-[25%] md:max-h-[500px] lg:max-h-[700px] md:rounded-[25%] md:h-[100%] md:border-15 md:border-[#40A9F4]" />
 
   </div>
