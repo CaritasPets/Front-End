@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue'
-import BaseInput from './InputComponents/BaseInput.vue';
-import { useAuthService } from '../services/auth/authService';
-import { useBaseInputStore } from '../stores/BaseInputStore';
+import BaseInput from '@/components/InputComponents/BaseInput.vue';
+import { useAuthService } from '@/services/auth/authService';
+import { useBaseInputStore } from '@/stores/BaseInputStore';
 const inputStore = useBaseInputStore()
 const authService = useAuthService()
 import { RouterLink } from 'vue-router';

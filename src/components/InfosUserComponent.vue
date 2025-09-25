@@ -25,11 +25,15 @@ onMounted(() => {
       <ul class="font-['Sen'] flex flex-wrap w-[100%] gap-6 align-center justify-center mb-5 md:mt-10">
         <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/user-icon.svg" alt="Ícone Usuário" class="w-12 h-12 mb-2"><strong>Username:</strong> {{ props?.user?.username }}
         </li>
-        <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"> <img src="/petInformationIcons/phone-icon.svg" alt="Ícone telefone" class="w-12 h-12 mb-2"><strong>Telefone:</strong> {{ props?.user?.common_profile.telefone }}
+        <li v-if="props?.user?.common_profile" class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"> <img src="/petInformationIcons/phone-icon.svg" alt="Ícone telefone" class="w-12 h-12 mb-2"><strong>Telefone:</strong> {{ props?.user?.common_profile.telefone }}
         </li>
-        <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/id-icon.svg" alt="Ícone CPF" class="w-12 h-12 mb-2"><strong>CPF:</strong> {{ props?.user?.common_profile.cpf }}
+        <li v-else class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"> <img src="/petInformationIcons/phone-icon.svg" alt="Ícone telefone" class="w-12 h-12 mb-2"><strong>Telefone:</strong> {{ props?.user?.organization_profile?.telefone }}
         </li>
-        <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/date-icon.svg" alt="Ícone Data" class="w-12 h-12 mb-2"><strong>Data de Nascimento:</strong> {{ props?.user?.common_profile.data_nascimento }}
+        <li v-if="props?.user?.common_profile" class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/id-icon.svg" alt="Ícone CPF" class="w-12 h-12 mb-2"><strong>CPF:</strong> {{ props?.user?.common_profile.cpf }}
+        </li>
+        <li v-else class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/id-icon.svg" alt="Ícone CPF" class="w-12 h-12 mb-2"><strong>CNPJ:</strong> {{ props?.user?.organization_profile.cnpj }}
+        </li>
+        <li v-if="props?.user?.common_profile" class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/date-icon.svg" alt="Ícone Data" class="w-12 h-12 mb-2"><strong>Data de Nascimento:</strong> {{ props?.user?.common_profile.data_nascimento }}
         </li>
         <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"> <img src="/petInformationIcons/mail-icon.svg" alt="Ícone Email" class="w-12 h-12 mb-2"><strong>Email:</strong>
           {{ props?.user?.email }}
