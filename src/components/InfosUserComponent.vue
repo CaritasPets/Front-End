@@ -1,18 +1,23 @@
 <script setup>
+import { onMounted } from 'vue';
+
 const props = defineProps(['user'])
 defineEmits(['logout'])
+onMounted(() => {
+  console.log(props.user)
+})
 </script>
 
 <template>
   <div class="bg-[#F7F5E0] pt-15 overflow-hidden">
-    <img :src="props?.user?.foto_perfil?.url" alt="Foto do usuário"
+    <img :src="`http://localhost:8000${props?.user?.foto}`" alt="Foto do usuário"
       class="w-full h-[610px] object-cover md:w-[50%] md:ml-[25%] md:max-h-[500px] lg:max-h-[700px] md:rounded-[25%] md:h-[100%] md:border-15 md:border-[#40A9F4]" />
 
   </div>
   <section class="bg-[#F7F5E0]">
     <div class="h-[160px] bg-[#F7F5E0] rounded-t-4xl -mt-20 relative z-10 md:mt-0">
       <h2 class="font-['Handlee'] text-5xl text-center p-15">
-        {{ props?.user?.nome }}
+        {{ props?.user?.username }}
       </h2>
 
     </div>
@@ -20,11 +25,15 @@ defineEmits(['logout'])
       <ul class="font-['Sen'] flex flex-wrap w-[100%] gap-6 align-center justify-center mb-5 md:mt-10">
         <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/user-icon.svg" alt="Ícone Usuário" class="w-12 h-12 mb-2"><strong>Username:</strong> {{ props?.user?.username }}
         </li>
-        <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"> <img src="/petInformationIcons/phone-icon.svg" alt="Ícone telefone" class="w-12 h-12 mb-2"><strong>Telefone:</strong> {{ props?.user?.telefone }}
+        <li v-if="props?.user?.common_profile" class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"> <img src="/petInformationIcons/phone-icon.svg" alt="Ícone telefone" class="w-12 h-12 mb-2"><strong>Telefone:</strong> {{ props?.user?.common_profile.telefone }}
         </li>
-        <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/id-icon.svg" alt="Ícone CPF" class="w-12 h-12 mb-2"><strong>CPF:</strong> {{ props?.user?.cpf }}
+        <li v-else class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"> <img src="/petInformationIcons/phone-icon.svg" alt="Ícone telefone" class="w-12 h-12 mb-2"><strong>Telefone:</strong> {{ props?.user?.organization_profile?.telefone }}
         </li>
-        <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/date-icon.svg" alt="Ícone Data" class="w-12 h-12 mb-2"><strong>Data de Nascimento:</strong> {{ props?.user?.data_nascimento }}
+        <li v-if="props?.user?.common_profile" class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/id-icon.svg" alt="Ícone CPF" class="w-12 h-12 mb-2"><strong>CPF:</strong> {{ props?.user?.common_profile.cpf }}
+        </li>
+        <li v-else class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/id-icon.svg" alt="Ícone CPF" class="w-12 h-12 mb-2"><strong>CNPJ:</strong> {{ props?.user?.organization_profile.cnpj }}
+        </li>
+        <li v-if="props?.user?.common_profile" class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"><img src="/petInformationIcons/date-icon.svg" alt="Ícone Data" class="w-12 h-12 mb-2"><strong>Data de Nascimento:</strong> {{ props?.user?.common_profile.data_nascimento }}
         </li>
         <li class="flex flex-col items-center justify-center bg-[#EEEBD1] rounded-2xl p-4 w-[100px] sm:w-[180px] md:w-[200px]"> <img src="/petInformationIcons/mail-icon.svg" alt="Ícone Email" class="w-12 h-12 mb-2"><strong>Email:</strong>
           {{ props?.user?.email }}

@@ -1,14 +1,17 @@
 <script setup>
 import BannerComponent from '../components/BannerComponent.vue';
 import PetPerdidoCardComponent from '@/components/PetPerdidoCardComponent.vue';
-
-
+import { usePerdidoService } from '../services/petsPerdidos/perdidoService';
+const perdidoService = usePerdidoService()
 import { useBannerComponentStore } from '../stores/BannerComponentStore';
 const bannerStore = useBannerComponentStore();
 import { usePetPerdidoStore } from '../stores/PetPerdidoStore';
+import { onMounted } from 'vue';
 const petPerdidoStore = usePetPerdidoStore();
 
-
+onMounted(() => {
+  perdidoService.getPerdidos()
+})
 </script>
 <template>
     <section class="banner">

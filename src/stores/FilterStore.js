@@ -37,7 +37,7 @@ export const useFilterStore = defineStore("filterStore", () => {
       options: [
         {
           option: "Sim",
-          value: "sim"
+          value: "totalmente"
         },
         {
           option: "Não",

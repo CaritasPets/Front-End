@@ -4,10 +4,12 @@ import { useRoute } from 'vue-router';
 const route = useRoute()
 function validateFooter(url) {
   if(url == '/user') return false
+  if(url == '/user/sign-up' || url == '/user/sign-up/') return false
+  if(url == '/user/login' || url == '/user/login/') return false
   if(url == '/user/profile') return true
   if(url == '/adote/register') return false
   if(url == '/procura-se/register') return false
-  if(url == '/ongs/sign-up') return false
+  if(url == '/ongs/sign-up/') return false
   return true
 }
 
