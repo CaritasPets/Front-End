@@ -18,7 +18,7 @@ const inputStore = useBaseInputStore()
       {{ inputStore.campos[props.name].label }}
     </label>
 
-    <div class="flex overflow-hidden rounded-full bg-white w-fit">
+    <div class="flex flex-row overflow-hidden rounded-full bg-gray-300 w-fit">
       <label
         v-for="opt in inputStore.campos[props.name].options"
         :key="opt.value"
@@ -31,7 +31,7 @@ const inputStore = useBaseInputStore()
         :style="[
           inputStore.campos[props.name].value === opt.value
             ? `background: ${inputStore.campos[props.name].background}`
-            : 'background: white'
+            : 'background: #D1D5DB'
         ]"
       >
         <input

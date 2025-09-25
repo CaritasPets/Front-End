@@ -29,7 +29,7 @@ const getValues = () => {
 }
 </script>
 <template>
-  <form @submit.prevent="handleSubmit" @reset.prevent="handleReset" class="flex flex-col items-center py-20 gap-10 bg-amber-200 sm:gap-16 lg:gap-20">
+  <form @submit.prevent="handleSubmit" @reset.prevent="handleReset" class="flex flex-col items-center py-20 gap-10 bg-[#F7F5E0] sm:gap-16 lg:gap-20">
     <div class="sm:flex md:flex lg:flex justify-around gap-10 w-full">
       <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
         <li class="flex flex-col w-[100%]">
@@ -43,29 +43,46 @@ const getValues = () => {
           <input
             list="racas"
             v-model="pet.raca"
-            class="bg-white text-[#1E0B00] rounded-full text-xl px-4 py-2"
+            class="bg-gray-300 text-[#1E0B00] rounded-full text-xl px-4 py-2"
             placeholder="Raça (se tiver)"
           />
           <div>
-            <datalist v-if="pet.especie == 'cachorro'" id="racas" class="text-6xl">
-              <option v-for="raca of racaStore.racasCachorro" :value="raca.value" :key="raca.value">
+            <datalist v-if="inputStore.campos.radio2.value === 'cachorro'" id="racas">
+              <option v-for="raca of racaStore.racasCachorro" :key="raca.value" :value="raca.value">
                 {{ raca.nome }}
               </option>
             </datalist>
-            <datalist v-else-if="pet.especie == 'gato'" id="racas" class="text-6xl">
-              <option v-for="raca of racaStore.racasGatos" :value="raca.value" :key="raca.value">
+            <datalist v-else-if="inputStore.campos.radio2.value === 'gato'" id="racas">
+              <option v-for="raca of racaStore.racasGatos" :key="raca.value" :value="raca.value">
                 {{ raca.nome }}
               </option>
             </datalist>
-            <datalist v-else id="racas" class="text-6xl">
-              <option v-for="raca of racaStore.racasPassaro" :value="raca.value" :key="raca.value">
+            <datalist v-else-if="inputStore.campos.radio2.value === 'passaro'" id="racas">
+              <option v-for="raca of racaStore.racasPassaro" :key="raca.value" :value="raca.value">
+                {{ raca.nome }}
+              </option>
+            </datalist>
+            <datalist v-else id="racas">
+              <option v-for="raca of [...racaStore.racasCachorro, ...racaStore.racasGatos, ...racaStore.racasPassaro]" :key="raca.value" :value="raca.value">
                 {{ raca.nome }}
               </option>
             </datalist>
           </div>
         </li>
         <li class="flex flex-col w-[100%]">
-          <ToggleComponent name="radio5"/>
+          <label class="text-xl lg:text-2xl mb-2 font-[Sen] text-[#1E0B00]">
+            *O seu pet é vacinado?
+          </label>
+          <select
+            v-model="inputStore.campos.radio5.value"
+            class="bg-gray-300 text-[#1E0B00] rounded-full text-xl px-4 py-2"
+            required
+          >
+            <option value="" disabled hidden>Selecione</option>
+            <option v-for="opt in inputStore.campos.radio5.options" :key="opt.value" :value="opt.value">
+              {{ opt.text }}
+            </option>
+          </select>
         </li>
       </ul>
       <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
@@ -86,15 +103,21 @@ const getValues = () => {
     <div class="mt-14 mr-180">
       <h2 class="text-xl font-[Sen] text-[#1E0B00]">* Indica campo obrigatório.</h2>
     </div>
-    <div class="flex gap-20">
-      <button class="text-xl text-[#FFF493] rounded-xl py-2 px-6 bg-[#03497B] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#03497B] hover:text-[#03497B] font-[Sen]" type="reset">
-        <span class="mdi mdi-delete-outline"></span>
-        Limpar
-      </button>
-      <button class="text-xl text-[#FFF493] rounded-xl py-2 px-6 bg-[#104C00] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#104C00] hover:text-[#104C00] font-[Sen]" type="submit">
-        <span class="mdi mdi-paw"></span>
-        Cadastrar Pet
-      </button>
-    </div>
+    <div>
+        <ul>
+          <li class="w-full flex flex-row justify-center gap-4 sm:gap-10 ">
+            <button
+              class="text-xl rounded-xl py-2 px-6 bg-[#FFBC46] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FFBC46] hover:text-[#FFBC46] font-[Sen]"
+              type="reset">
+              Limpar
+            </button>
+            <button
+              class="text-xl rounded-xl py-2 px-6 bg-[#FF953C] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FF953C] hover:text-[#FF953C] font-[Sen]"
+              type="submit">
+              Cadastrar Pet
+            </button>
+          </li>
+        </ul>
+      </div>
   </form>
 </template>
