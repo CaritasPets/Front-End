@@ -4,12 +4,17 @@ import BaseInput from '../InputComponents/BaseInput.vue'
 import ToggleComponent from '../InputComponents/RadioInput.vue'
 import PictureInput from '../InputComponents/PictureInput.vue'
 import { useBaseInputStore } from '@/stores/BaseInputStore'
-
+import { usePerdidoService } from '../../services/petsPerdidos/perdidoService'
+const perdidoService = usePerdidoService()
 const inputStore = useBaseInputStore()
 
 const formUserData = ref({
-  username: '',
-  password: ''
+  nome: '',
+  especie: '',
+  genero: '',
+  localidade: '',
+  caracteristicas: '',
+  foto: null,
 })
 
 const getValues = () => {
@@ -17,14 +22,33 @@ const getValues = () => {
     Object.entries(inputStore.campos).map(([key, field]) => [key, field.value])
   )
 
-  formUserData.value.username = valores.input1
-  formUserData.value.password = valores.input2
+  formUserData.value.nome = valores.input1
+  formUserData.value.localidade = valores.input2
+  formUserData.value.caracteristicas = valores.input3
+  formUserData.value.genero = valores.radio1
+  formUserData.value.especie = valores.radio2
+
   alert(valores)
+}
+
+const submitForm = () => {
+
+  getValues()
+
+  const formData = new FormData()
+  formData.append("nome", formUserData.value.nome)
+  formData.append("localidade", formUserData.value.localidade)
+  formData.append("caracteristicas", formUserData.value.caracteristicas)
+  formData.append("genero", formUserData.value.genero)
+  formData.append("especie", formUserData.value.especie)
+  formData.append("foto", formUserData.value.foto)
+
+  perdidoService.postPerdidos(formData)
 }
 </script>
 <template>
-  <form @submit.prevent="handleSubmit" class="flex flex-col items-center py-20 gap-10 bg-[#F7F5E0] sm:gap-16 lg:gap-20">
-    <div class="sm:flex md:flex lg:flex justify-around gap-10 w-full">
+  <form @submit.prevent="submitForm" class="flex flex-col items-center py-20 gap-10 bg-[#F7F5E0] sm:gap-16 lg:gap-20">
+    <div class="sm:flex md:flex lg:flex justify-start px-10 gap-20 w-full">
         <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
           <li class="flex flex-col w-[100%]">
             <BaseInput name="input1"/>
@@ -44,7 +68,7 @@ const getValues = () => {
             <ToggleComponent name="radio2"/>
           </li>
           <li class="flex flex-col w-[100%]">
-            <PictureInput/>
+            <PictureInput v-model="formUserData.foto"/>
           </li>
         </ul>
     </div>

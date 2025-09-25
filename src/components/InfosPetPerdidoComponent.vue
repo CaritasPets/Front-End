@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 const props = defineProps(['petPerdido', 'user'])
 const router = useRouter()
@@ -12,6 +13,10 @@ function goToUserProfile() {
 function goToProcuraSe() {
   router.push({ name: 'procura-se' })
 }
+
+onMounted(() => {
+    console.log(props.user)
+})
 </script>
 
 <template>
@@ -36,10 +41,9 @@ function goToProcuraSe() {
             </div>
         </div>
         <div class="w-[90%] h-full bg-[#EEEBD1] flex flex-col sm:flex-row items-center gap-6 p-6 mt-10 mr-5 ml-5 rounded-2xl max-w-[650px] mx-auto md:w-full md:ml-[13%] lg:ml-[29%]">
-            <img v-if="props?.user?.foto_perfil" :src="props.user.foto_perfil.file" alt="Foto do Dono" class="w-24 h-24 rounded-full object-cover border-4 border-[#FF953C] sm:w-34 sm:h-24" />
+            <img v-if="props?.user?.foto" :src="props.user.foto" alt="Foto do Dono" class="w-24 h-24 rounded-full object-cover border-4 border-[#FF953C] sm:w-40 sm:h-40" />
             <div class="flex flex-col text-center sm:text-left">
-                <p class="text-2xl font-['Sen'] font-semibold">{{ props?.user?.nome }}</p>
-                <p class="text-lg font-['Sen'] flex items-center gap-2 justify-center"><img src="/petInformationIcons/phone-icon.svg" alt="Ícone de telefone" class="w-[5%]"> {{ props?.user?.telefone }}</p>
+                <p class="text-2xl font-['Sen'] font-semibold">{{ props?.user.username }}</p>
             </div>
         </div>
         <div class="text-center flex flex-wrap mb-10 gap-5 justify-center bg-[#F7F5E0] lg:ml-66  sm:max-w-[1000px] md:gap-10">
