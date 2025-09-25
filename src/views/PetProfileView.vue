@@ -3,13 +3,17 @@ import { useRoute } from 'vue-router'
 import { usePetStore } from '@/stores/PetStore'
 import { useOngStore } from '@/stores/OngsStore'
 import InfosPetComponent from '@/components/InfosPetComponent.vue'
+import { onMounted } from 'vue'
 
 const route = useRoute()
 const petStore = usePetStore()
 const ongStore = useOngStore()
 
 const pet = petStore.propriedades.find(p => String(p.id) === String(route.params.id))
-const ong = ongStore.ong.find(o => pet && String(o.id) === String(pet.user.id))
+const ong = ongStore.ong.find(o => String(o.id) === String(pet.user.id))
+onMounted(() => {
+  console.log(pet)
+})
 </script>
 
 <template>

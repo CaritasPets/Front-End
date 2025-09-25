@@ -76,13 +76,26 @@ export const useAdocaoService = defineStore('adocaoService', () => {
             console.log(err)
         }
     }
+
+    const profile = async(id) => {
+        try{
+            const response = await api.get(`${urlStore.adocao}${id}`)
+            if(response.data){
+                console.log(response.data)
+                return response.data
+            }
+        } catch(err){
+            console.log(err)
+        }
+    }
     return{
         getAdocao,
         postAdocao,
         patchAdocao,
         deleteAdocao,
         toggleFavoriteAdocao,
-        getFavoriteAdocao
+        getFavoriteAdocao,
+        profile,
     }
 })
 
