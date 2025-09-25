@@ -1,13 +1,18 @@
 <script setup>
+import { onMounted } from 'vue';
 import BannerComponent from '../components/BannerComponent.vue';
 import PapelOngs from '../components/OngComponent/PapelOngs.vue';
 import OngsComponent from '../components/OngsComponent.vue';
-
+import { useOngService } from '../services/organizations/ongService';
 import { useBannerComponentStore } from '../stores/BannerComponentStore';
 import { useOngStore } from '../stores/OngsStore';
 const bannerStore = useBannerComponentStore();
 const ongStore = useOngStore();
+const ongService = useOngService()
 
+onMounted(()=> {
+  ongService.getOngs()
+})
 </script>
 <template>
   <section>

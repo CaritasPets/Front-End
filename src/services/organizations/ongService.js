@@ -14,6 +14,7 @@ export const useOngService = defineStore('ongService', () => {
             if(response.data){
                 console.log('Ongs puxadads com sucesso!')
                 ongStore.ong = response.data
+                console.log(response.data)
             }
         } catch(err) {
             console.log(err)
