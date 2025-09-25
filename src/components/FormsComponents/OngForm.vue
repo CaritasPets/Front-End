@@ -2,21 +2,6 @@
 import { ref } from 'vue'
 import BaseInput from '../InputComponents/BaseInput.vue'
 
-const file = ref(null)
-const previewUrl = ref(null)
-const ong = ref({
-  nome: '',
-  telefone: '',
-  email: '',
-  cnpj: '',
-  instagram: '',
-  facebook: '',
-  endereco: '',
-  senha: '',
-  foto_perfil: '',
-  descricao: '',
-})
-
 </script>
 <template>
   <form class="flex flex-col items-center py-20 gap-10 bg-amber-200 sm:gap-16 lg:gap-20">

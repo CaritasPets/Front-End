@@ -1,5 +1,6 @@
 <script setup>
 import PetForm from '../components/FormsComponents/PetForm.vue';
+import DecorationCadastro from '@/components/FormsComponents/DecorationCadastro.vue';
 </script>
 <template>
   <section class="bg-black/80 flex sm:px-20 sm:py-20">

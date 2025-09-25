@@ -62,6 +62,7 @@ const verifyHeader = (url) => {
   if(url == '/user/sign-up/' || url == '/user/sign-up') return false;
   if(url == '/procura-se/register' || url == '/procura-se/register') return false;
   if(url == '/ongs/sign-up/' || url == '/ongs/sign-up/') return false;
+  if(url == '/adote/register' || url == '/adote/register') return false;
   return true
 }
 
