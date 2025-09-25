@@ -8,11 +8,11 @@ import BaseInput from '../InputComponents/BaseInput.vue'
 
 </script>
 <template>
-  <form @submit.prevent="handleRegister" class="flex flex-col items-center py-20 gap-10 bg-amber-200 sm:gap-16 lg:gap-20">
+  <form @submit.prevent="handleRegister" class="flex flex-col items-center py-20 gap-10 bg-[#FAE8AD] sm:gap-16 lg:gap-20">
     <div class=" sm:flex md:flex lg:flex justify-around gap-10 w-full">
       <ul class="flex flex-col items-center w-full lg:w-1/3 gap-6">
         <li class="flex flex-col w-[100%]">
-          <BaseInput name="input4"/>
+          <BaseInput name="input4" class="hover:drop-shadow-xl transition-all duration-500"/>
         </li>
         <li class="flex flex-col w-[100%]">
           <BaseInput name="input5"/>
@@ -39,7 +39,7 @@ import BaseInput from '../InputComponents/BaseInput.vue'
       <div class="flex items-center gap-4 sm:gap-6 sm:text-lg lg:text-xl text-[#1E0B00] w-[90%]">
         <p class="font-[Sen] ">Já possuí uma conta?</p>
         <RouterLink to="/user/login/"
-          class="border-2 py-2 px-4 sm:px-6 border-[#FDA202] text-black rounded-2xl bg-[#FDA202] hover:bg-transparent hover:text-[#FDA202] transition-all duration-500 font-[Sen]">
+          class="border-2 py-2 px-4 sm:px-6 border-[#FFBC46] text-black rounded-2xl bg-[#FFBC46] hover:bg-transparent hover:text-[#FFBC46] transition-all duration-500 font-[Sen]">
           Fazer login
         </RouterLink>
       </div>
@@ -47,12 +47,12 @@ import BaseInput from '../InputComponents/BaseInput.vue'
         <ul>
           <li class="w-full flex flex-row justify-center gap-4 sm:gap-10 ">
             <button
-              class="text-xl rounded-xl py-2 px-6 bg-[#FDA202] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FDA202] hover:text-[#FDA202] font-[Sen]"
+              class="text-xl rounded-xl py-2 px-6 bg-[#FFBC46] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FFBC46] hover:text-[#FFBC46] font-[Sen]"
               type="reset">
               Limpar
             </button>
             <button
-              class="text-xl rounded-xl py-2 px-6 bg-[#FF7700] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FF7700] hover:text-[#FF7700] font-[Sen]"
+              class="text-xl rounded-xl py-2 px-6 bg-[#FF953C] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#FF953C] hover:text-[#FF953C] font-[Sen]"
               type="submit">
               Cadastrar-se
             </button>
