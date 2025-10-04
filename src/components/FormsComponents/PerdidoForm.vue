@@ -28,7 +28,6 @@ const getValues = () => {
   formUserData.value.genero = valores.radio1
   formUserData.value.especie = valores.radio2
 
-  alert(valores)
 }
 
 const submitForm = () => {

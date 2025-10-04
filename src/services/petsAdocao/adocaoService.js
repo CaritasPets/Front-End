@@ -2,12 +2,16 @@ import { defineStore } from "pinia";
 import api from "../../plugins/api";
 import { useRequestUrlStore } from "../../stores/RequestsUrls";
 import { usePetStore } from "../../stores/PetStore";
+import { useMessageStore } from "../../stores/MessagesStore";
+import { useRouter } from "vue-router";
 import { ref } from "vue";
 
 export const useAdocaoService = defineStore('adocaoService', () => {
     const loading = ref(false)
     const petStore = usePetStore()
     const urlStore = useRequestUrlStore()
+    const messageStore = useMessageStore();
+    const router = useRouter();
 
     const getAdocao = async () => {
         try{
@@ -27,12 +31,17 @@ export const useAdocaoService = defineStore('adocaoService', () => {
         try{
             const response = await api.post(urlStore.adocao, petData);
             if(response.data){
-                console.log('Pet criado com sucesso!')
-                getAdocao()
+                messageStore.addNotification({
+                    type: 'success',
+                    message: 'Pet registrado com sucesso!'
+                })
+               setTimeout(() => router.push('/adote'), 3500) 
             }
         } catch(err) {
-            alert(err.response.data.detail)
-            console.log(err)
+            messageStore.addNotification({
+                type:'error',
+                message: err.response.data.detail
+            })
         }
     }
     const patchAdocao = async (id, petNewData) => {

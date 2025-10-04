@@ -2,12 +2,16 @@ import { defineStore } from "pinia";
 import api from "../../plugins/api";
 import { useRequestUrlStore } from "../../stores/RequestsUrls";
 import { usePetPerdidoStore } from "../../stores/PetPerdidoStore";
+import { useMessageStore } from "../../stores/MessagesStore";
+import { useRouter } from "vue-router";
 import { ref } from "vue";
 
 export const usePerdidoService = defineStore('perdidoService', () => {
     const loading = ref(false)
     const petPerdidoStore = usePetPerdidoStore()
     const urlStore = useRequestUrlStore()
+    const messageStore = useMessageStore();
+    const router = useRouter()
 
     const getPerdidos = async () => {
         try{
@@ -28,12 +32,21 @@ export const usePerdidoService = defineStore('perdidoService', () => {
         try{
             const response = await api.post(urlStore.perdidos, formPet);
             if(response.data){
-                console.log('Pet perdido criado com sucesso!');
-                alert('Pet perdido criado com sucesso');
-                getPerdidos()
+                messageStore.addNotification({
+                    type: 'success',
+                    message: 'Pet registrado com sucesso!'
+                });
+               setTimeout(() => router.push('/procura-se'), 3500);
             }
         } catch(err) {
-            console.log(err)
+            messageStore.addNotification({
+                type: 'error',
+                message: err.response?.data?.foto[0] || 
+                         err.response?.data?.nome[0] ||
+                         err.response?.data?.localidade[0] ||
+                         err.response?.data?.especie[0] ||
+                         'Erro ao registrar pet!'
+            })
         }
     }
 
