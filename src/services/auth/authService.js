@@ -1,15 +1,20 @@
 import { defineStore } from "pinia";
 import api from "../../plugins/api";
 import { useRequestUrlStore } from "../../stores/RequestsUrls";
+import { useMessageStore } from "../../stores/MessagesStore";
+import { useRouter } from "vue-router";
 import { ref } from "vue";
+
 
 export const useAuthService = defineStore('authService', () => {
     
+    const router = useRouter();
     const user = ref(null)
 
     const loading = ref(false)
 
-    const urlStore = useRequestUrlStore()
+    const urlStore = useRequestUrlStore();
+    const messageStore = useMessageStore();
 
     const register = async (formData) => {
         try{
@@ -22,11 +27,24 @@ export const useAuthService = defineStore('authService', () => {
                 const { access, refresh } = response.data.tokens;
                 localStorage.setItem("accessToken", access);
                 localStorage.setItem("refreshToken", refresh);
-                console.log(response.data);
-                window.location.href = '/user/profile'
+                
+                messageStore.addNotification({
+                    type:'success',
+                    message: 'Conta criada com sucesso! 🎉',
+                })
+
+                setTimeout(() => router.push("/user/profile"), 3500);
             }
         } catch(err) {
-            console.log(err)
+            console.log(err);
+            messageStore.addNotification({
+                type: "error",
+                message:
+                err.response?.data?.username[0] ||
+                err.response?.data?.cpf[0] ||
+                err.response?.data?.email[0] ||
+                "Erro ao registrar usuário.",
+            });
         }
     }
 
@@ -36,11 +54,17 @@ export const useAuthService = defineStore('authService', () => {
             const { access, refresh } = response.data;
             localStorage.setItem('accessToken', access);
             localStorage.setItem('refreshToken', refresh)
-            alert(response.data.message)
-            window.location.href = '/user/profile'
+            messageStore.addNotification({
+                type: "success",
+                message: `Bem vindo(a)! 👋`,
+            });
+            setTimeout(() => router.push("/user/profile"), 3500);
         } catch(err){
             console.log(err)
-            alert(err.response.data.detail)
+            messageStore.addNotification({
+                type: 'error',
+                message: 'Usuário ou senha inválidos'
+            })
         }
     }
     const profile = async () => {
@@ -50,16 +74,19 @@ export const useAuthService = defineStore('authService', () => {
             console.log('Informações puxadas com sucesso!')
             user.value = response.data
         } catch(err){
-            alert('Você precisa fazer login primeiro')
+            messageStore.addNotification({
+                type: "error",
+                message: "Você precisa fazer login primeiro.",
+            });
             console.log(err)
-            window.location.href = '/user/login/'
+            router.push('/user/login/')
         } finally{
             loading.value = false
         }
     }
     const logout = () => {
         localStorage.clear()
-        window.location.href = '/user/login/'
+        router.push('/user/login/')
     }
 
     const deleteUser = async () => {
