@@ -6,7 +6,7 @@ const petsPerdidosMocked = [
     genero: "macho",
     localidade: "Bairro Floresta, Rua Santa Catarina",
     caracteristicas: "Gosta de carinho e é bem ativo",
-    foto: "http://localhost:8000/media/images/perdidos/pompom.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0023.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -20,7 +20,7 @@ const petsPerdidosMocked = [
     genero: "femea",
     localidade: "Bairro Floresta, Rua Santa Catarina",
     caracteristicas: "Gosta de carinho e é bem ativo",
-    foto: "http://localhost:8000/media/images/perdidos/pexels-mareezimny-2759564.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0024.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -34,7 +34,7 @@ const petsPerdidosMocked = [
     genero: "macho",
     localidade: "Bairro Itaum",
     caracteristicas: "É bem ativo",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0052.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0025.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -48,7 +48,7 @@ const petsPerdidosMocked = [
     genero: "macho",
     localidade: "Bairro Aventureiro",
     caracteristicas: "É calminho e dorminhoco",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0026.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0026.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -62,7 +62,7 @@ const petsPerdidosMocked = [
     genero: "macho",
     localidade: "Bairro Boa Vista",
     caracteristicas: "Canta bastante",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0070.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0027.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -76,7 +76,7 @@ const petsPerdidosMocked = [
     genero: "femea",
     localidade: "Bairro Pirabeiraba",
     caracteristicas: "Arteiro",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0091.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0028.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -90,7 +90,7 @@ const petsPerdidosMocked = [
     genero: "femea",
     localidade: "Bairro Vila Nova",
     caracteristicas: "Agitada e alegre",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0049.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0029.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -104,7 +104,7 @@ const petsPerdidosMocked = [
     genero: "macho",
     localidade: "Bairro Iririu",
     caracteristicas: "Bravo e arisco",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0074.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0030.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -118,7 +118,7 @@ const petsPerdidosMocked = [
     genero: "macho",
     localidade: "Bairro Paranaguamirim",
     caracteristicas: "Brincalhão e feliz",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0056.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0031.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -132,7 +132,7 @@ const petsPerdidosMocked = [
     genero: "femea",
     localidade: "Bairro Atiradores",
     caracteristicas: "Carinhosa e se assusta com barulho",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0030.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0032.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -146,7 +146,7 @@ const petsPerdidosMocked = [
     genero: "macho",
     localidade: "Bairro Centro",
     caracteristicas: "Brincalhão e adora correr",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0065.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0033.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -160,7 +160,7 @@ const petsPerdidosMocked = [
     genero: "macho",
     localidade: "Bairro Nova Brasilia",
     caracteristicas: "Teimoso, mas dócil",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0027.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0034.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -174,7 +174,7 @@ const petsPerdidosMocked = [
     genero: "femea",
     localidade: "Bairro Iririu",
     caracteristicas: "Estranha pessoas novas",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0054.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0035.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -188,7 +188,7 @@ const petsPerdidosMocked = [
     genero: "femea",
     localidade: "Bairro Iririu",
     caracteristicas: "Estranha pessoas novas",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0054_Gj3jAFu.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0036.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -202,7 +202,7 @@ const petsPerdidosMocked = [
     genero: "femea",
     localidade: "Bairro Glória",
     caracteristicas: "Boazinha",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0043.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0037.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -216,7 +216,7 @@ const petsPerdidosMocked = [
     genero: "macho",
     localidade: "Bairro Costa e Silva",
     caracteristicas: "Muito comilão",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0061.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0038.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
@@ -230,7 +230,7 @@ const petsPerdidosMocked = [
     genero: "femea",
     localidade: "Bairro Glória",
     caracteristicas: "Amigável",
-    foto: "http://localhost:8000/media/images/perdidos/IMG-20250917-WA0078.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0039.jpg",
     user: {
       username: "AmorAnimal",
       email: "amoranimal@gmail.com",
@@ -244,7 +244,7 @@ const petsPerdidosMocked = [
     genero: "femea",
     localidade: "aqui do lado",
     caracteristicas: "aaaaaaa",
-    foto: "http://localhost:8000/media/images/perdidos/pexels-guvo59-28405671.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0040.jpg",
     user: {
       username: "AdoteJoinville",
       email: "adotejoinville@gmail.com",
@@ -258,7 +258,7 @@ const petsPerdidosMocked = [
     genero: "macho",
     localidade: "Rua Santa Catarina 1900",
     caracteristicas: "Muito fofinho e carinhoso",
-    foto: "http://localhost:8000/media/images/perdidos/pexels-rkjajoria-1189673.jpg",
+    foto: "/petperdido-images/IMG-20250917-WA0041.jpg",
     user: {
       username: "AndreRicardoSc",
       email: "schultzandrericardo@gmail.com",
