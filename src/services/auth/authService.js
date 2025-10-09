@@ -25,6 +25,7 @@ export const useAuthService = defineStore('authService', () => {
             });
             if (response.data && response.data.tokens) {
                 const { access, refresh } = response.data.tokens;
+                localStorage.clear();
                 localStorage.setItem("accessToken", access);
                 localStorage.setItem("refreshToken", refresh);
                 
@@ -52,6 +53,7 @@ export const useAuthService = defineStore('authService', () => {
         try{
             const response = await api.post(urlStore.login, { username, password });
             const { access, refresh } = response.data;
+            localStorage.clear();
             localStorage.setItem('accessToken', access);
             localStorage.setItem('refreshToken', refresh)
             messageStore.addNotification({

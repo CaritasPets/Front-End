@@ -67,7 +67,7 @@ function goToAdote(){
                 class="bg-[#98CB2A] mt-10 w-[90%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#98CB2A] hover:text-[#98CB2A] sm:w-[40%]"
                 @click="goToAdote">
                 <span class="mdi mdi-arrow-left-bold-outline"></span>
-                Retornar para Página de Perdidos
+                Retornar para Página de Adoção
             </button>
         </div>
     </section>
