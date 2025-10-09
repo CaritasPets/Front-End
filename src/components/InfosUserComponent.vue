@@ -40,7 +40,7 @@ onMounted(() => {
         </li>
       </ul>
     </div>
-    <div class="flex flex-wrap mb-10 gap-5 justify-center bg-[#F7F5E0] pt-10 lg:ml-65 sm:max-w-[1000px] md:gap-10">
+    <div class="flex flex-wrap mb-10 justify-center">
       <button @click="$emit('logout')" class="bg-[#98CB2A] mt-10 w-[50%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#98CB2A] hover:text-[#2c2e27] sm:w-[20%]"><span class="mdi mdi-arrow-left-bold-outline"></span> Sair
       </button>
       <!-- <button class="bg-[#40A9F4] mt-10 w-[70%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#40A9F4] hover:text-[#40A9F4] sm:w-[30%]"><span class="mdi mdi-pencil-outline"></span> Alterar informações
