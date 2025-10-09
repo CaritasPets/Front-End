@@ -44,10 +44,10 @@ const props = defineProps(['ong'])
       </div>
     </div>
     <div class="text-center flex flex-wrap mb-10 gap-5 justify-center mt-60 bg-[#F7F5E0] lg:ml-85 sm:max-w-[850px] md:gap-10">
-      <button
+      <!-- <button
         class="bg-[#40A9F4] mt-10 w-[80%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#40A9F4] hover:text-[#40A9F4] sm:w-[25%]">
         <span class="mdi mdi-pencil-outline"></span> Alterar informações
-      </button>
+      </button> -->
       <RouterLink to="/ongs"
         class="bg-[#98CB2A] mt-10 w-[80%] text-lg pt-2 pb-2 rounded-2xl font-[Sen] cursor-pointer border-2 border-transparent transition-all duration-500 hover:bg-transparent hover:border-[#98CB2A] hover:text-[#98CB2A] sm:w-[40%]">
         <span class="mdi mdi-arrow-left-bold-outline"></span> Retornar para Página de ONGs
