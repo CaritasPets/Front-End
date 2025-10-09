@@ -93,6 +93,7 @@ export const useAdocaoService = defineStore('adocaoService', () => {
 
     const profile = async(id) => {
         try{
+            loading.value = true
             const response = await api.get(`${urlStore.adocao}${id}`)
             if(response.data){
                 console.log(response.data)
@@ -100,6 +101,12 @@ export const useAdocaoService = defineStore('adocaoService', () => {
             }
         } catch(err){
             console.log(err)
+            messageStore.addNotification({
+                type: 'error',
+                message: 'Pet não encontrado'
+            });
+        } finally{
+            loading.value = false
         }
     }
     return{

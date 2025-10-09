@@ -41,10 +41,10 @@ onMounted(() => {
             </div>
         </div>
         <div class="w-[90%] h-full bg-[#EEEBD1] flex flex-col sm:flex-row items-center gap-6 p-6 mt-10 mr-5 ml-5 rounded-2xl max-w-[650px] mx-auto md:w-full md:ml-[13%] lg:ml-[29%]">
-            <img v-if="props?.user?.foto" :src="props.user.foto" alt="Foto do Dono" class="w-24 h-24 rounded-full object-cover border-4 border-[#FF953C] sm:w-40 sm:h-40" />
+            <img v-if="props.user?.foto" :src="props.user?.foto" alt="Foto do Dono" class="w-24 h-24 rounded-full object-cover border-4 border-[#FF953C] sm:w-40 sm:h-40" />
             <div class="flex flex-col text-center sm:text-left">
-                <p class="text-2xl font-['Sen'] font-semibold">{{ props?.user.username }}</p>
-                <p class="flex items-center gap-2 mt-5"><img src="/petInformationIcons/mail-icon.svg" alt="Icone Email" class="w-[5%] ">{{ props.user.email }}</p>
+                <p class="text-2xl font-['Sen'] font-semibold">{{ props.user?.username }}</p>
+                <p class="flex items-center gap-2 mt-5"><img src="/petInformationIcons/mail-icon.svg" alt="Icone Email" class="w-8 ">{{ props.user?.email }}</p>
             </div>
         </div>
         <div class="text-center flex flex-wrap mb-10 gap-5 justify-center bg-[#F7F5E0] lg:ml-66  sm:max-w-[1000px] md:gap-10">

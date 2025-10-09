@@ -1,24 +1,21 @@
 <script setup>
-import { useRoute } from 'vue-router'
-import { usePetStore } from '@/stores/PetStore'
-import { useOngStore } from '@/stores/OngsStore'
+import { useAdocaoService } from '../services/petsAdocao/adocaoService'
 import InfosPetComponent from '@/components/InfosPetComponent.vue'
-import { onMounted } from 'vue'
+import LoadinComponent from '../components/LoadinComponent.vue'
+import { onMounted, ref } from 'vue'
 
-const route = useRoute()
-const petStore = usePetStore()
-const ongStore = useOngStore()
-
-const pet = petStore.propriedades.find(p => String(p.id) === String(route.params.id))
-const ong = ongStore.ong.find(o => String(o.id) === String(pet.user.id))
-onMounted(() => {
-  console.log(pet)
+const props = defineProps(['id'])
+const adocaoService = useAdocaoService();
+const pet = ref(null)
+onMounted(async() => {
+  pet.value = await adocaoService.profile(props.id);
 })
 </script>
 
 <template>
   <section class="md:pt-15">
-  <InfosPetComponent v-if="pet" :propriedades="pet" :ong="ong" class="bg-[#F7F5E0]"/>
+  <LoadinComponent v-if="adocaoService.loading"/>  
+  <InfosPetComponent v-else-if="!adocaoService.loading" :propriedades="pet" class="bg-[#F7F5E0]"/>
   <p v-else class="text-center text-2xl text-[#1E0B00] mt-10 font-[Sen] bg-[#F7F5E0]">
     Pet não encontrado.
   </p>

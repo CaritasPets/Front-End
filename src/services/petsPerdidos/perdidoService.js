@@ -96,6 +96,22 @@ export const usePerdidoService = defineStore('perdidoService', () => {
             console.log(err)
         }
     }
+
+    const profile = async (id) => {
+        try{
+            loading.value = true
+            const response = await api.get(`${urlStore.perdidos}${id}`);
+            return response.data
+        } catch(err){
+            console.log(err);
+            messageStore.addNotification({
+                type: 'error',
+                message: 'Pet não encontrado'
+            })
+        } finally{
+            loading.value = false
+        }
+    }
     return{
         getPerdidos,
         postPerdidos,
@@ -103,6 +119,7 @@ export const usePerdidoService = defineStore('perdidoService', () => {
         deletePerdido,
         toggleFavoritePerdido,
         getFavoritePerdido,
+        profile,
         loading
     }
 })

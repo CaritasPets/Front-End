@@ -7,11 +7,6 @@ function goToAdote(){
     router.push({ name: 'adote' })
 }
 
-function goToOngProfile() {
-    if (props.propriedades.user?.organization_profile.id) {
-        router.push({ name: 'ong-profile', params: { id: props.propriedades.user.id } })
-    }
-}
 </script>
 
 <template>
@@ -21,7 +16,7 @@ function goToOngProfile() {
     <section class="bg-[#F7F5E0]">
         <div class="h-[500px] bg-[#F7F5E0] rounded-t-4xl my-20 relative md:mt-0">
             <h2 class="font-['Handlee'] text-5xl text-center p-15">
-                {{ props?.propriedades?.nome }}
+                {{ props.propriedades?.nome }}
             </h2>
             <div class="w-full h-full">
                 <ul class="font-['Sen'] flex flex-wrap w-[100%] gap-6 align-center justify-center mb-5">
@@ -55,10 +50,10 @@ function goToOngProfile() {
             </div>
         </div>
         <div class="w-[90%] h-full bg-[#EEEBD1] flex flex-col sm:flex-row items-center gap-6 p-6 mr-5 ml-5 rounded-2xl max-w-[650px] mx-auto md:w-full md:ml-[18%] lg:ml-[29%]">
-            <img v-if="props?.propriedades?.user.foto" :src="props.propriedades.user.foto" alt="Foto da ONG" class="w-24 h-24 rounded-full object-cover border-4 border-[#FF953C] sm:w-30 sm:h-30" />
+            <img v-if="props?.propriedades?.user?.foto" :src="props.propriedades?.user?.foto" alt="Foto da ONG" class="w-24 h-24 rounded-full object-cover border-4 border-[#FF953C] sm:w-30 sm:h-30" />
             <div class="flex flex-col text-center sm:text-left">
-                <p class="text-2xl font-['Sen'] font-semibold">{{ props?.propriedades?.user.username }}</p>
-                <p class="flex items-center gap-2 mt-5"><img src="/petInformationIcons/mail-icon.svg" alt="Icone Email" class="w-[5%] ">{{ props.propriedades.user.email }}</p>
+                <p class="text-2xl font-['Sen'] font-semibold">{{ props?.propriedades?.user?.username }}</p>
+                <p class="flex items-center gap-2 mt-5"><img src="/petInformationIcons/mail-icon.svg" alt="Icone Email" class="w-[5%] ">{{ props.propriedades?.user?.email }}</p>
             </div>
         </div> 
         <div class="text-center flex flex-wrap mb-10 gap-5 justify-center bg-[#F7F5E0] lg:ml-70  sm:max-w-[1000px] md:gap-10">

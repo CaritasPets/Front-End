@@ -1,17 +1,22 @@
 <script setup>
-import { useRoute } from 'vue-router'
-import { usePetPerdidoStore } from '../stores/PetPerdidoStore'
+import { usePerdidoService } from '../services/petsPerdidos/perdidoService'
 import InfosPetPerdidoComponent from '@/components/InfosPetPerdidoComponent.vue'
+import LoadinComponent from '../components/LoadinComponent.vue'
+import { onMounted, ref } from 'vue'
 
-const route = useRoute()
-const petPerdidoStore = usePetPerdidoStore()
+const props = defineProps(['id'])
+const perdidoService = usePerdidoService()
 
-const pet = petPerdidoStore.propriedades.find(p => String(p.id) === String(route.params.id))
+const pet = ref(null);
+onMounted( async () => {
+  pet.value = await perdidoService.profile(props.id);
+})
 </script>
 
 <template>
   <section class="md:pt-15">
-  <InfosPetPerdidoComponent v-if="pet" :petPerdido="pet" :user="pet.user" />
+  <LoadinComponent v-if="perdidoService.loading"/>
+  <InfosPetPerdidoComponent v-else-if="!perdidoService.loading" :petPerdido="pet" :user="pet?.user" />
   <p v-else class="text-center text-2xl text[#1E0B00] mt-10 font-[Sen]">
     Pet perdido não encontrado.
   </p>
