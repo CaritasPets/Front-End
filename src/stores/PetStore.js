@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 import { useFilterStore } from './FilterStore';
+import petsAdocaoMocked from "../mock/adocao";
 
 export const usePetStore = defineStore('petStore', () => {
 
@@ -14,7 +15,7 @@ export const usePetStore = defineStore('petStore', () => {
 
     };
 
-    const propriedades = ref([]);
+    const propriedades = ref([...petsAdocaoMocked]);
 
     const filterStore = useFilterStore();
 
